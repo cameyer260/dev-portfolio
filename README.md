@@ -1,36 +1,88 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+🌐 Dev Portfolio
 
-## Getting Started
+A modern developer portfolio built with Next.js and Tailwind CSS.
+Showcases my projects, skills, and experience with a responsive, dark-mode–friendly design.
 
-First, run the development server:
+✨ Features
 
-```bash
+🌓 Dark Mode Toggle — respects system preference and allows manual switching.
+
+📂 Projects Section — highlights full-stack apps with links to live demos and repos.
+
+💼 Experience Timeline — work and freelance history with concise bullet points.
+
+🛠 Skills Grid — quick overview of technologies I use.
+
+📬 Contact Form — easy way to reach me.
+
+🚀 Tech Stack
+
+Framework: Next.js
+
+Styling: Tailwind CSS
+
+Icons: Lucide React
+
+Deployment: Vercel
+
+📂 Projects
+
+DocuQuery
+AI-powered document Q&A app where users upload files and instantly query their contents using vector search.
+Tech: Next.js, OpenAI, Pinecone, Upstash Redis
+
+SkillSphere
+Real-time multiplayer gaming platform where users compete across multiple games. Built with WebSockets, Supabase, and deployed on a DigitalOcean VPS.
+Tech: Next.js, Supabase, WebSockets, Vercel, DigitalOcean VPS
+
+Social Media Mock
+Lightweight Twitter-style social media app with authentication, user avatars, and S3 image storage.
+Tech: Next.js, MongoDB, Tailwind, S3, bcrypt Auth
+
+🛠 Skills
+
+TypeScript • Python • React/Next.js • Tailwind CSS
+
+Node.js • PostgreSQL • Supabase • WebSockets
+
+Docker • AWS S3
+
+💼 Experience
+
+Freelance Web Developer (2025 – Present)
+
+Design and ship marketing sites, dashboards, and MVPs for clients.
+
+Own the stack end-to-end: Next.js, Tailwind, Supabase, Vercel.
+
+Server at Dewey's Pizza, Edwardsville, IL (Jun 2024 – Present)
+
+Deliver excellent customer service in a fast-paced restaurant environment.
+
+Collaborate with team members to maintain efficient operations during peak hours.
+
+📦 Setup
+
+Clone the repo:
+
+git clone https://github.com/cameyer260/dev-portfolio.git
+cd dev-portfolio
+
+
+Install dependencies:
+
+npm install
+
+
+Run the dev server:
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Open http://localhost:3000.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+📜 License
 
-## Learn More
+MIT License © 2025 Christopher Meyer
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+👉 Live Demo (if deployed): https://www.christophermeyer.dev
