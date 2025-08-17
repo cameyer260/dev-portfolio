@@ -29,25 +29,26 @@ export default function PortfolioPage() {
 
   const projects = [
     {
+      title: "DocuQuery",
+      blurb:
+        "AI-powered document Q&A app where users upload files and instantly query their contents using vector search.",
+      tags: ["Next.js", "OpenAI", "Pinecone", "Upstash Redis"],
+      href: "https://www.docuquery.online",
+      repo: "https://github.com/cameyer260/ai-doc-qa",
+    },
+    {
       title: "SkillSphere",
-      blurb: "Real‑time games platform (Next.js + Supabase + WebSockets).",
-      tags: ["Next.js", "WebSockets", "Supabase", "Vercel"],
+      blurb: "Real‑time multiplayer gaming that lets users compete across multiple games platform (Next.js + Supabase + WebSockets).",
+      tags: ["Next.js", "WebSockets", "Supabase", "Vercel", "DigitalOcean VPS"],
       href: "https://playskillsphere.com",
       repo: "https://github.com/cameyer260/skillsphere",
     },
     {
       title: "Social Media Mock",
-      blurb: "Lightweight Twitter‑style mock with avatars & auth.",
-      tags: ["Next.js", "Postgres", "Tailwind", "S3"],
-      href: "https://github.com/thispagedoesntexist",
-      repo: "https://github.com/thispagedoesntexist",
-    },
-    {
-      title: "Chess Bot",
-      blurb: "Local Stockfish.js chess bot that analyzes positions in real time and suggests moves.",
-      tags: ["React", "TypeScript", "Stockfish.js"],
-      href: "https://github.com/thispagedoesntexist",
-      repo: "https://github.com/thispagedoesntexist",
+      blurb: "Lightweight Twitter-style social media app with authentication, user avatars, and image storage using S3.",
+      tags: ["Next.js", "MongoDB", "Tailwind", "S3", "bcrypt Auth"],
+      href: "https://github.com/cameyer260/social-media-mock",
+      repo: "https://github.com/cameyer260/social-media-mock",
     },
   ];
 
