@@ -85,4 +85,4 @@ Open http://localhost:3000.
 
 MIT License © 2025 Christopher Meyer
 
-👉 Live Demo (if deployed): https://www.christophermeyer.dev
+👉 Live Site: https://www.christophermeyer.dev
