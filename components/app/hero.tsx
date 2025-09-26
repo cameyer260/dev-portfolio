@@ -16,7 +16,7 @@ export default function Hero() {
       >
         <div className="inline-flex items-center gap-2 rounded-full border border-zinc-200 bg-white px-3 py-1 text-xs text-zinc-600 shadow-sm dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-300">
           <Rocket className="h-3.5 w-3.5" />
-          Open to SWE internships (Aug 2025)
+          Open to SWE internships (May 2026)
         </div>
         <h1 className="mt-6 text-4xl font-bold tracking-tight sm:text-6xl">
           Building fast, clean,{" "}
