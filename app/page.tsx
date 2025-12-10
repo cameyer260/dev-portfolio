@@ -32,7 +32,7 @@ export default function PortfolioPage() {
       title: "DocuQuery",
       blurb:
         "AI-powered document Q&A app where users upload files and instantly query their contents using vector search.",
-      tags: ["Next.js", "OpenAI", "Pinecone", "AWS S3"],
+      tags: ["Next.js", "OpenAI", "Pinecone", "AWS S3", "Prisma", "DigitalOcean VPS", "PostgreSQL"],
       href: "https://www.docuquery.online",
       repo: "https://github.com/cameyer260/docuquery",
     },
