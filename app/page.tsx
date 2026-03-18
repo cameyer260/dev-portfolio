@@ -319,9 +319,20 @@ export default function PortfolioPage() {
                 <span className="text-xs text-zinc-500 font-mono">contact.sh</span>
               </div>
               <form action="https://api.web3forms.com/submit" method="POST" className="p-4 space-y-4">
-                {/* Replace with actual Web3Forms Access Key later if needed */}
-                <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
+                <input type="hidden" name="access_key" value="4fba4adc-a100-40a6-85b6-c6e79398ce1f" />
+                <input type="hidden" name="subject" value="New portfolio contact form submission" />
+                <input type="hidden" name="from_name" value="Christopher Meyer Portfolio" />
                 
+                <div className="space-y-1">
+                  <label className="text-xs font-mono text-zinc-500 pl-1">~/name</label>
+                  <input 
+                    type="text" 
+                    name="name"
+                    required
+                    placeholder="Your name"
+                    className="w-full bg-transparent border border-white/10 rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-white/30 transition-colors"
+                  />
+                </div>
                 <div className="space-y-1">
                   <label className="text-xs font-mono text-zinc-500 pl-1">~/email</label>
                   <input 
