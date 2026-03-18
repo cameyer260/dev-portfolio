@@ -35,13 +35,13 @@ const Dock = () => {
   ];
 
   return (
-    <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50">
-      <div className="flex items-center gap-2 p-2 rounded-full bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl">
+    <div className="fixed bottom-4 left-1/2 z-50 w-max max-w-[calc(100vw-1.5rem)] -translate-x-1/2 md:bottom-6">
+      <div className="flex items-center gap-1 overflow-x-auto rounded-full border border-white/10 bg-white/5 p-1.5 shadow-2xl backdrop-blur-xl md:gap-2 md:p-2">
         {links.map((link) => (
           <a
             key={link.name}
             href={link.href}
-            className="relative px-4 py-2 text-sm text-zinc-400 hover:text-white transition-colors rounded-full hover:bg-white/10"
+            className="shrink-0 rounded-full px-3 py-2 text-xs text-zinc-400 transition-colors hover:bg-white/10 hover:text-white md:px-4 md:text-sm"
           >
             {link.name}
           </a>
@@ -61,9 +61,9 @@ export default function PortfolioPage() {
         <div className="h-[50rem] w-[50rem] opacity-20 bg-gradient-to-b from-blue-500/20 via-purple-500/10 to-transparent blur-[100px] rounded-full translate-y-[-20%]" />
       </div>
 
-      <main className="max-w-5xl mx-auto px-6 py-24 space-y-32">
+      <main className="max-w-5xl mx-auto px-6 py-16 space-y-24 md:py-24 md:space-y-32">
         {/* HERO SECTION */}
-        <section id="home" className="space-y-8 pt-12">
+        <section id="home" className="space-y-8 pt-4 md:pt-12">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
