@@ -29,6 +29,14 @@ export default function PortfolioPage() {
 
   const projects = [
     {
+      title: "StafferAI",
+      blurb:
+        "Multi-tenant AI knowledge assistant that helps businesses search internal documents with grounded, citation-backed answers.",
+      tags: ["Next.js", "OpenAI", "Supabase", "pgvector", "Stripe", "Vercel"],
+      href: "https://www.stafferai.app/",
+      repo: "https://github.com/cameyer260/stafferai-public",
+    },
+    {
       title: "DocuQuery",
       blurb:
         "AI-powered document Q&A app where users upload files and instantly query their contents using vector search.",
@@ -42,13 +50,6 @@ export default function PortfolioPage() {
       tags: ["Next.js", "WebSockets", "Supabase", "Vercel", "DigitalOcean VPS"],
       href: "https://playskillsphere.com",
       repo: "https://github.com/cameyer260/skillsphere",
-    },
-    {
-      title: "Social Media Mock",
-      blurb: "Lightweight Twitter-style social media app with authentication, user avatars, and image storage using S3.",
-      tags: ["Next.js", "MongoDB", "Tailwind", "S3", "bcrypt Auth"],
-      href: "https://github.com/cameyer260/social-media-mock",
-      repo: "https://github.com/cameyer260/social-media-mock",
     },
   ];
 
