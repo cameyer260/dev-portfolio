@@ -13,6 +13,7 @@ import {
   ArrowRight,
   Mail,
   Music,
+  Phone,
   Github,
   Linkedin,
   Cpu,
@@ -70,7 +71,7 @@ export default function PortfolioPage() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
             </span>
-            Targeting Summer 2027 SWE Internships
+            Freelance developer in Edwardsville, IL serving the St. Louis area
           </motion.div>
 
           <div className="grid items-center gap-10 md:grid-cols-[minmax(0,1fr)_320px]">
@@ -81,13 +82,44 @@ export default function PortfolioPage() {
               className="max-w-3xl"
             >
               <h1 className="text-5xl md:text-7xl font-medium tracking-tight text-transparent bg-clip-text bg-gradient-to-b from-white to-white/70 mb-6">
-                Building intelligent, <br className="hidden md:block"/> 
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 to-cyan-300">real-time systems.</span>
+                Freelance websites for <br className="hidden md:block"/> 
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 to-cyan-300">local businesses in Edwardsville and St. Louis.</span>
               </h1>
-              <p className="text-xl text-zinc-400 leading-relaxed">
-                I&apos;m Christopher Meyer, a Software Engineer and CS student specializing in Next.js, 
-                Supabase, and distributed systems. 
+              <p className="text-lg md:text-xl text-zinc-400 leading-relaxed">
+                I build fast, modern websites for local businesses, improve mobile experience, and help companies rank better on Google. I&apos;m also a Computer Science student building production software and open to Summer 2027 software engineering internships.
               </p>
+              <div className="mt-8 grid gap-3 sm:grid-cols-3">
+                {[
+                  "Fast, modern websites",
+                  "Better mobile experience",
+                  "SEO and local visibility",
+                ].map((item) => (
+                  <div
+                    key={item}
+                    className="rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm text-zinc-300"
+                  >
+                    {item}
+                  </div>
+                ))}
+              </div>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <a
+                  href="#contact"
+                  className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-medium text-black transition-colors hover:bg-zinc-200"
+                >
+                  Start a Project <ArrowRight className="h-4 w-4" />
+                </a>
+                <a
+                  href="#work"
+                  className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-white/[0.08]"
+                >
+                  View Technical Work
+                </a>
+              </div>
+              <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-3 py-1 text-xs text-emerald-200">
+                <Building2 className="h-3.5 w-3.5" />
+                Student developer open to internships and freelance work
+              </div>
             </motion.div>
 
             <motion.div
@@ -301,78 +333,118 @@ export default function PortfolioPage() {
         </section>
 
         {/* COMMAND PALETTE CONTACT */}
-        <section id="contact" className="max-w-xl mx-auto space-y-8 text-center pt-20">
-          <h2 className="text-3xl font-medium text-white mb-4">Let&apos;s build something.</h2>
-          <p className="text-zinc-400 mb-8">
-            Currently open to Summer 2027 SWE Internships and freelance opportunities.
-          </p>
+        <section id="contact" className="space-y-8 pt-20">
+          <div className="max-w-2xl">
+            <h2 className="text-3xl font-medium text-white mb-4">Let&apos;s build something useful.</h2>
+            <p className="text-zinc-400 text-lg">
+              If you need a website for your business, want to improve your current site, or you&apos;re reaching out about an internship, feel free to email or text me directly. I respond quickly.
+            </p>
+          </div>
 
-          <SpotlightCard className="p-2 text-left">
-            <div className="bg-zinc-950/80 rounded-xl overflow-hidden border border-white/5 shadow-2xl">
-              <div className="flex items-center px-4 py-3 border-b border-white/5 bg-white/[0.02]">
-                <div className="flex gap-1.5 mr-4">
-                  <div className="w-3 h-3 rounded-full bg-red-500/80" />
-                  <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
-                  <div className="w-3 h-3 rounded-full bg-green-500/80" />
+          <div className="grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
+            <div className="space-y-4">
+              <SpotlightCard className="p-6 border-emerald-500/20 bg-emerald-500/5">
+                <div className="flex items-start gap-4">
+                  <div className="rounded-xl border border-emerald-500/20 bg-emerald-500/10 p-3 text-emerald-300">
+                    <Mail className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <p className="text-sm uppercase tracking-[0.2em] text-zinc-500">Email</p>
+                    <a
+                      href="mailto:cameyer06@gmail.com"
+                      className="mt-2 block text-lg font-medium text-white hover:text-emerald-200 transition-colors"
+                    >
+                      cameyer06@gmail.com
+                    </a>
+                  </div>
                 </div>
-                <Terminal className="w-4 h-4 text-zinc-500 mr-2" />
-                <span className="text-xs text-zinc-500 font-mono">contact.sh</span>
+              </SpotlightCard>
+
+              <SpotlightCard className="p-6 border-sky-500/20 bg-sky-500/5">
+                <div className="flex items-start gap-4">
+                  <div className="rounded-xl border border-sky-500/20 bg-sky-500/10 p-3 text-sky-300">
+                    <Phone className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <p className="text-sm uppercase tracking-[0.2em] text-zinc-500">Phone</p>
+                    <a
+                      href="tel:6187724471"
+                      className="mt-2 block text-lg font-medium text-white hover:text-sky-200 transition-colors"
+                    >
+                      618-772-4471
+                    </a>
+                    <p className="mt-2 text-sm text-zinc-400">
+                      Feel free to email or text me directly. I respond quickly.
+                    </p>
+                  </div>
+                </div>
+              </SpotlightCard>
+
+              <div className="flex gap-6 px-2 pt-4">
+                <a href="https://github.com/cameyer260" className="text-zinc-500 hover:text-white transition-colors">
+                  <Github className="w-5 h-5" />
+                </a>
+                <a href="https://www.linkedin.com/in/cameyer06/" className="text-zinc-500 hover:text-white transition-colors">
+                  <Linkedin className="w-5 h-5" />
+                </a>
               </div>
-              <form action="https://api.web3forms.com/submit" method="POST" className="p-4 space-y-4">
-                <input type="hidden" name="access_key" value="4fba4adc-a100-40a6-85b6-c6e79398ce1f" />
-                <input type="hidden" name="subject" value="New portfolio contact form submission" />
-                <input type="hidden" name="from_name" value="Christopher Meyer Portfolio" />
-                
-                <div className="space-y-1">
-                  <label className="text-xs font-mono text-zinc-500 pl-1">~/name</label>
-                  <input 
-                    type="text" 
-                    name="name"
-                    required
-                    placeholder="Your name"
-                    className="w-full bg-transparent border border-white/10 rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-white/30 transition-colors"
-                  />
-                </div>
-                <div className="space-y-1">
-                  <label className="text-xs font-mono text-zinc-500 pl-1">~/email</label>
-                  <input 
-                    type="email" 
-                    name="email"
-                    required
-                    placeholder="you@example.com"
-                    className="w-full bg-transparent border border-white/10 rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-white/30 transition-colors"
-                  />
-                </div>
-                <div className="space-y-1">
-                  <label className="text-xs font-mono text-zinc-500 pl-1">~/message</label>
-                  <textarea 
-                    name="message"
-                    required
-                    rows={4}
-                    placeholder="How can I help you?"
-                    className="w-full bg-transparent border border-white/10 rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-white/30 transition-colors resize-none"
-                  />
-                </div>
-                <button 
-                  type="submit"
-                  className="w-full bg-white text-black font-medium text-sm py-2 rounded-lg hover:bg-zinc-200 transition-colors flex justify-center items-center gap-2"
-                >
-                  Send Message <ArrowRight className="w-4 h-4" />
-                </button>
-              </form>
             </div>
-          </SpotlightCard>
 
-          <div className="flex justify-center gap-6 pt-12">
-            <a href="https://github.com/cameyer260" className="text-zinc-500 hover:text-white transition-colors">
-              <Github className="w-5 h-5" />
-            </a>
-            <a href="https://www.linkedin.com/in/cameyer06/" className="text-zinc-500 hover:text-white transition-colors">
-              <Linkedin className="w-5 h-5" />
-            </a>
-            <a href="mailto:cameyer06@gmail.com" className="text-zinc-500 hover:text-white transition-colors">
-              <Mail className="w-5 h-5" />
-            </a>
+            <SpotlightCard className="p-2 text-left">
+              <div className="bg-zinc-950/80 rounded-xl overflow-hidden border border-white/5 shadow-2xl">
+                <div className="flex items-center px-4 py-3 border-b border-white/5 bg-white/[0.02]">
+                  <div className="flex gap-1.5 mr-4">
+                    <div className="w-3 h-3 rounded-full bg-red-500/80" />
+                    <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
+                    <div className="w-3 h-3 rounded-full bg-green-500/80" />
+                  </div>
+                  <Terminal className="w-4 h-4 text-zinc-500 mr-2" />
+                  <span className="text-xs text-zinc-500 font-mono">contact.sh</span>
+                </div>
+                <form action="https://api.web3forms.com/submit" method="POST" className="p-4 space-y-4">
+                  <input type="hidden" name="access_key" value="4fba4adc-a100-40a6-85b6-c6e79398ce1f" />
+                  <input type="hidden" name="subject" value="New portfolio contact form submission" />
+                  <input type="hidden" name="from_name" value="Christopher Meyer Portfolio" />
+                  
+                  <div className="space-y-1">
+                    <label className="text-xs font-mono text-zinc-500 pl-1">~/name</label>
+                    <input 
+                      type="text" 
+                      name="name"
+                      required
+                      placeholder="Your name"
+                      className="w-full bg-transparent border border-white/10 rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-white/30 transition-colors"
+                    />
+                  </div>
+                  <div className="space-y-1">
+                    <label className="text-xs font-mono text-zinc-500 pl-1">~/email</label>
+                    <input 
+                      type="email" 
+                      name="email"
+                      required
+                      placeholder="you@example.com"
+                      className="w-full bg-transparent border border-white/10 rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-white/30 transition-colors"
+                    />
+                  </div>
+                  <div className="space-y-1">
+                    <label className="text-xs font-mono text-zinc-500 pl-1">~/message</label>
+                    <textarea 
+                      name="message"
+                      required
+                      rows={5}
+                      placeholder="Tell me about your business, website, or opportunity."
+                      className="w-full bg-transparent border border-white/10 rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-white/30 transition-colors resize-none"
+                    />
+                  </div>
+                  <button 
+                    type="submit"
+                    className="w-full bg-white text-black font-medium text-sm py-3 rounded-lg hover:bg-zinc-200 transition-colors flex justify-center items-center gap-2"
+                  >
+                    Send Message <ArrowRight className="w-4 h-4" />
+                  </button>
+                </form>
+              </div>
+            </SpotlightCard>
           </div>
         </section>
 
