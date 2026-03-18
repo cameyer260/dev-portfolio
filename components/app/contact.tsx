@@ -3,29 +3,34 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import { useState } from "react";
+import { FormEvent, useState } from "react";
+
+type Web3FormsResponse = {
+  success: boolean;
+};
 
 export default function Contact() {
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState(false);
 
-  const onSubmit = async (event: any) => {
+  const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setLoading(true);
 
-    const formData = new FormData(event.target);
+    const form = event.currentTarget;
+    const formData = new FormData(form);
 
     const response = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
       body: formData,
     });
 
-    const data = await response.json();
+    const data: Web3FormsResponse = await response.json();
 
     if (data.success) {
       setSubmitted(true);
-      event.target.reset();
+      form.reset();
     } else {
       console.log("Error", data);
       setError(true);
@@ -45,7 +50,7 @@ export default function Contact() {
                 Form Submitted Successfully
               </h3>
               <p className="mt-2 text-zinc-500">
-                Thanks for reaching out! I'll get back to you as soon as
+                Thanks for reaching out! I&apos;ll get back to you as soon as
                 possible.
               </p>
               <Button
