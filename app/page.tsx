@@ -14,17 +14,39 @@ export default function PortfolioPage() {
   const [dark, setDark] = useState(false);
 
   useEffect(() => {
-    // Respect user's system preference on first load
-    const prefersDark =
-      window.matchMedia &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches;
-    document.documentElement.classList.toggle("dark", prefersDark);
-    setDark(prefersDark);
+    if (!window.matchMedia) {
+      return;
+    }
+
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+
+    const syncTheme = (isDark: boolean) => {
+      document.documentElement.classList.toggle("dark", isDark);
+      setDark(isDark);
+    };
+
+    const frame = window.requestAnimationFrame(() => {
+      syncTheme(mediaQuery.matches);
+    });
+
+    const handleChange = (event: MediaQueryListEvent) => {
+      syncTheme(event.matches);
+    };
+
+    mediaQuery.addEventListener("change", handleChange);
+
+    return () => {
+      window.cancelAnimationFrame(frame);
+      mediaQuery.removeEventListener("change", handleChange);
+    };
   }, []);
 
   const toggleTheme = () => {
-    document.documentElement.classList.toggle("dark");
-    setDark((d) => !d);
+    setDark((current) => {
+      const next = !current;
+      document.documentElement.classList.toggle("dark", next);
+      return next;
+    });
   };
 
   const projects = [
