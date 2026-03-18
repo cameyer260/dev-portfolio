@@ -6,6 +6,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { 
   Terminal, 
   Code2, 
+  Download,
+  FileText,
   Gamepad2, 
   Building2, 
   Pizza, 
@@ -27,6 +29,7 @@ const Dock = () => {
   const links = [
     { name: "Home", href: "#home" },
     { name: "Work", href: "#work" },
+    { name: "Resume", href: "#resume" },
     { name: "Career", href: "#career" },
     { name: "Contact", href: "#contact" },
   ];
@@ -114,6 +117,19 @@ export default function PortfolioPage() {
                   className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-white/[0.08]"
                 >
                   View Technical Work
+                </a>
+                <a
+                  href="#resume"
+                  className="inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-5 py-3 text-sm font-medium text-emerald-100 transition-colors hover:bg-emerald-500/15"
+                >
+                  View Resume <FileText className="h-4 w-4" />
+                </a>
+                <a
+                  href="/christopher-meyer-resume.pdf"
+                  download
+                  className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-white/[0.08]"
+                >
+                  Download PDF <Download className="h-4 w-4" />
                 </a>
               </div>
               <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-3 py-1 text-xs text-emerald-200">
@@ -241,6 +257,197 @@ export default function PortfolioPage() {
                 </div>
               </div>
             </SpotlightCard>
+          </div>
+        </section>
+
+        {/* INTERACTIVE RESUME */}
+        <section id="resume" className="space-y-8">
+          <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+            <div className="max-w-3xl">
+              <p className="text-sm uppercase tracking-[0.25em] text-zinc-500">Resume</p>
+              <h2 className="mt-3 text-3xl font-medium text-white">Interactive resume with a plain PDF download.</h2>
+              <p className="mt-4 text-zinc-400 text-lg leading-relaxed">
+                For recruiters, this is a fast way to scan my background. For business owners, it shows the technical depth behind the websites and software I build.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-3">
+              <a
+                href="/christopher-meyer-resume.pdf"
+                download
+                className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-medium text-black transition-colors hover:bg-zinc-200"
+              >
+                Download Resume <Download className="h-4 w-4" />
+              </a>
+              <a
+                href="/christopher-meyer-resume.pdf"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-white/[0.08]"
+              >
+                Open PDF <FileText className="h-4 w-4" />
+              </a>
+            </div>
+          </div>
+
+          <div className="grid gap-4 lg:grid-cols-[1.1fr_0.9fr]">
+            <SpotlightCard className="p-8">
+              <div className="flex items-start justify-between gap-6">
+                <div>
+                  <h3 className="text-2xl font-medium text-white">Christopher Meyer</h3>
+                  <p className="mt-2 text-zinc-400">
+                    Computer Science student interested in software engineering, AI/ML, and data science. Open to Summer 2027 internships and freelance web development work.
+                  </p>
+                </div>
+                <div className="rounded-2xl border border-emerald-500/20 bg-emerald-500/10 px-4 py-2 text-sm text-emerald-100">
+                  GPA 3.57
+                </div>
+              </div>
+
+              <div className="mt-8 grid gap-4 md:grid-cols-2">
+                <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-5">
+                  <p className="text-xs uppercase tracking-[0.2em] text-zinc-500">Education</p>
+                  <h4 className="mt-3 text-lg font-medium text-white">Southern Illinois University Edwardsville</h4>
+                  <p className="mt-1 text-sm text-zinc-400">B.S. in Computer Science, Minor in Mathematics</p>
+                  <p className="mt-2 text-sm text-zinc-500">Aug 2024 - Fall 2027 · Edwardsville, Illinois</p>
+                  <p className="mt-3 text-sm text-zinc-400">Scholarships: Cougar Pride Scholarship, Johnetta Haley Scholarship</p>
+                </div>
+
+                <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-5">
+                  <p className="text-xs uppercase tracking-[0.2em] text-zinc-500">Relevant Coursework</p>
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    {[
+                      "Algorithms and Data Structures",
+                      "Operating Systems",
+                      "Database and Web System Development",
+                      "Computer Organization and Architecture",
+                      "Linear Algebra",
+                    ].map((course) => (
+                      <span
+                        key={course}
+                        className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 text-xs text-zinc-300"
+                      >
+                        {course}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </SpotlightCard>
+
+            <SpotlightCard className="p-8">
+              <p className="text-xs uppercase tracking-[0.2em] text-zinc-500">Technical Skills</p>
+              <div className="mt-5 space-y-5">
+                <div>
+                  <h4 className="text-sm font-medium text-white">Languages</h4>
+                  <p className="mt-2 text-sm text-zinc-400">TypeScript, Python, Java, PHP, SQL, HTML/CSS</p>
+                </div>
+                <div>
+                  <h4 className="text-sm font-medium text-white">Frameworks and Platforms</h4>
+                  <p className="mt-2 text-sm text-zinc-400">React, Next.js, Node, Express, Supabase, AWS, MongoDB</p>
+                </div>
+                <div>
+                  <h4 className="text-sm font-medium text-white">Developer Tools</h4>
+                  <p className="mt-2 text-sm text-zinc-400">Codex, OpenCode, Cursor, Git, GitHub, DigitalOcean, SSH, Unix</p>
+                </div>
+              </div>
+            </SpotlightCard>
+          </div>
+
+          <div className="grid gap-4 lg:grid-cols-[1.1fr_0.9fr]">
+            <SpotlightCard className="p-8">
+              <div className="flex items-center justify-between gap-4">
+                <h3 className="text-2xl font-medium text-white">Project Highlights</h3>
+                <a
+                  href="#work"
+                  className="text-sm text-zinc-400 transition-colors hover:text-white"
+                >
+                  See live portfolio cards
+                </a>
+              </div>
+              <div className="mt-6 space-y-5">
+                {[
+                  {
+                    title: "StafferAI",
+                    date: "Mar 2026",
+                    stack: "Next.js, OpenAI, Supabase, pgvector, Stripe",
+                    bullets: [
+                      "Built a production-ready multi-tenant RAG platform for querying internal business documents.",
+                      "Designed secure organization-scoped retrieval with pgvector, Supabase Auth, Postgres RLS, and role-based access control.",
+                      "Implemented subscriptions, ingestion pipelines, usage guardrails, and citation-backed answers.",
+                    ],
+                  },
+                  {
+                    title: "AI Document Q&A (DocuQuery)",
+                    date: "Dec 2025",
+                    stack: "Next.js, OpenAI, Pinecone, AWS S3, NextAuth, PostgreSQL, Prisma",
+                    bullets: [
+                      "Built an AI document Q&A app using semantic search and LLMs over uploaded content.",
+                      "Integrated vector search, secure authentication, cloud storage, and VPS deployment.",
+                    ],
+                  },
+                  {
+                    title: "PlaySkillSphere",
+                    date: "Jul 2025",
+                    stack: "React, Next.js, WebSockets, Supabase, VPS",
+                    bullets: [
+                      "Developed a real-time multiplayer web app with live game lobbies and responsive frontend systems.",
+                      "Integrated WebSockets for live communication and Supabase for authentication and backend data.",
+                    ],
+                  },
+                ].map((project) => (
+                  <div key={project.title} className="rounded-2xl border border-white/10 bg-white/[0.02] p-5">
+                    <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
+                      <h4 className="text-lg font-medium text-white">{project.title}</h4>
+                      <span className="text-sm text-zinc-500">{project.date}</span>
+                    </div>
+                    <p className="mt-2 text-sm text-zinc-400">{project.stack}</p>
+                    <ul className="mt-4 space-y-2 text-sm text-zinc-400">
+                      {project.bullets.map((bullet) => (
+                        <li key={bullet} className="flex gap-2">
+                          <span className="text-zinc-600">-</span>
+                          <span>{bullet}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </SpotlightCard>
+
+            <div className="space-y-4">
+              <SpotlightCard className="p-8">
+                <p className="text-xs uppercase tracking-[0.2em] text-zinc-500">Experience</p>
+                <div className="mt-5 rounded-2xl border border-white/10 bg-white/[0.02] p-5">
+                  <div className="flex items-start gap-3">
+                    <div className="rounded-xl border border-amber-500/20 bg-amber-500/10 p-3 text-amber-400">
+                      <Pizza className="h-5 w-5" />
+                    </div>
+                    <div>
+                      <h4 className="text-lg font-medium text-white">Dewey&apos;s Pizza</h4>
+                      <p className="mt-1 text-sm text-zinc-400">Server · June 2024 - Present · Edwardsville, Illinois</p>
+                      <ul className="mt-4 space-y-2 text-sm text-zinc-400">
+                        <li className="flex gap-2"><span className="text-zinc-600">-</span><span>Provided excellent customer service in a fast-paced environment.</span></li>
+                        <li className="flex gap-2"><span className="text-zinc-600">-</span><span>Collaborated with the team to keep operations efficient during peak hours.</span></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </SpotlightCard>
+
+              <SpotlightCard className="p-8">
+                <p className="text-xs uppercase tracking-[0.2em] text-zinc-500">Campus Involvement</p>
+                <div className="mt-5 space-y-3 text-sm text-zinc-400">
+                  <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-4">
+                    <p className="text-white font-medium">Computer Association of SIUE (CAOS)</p>
+                    <p className="mt-1">Member · Aug 2025 - Present</p>
+                  </div>
+                  <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-4">
+                    <p className="text-white font-medium">Sigma Phi Epsilon Fraternity</p>
+                    <p className="mt-1">Member · Mar 2025 - Present</p>
+                  </div>
+                </div>
+              </SpotlightCard>
+            </div>
           </div>
         </section>
 
