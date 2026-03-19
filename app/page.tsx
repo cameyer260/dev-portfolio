@@ -30,7 +30,6 @@ const Dock = () => {
     { name: "Home", href: "#home" },
     { name: "Work", href: "#work" },
     { name: "Resume", href: "#resume" },
-    { name: "Career", href: "#career" },
     { name: "Contact", href: "#contact" },
   ];
 
@@ -171,7 +170,13 @@ export default function PortfolioPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {/* StafferAI - Large Card */}
-            <SpotlightCard className="md:col-span-2 p-8 group cursor-pointer" onClick={() => window.open('https://www.stafferai.app/', '_blank')}>
+            <SpotlightCard className="md:col-span-2 p-8 group">
+              <a
+                href="https://www.stafferai.app/"
+                target="_blank"
+                rel="noreferrer"
+                className="block h-full"
+              >
               <div className="h-full flex flex-col justify-between">
                 <div>
                   <div className="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center border border-blue-500/20 mb-6 group-hover:scale-110 transition-transform">
@@ -190,10 +195,17 @@ export default function PortfolioPage() {
                   ))}
                 </div>
               </div>
+              </a>
             </SpotlightCard>
 
             {/* DocuQuery */}
-            <SpotlightCard className="p-8 group cursor-pointer" onClick={() => window.open('https://docuquery.online', '_blank')}>
+            <SpotlightCard className="p-8 group">
+              <a
+                href="https://docuquery.online"
+                target="_blank"
+                rel="noreferrer"
+                className="block h-full"
+              >
               <div className="h-full flex flex-col justify-between">
                 <div>
                   <div className="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center border border-purple-500/20 mb-6 group-hover:scale-110 transition-transform">
@@ -212,10 +224,17 @@ export default function PortfolioPage() {
                   ))}
                 </div>
               </div>
+              </a>
             </SpotlightCard>
 
             {/* SkillSphere */}
-            <SpotlightCard className="md:col-span-1 p-8 group cursor-pointer" onClick={() => window.open('https://playskillsphere.com', '_blank')}>
+            <SpotlightCard className="md:col-span-1 p-8 group">
+              <a
+                href="https://playskillsphere.com"
+                target="_blank"
+                rel="noreferrer"
+                className="block h-full"
+              >
               <div className="h-full flex flex-col justify-between">
                 <div>
                   <div className="w-12 h-12 rounded-xl bg-rose-500/10 flex items-center justify-center border border-rose-500/20 mb-6 group-hover:scale-110 transition-transform">
@@ -234,6 +253,7 @@ export default function PortfolioPage() {
                   ))}
                 </div>
               </div>
+              </a>
             </SpotlightCard>
 
             {/* Solutions / Freelance */}
@@ -417,18 +437,36 @@ export default function PortfolioPage() {
             <div className="space-y-4">
               <SpotlightCard className="p-8">
                 <p className="text-xs uppercase tracking-[0.2em] text-zinc-500">Experience</p>
-                <div className="mt-5 rounded-2xl border border-white/10 bg-white/[0.02] p-5">
-                  <div className="flex items-start gap-3">
-                    <div className="rounded-xl border border-amber-500/20 bg-amber-500/10 p-3 text-amber-400">
-                      <Pizza className="h-5 w-5" />
+                <div className="mt-5 space-y-4">
+                  <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-5">
+                    <div className="flex items-start gap-3">
+                      <div className="rounded-xl border border-indigo-500/20 bg-indigo-500/10 p-3 text-indigo-400">
+                        <Code2 className="h-5 w-5" />
+                      </div>
+                      <div>
+                        <h4 className="text-lg font-medium text-white">Freelance Web Developer</h4>
+                        <p className="mt-1 text-sm text-zinc-400">2025 - Present</p>
+                        <ul className="mt-4 space-y-2 text-sm text-zinc-400">
+                          <li className="flex gap-2"><span className="text-zinc-600">-</span><span>Design and ship marketing sites, dashboards, and MVPs for clients.</span></li>
+                          <li className="flex gap-2"><span className="text-zinc-600">-</span><span>Manage client relations and end-to-end project lifecycles.</span></li>
+                        </ul>
+                      </div>
                     </div>
-                    <div>
-                      <h4 className="text-lg font-medium text-white">Dewey&apos;s Pizza</h4>
-                      <p className="mt-1 text-sm text-zinc-400">Server · June 2024 - Present · Edwardsville, Illinois</p>
-                      <ul className="mt-4 space-y-2 text-sm text-zinc-400">
-                        <li className="flex gap-2"><span className="text-zinc-600">-</span><span>Provided excellent customer service in a fast-paced environment.</span></li>
-                        <li className="flex gap-2"><span className="text-zinc-600">-</span><span>Collaborated with the team to keep operations efficient during peak hours.</span></li>
-                      </ul>
+                  </div>
+
+                  <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-5">
+                    <div className="flex items-start gap-3">
+                      <div className="rounded-xl border border-amber-500/20 bg-amber-500/10 p-3 text-amber-400">
+                        <Pizza className="h-5 w-5" />
+                      </div>
+                      <div>
+                        <h4 className="text-lg font-medium text-white">Dewey&apos;s Pizza</h4>
+                        <p className="mt-1 text-sm text-zinc-400">Server · 2024 - Present · Edwardsville, Illinois</p>
+                        <ul className="mt-4 space-y-2 text-sm text-zinc-400">
+                          <li className="flex gap-2"><span className="text-zinc-600">-</span><span>Provided excellent customer service in a fast-paced environment.</span></li>
+                          <li className="flex gap-2"><span className="text-zinc-600">-</span><span>Collaborated with the team to keep operations efficient during peak hours.</span></li>
+                        </ul>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -470,46 +508,6 @@ export default function PortfolioPage() {
                 <span className="text-sm font-medium text-zinc-400 group-hover:text-white transition-colors">{skill.name}</span>
               </SpotlightCard>
             ))}
-          </div>
-        </section>
-
-        {/* CAREER & GROWTH TIMELINE */}
-        <section id="career" className="space-y-8">
-          <h2 className="text-2xl font-medium text-white">Career & Growth</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            
-            <SpotlightCard className="p-8">
-              <div className="flex items-start gap-4">
-                <div className="p-3 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-400">
-                  <Code2 className="w-5 h-5" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-medium text-white">Freelance Web Developer</h3>
-                  <p className="text-sm text-zinc-400 mb-4">2025 – Present</p>
-                  <ul className="space-y-2 text-sm text-zinc-400">
-                    <li className="flex gap-2"><span className="text-zinc-600">-</span> Design and ship marketing sites, dashboards, and MVPs for clients.</li>
-                    <li className="flex gap-2"><span className="text-zinc-600">-</span> Manage client relations and end-to-end project lifecycles.</li>
-                  </ul>
-                </div>
-              </div>
-            </SpotlightCard>
-
-            <SpotlightCard className="p-8">
-              <div className="flex items-start gap-4">
-                <div className="p-3 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400">
-                  <Pizza className="w-5 h-5" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-medium text-white">Dewey&apos;s Pizza</h3>
-                  <p className="text-sm text-zinc-400 mb-4">High-Stakes Operations & Team Collaboration</p>
-                  <ul className="space-y-2 text-sm text-zinc-400">
-                    <li className="flex gap-2"><span className="text-zinc-600">-</span> Collaborated with team members to maintain efficient operations during peak hours.</li>
-                    <li className="flex gap-2"><span className="text-zinc-600">-</span> Handled high-pressure environments requiring extreme multitasking.</li>
-                  </ul>
-                </div>
-              </div>
-            </SpotlightCard>
-
           </div>
         </section>
 
