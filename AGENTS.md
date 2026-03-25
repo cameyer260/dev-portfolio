@@ -12,6 +12,7 @@
 - Prefer reusable, config-driven implementations over one-off hardcoded pages.
 - Keep mobile behavior strong and conversion-focused where relevant.
 - Avoid introducing feature-specific design rules as global repo rules unless they are meant to apply everywhere.
+- After meaningful implementation work, suggest a conventional commit message the user can use for the completed changes.
 
 ## Examples Scope
 

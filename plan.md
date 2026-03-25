@@ -262,7 +262,6 @@ Once `docs/examples/DESIGN.md` exists, AI should be prompted against it every ti
 
 Prompting pattern:
 
-- Tell AI to read `DESIGN.md`
 - Tell AI to read `docs/examples/DESIGN.md`
 - Tell AI which theme family and industry it is implementing
 - Tell AI which route or component to build
@@ -450,6 +449,17 @@ Do not:
 ### Phase 0: Up-Front Design Setup
 
 These are the tasks to do manually before asking AI to build the code.
+
+Status: complete
+
+Completed:
+
+- Created the visual-family directions in Google Stitch
+- Converted the selected visual directions into `docs/examples/DESIGN.md`
+- Established the four reusable visual families:
+  warm/editorial, bold/trust-first, premium/professional, energetic/performance
+- Scoped example-specific design guidance away from the main portfolio
+- Added `AGENTS.md` so future AI work knows to apply examples rules only inside the examples system
 
 #### Tasks for me
 
