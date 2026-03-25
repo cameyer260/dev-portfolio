@@ -94,7 +94,7 @@ Implementation goal:
 Best speed-to-quality setup for this branch:
 
 - Use Google Stitch for visual direction and design-system planning
-- Use a repo-level `DESIGN.md` to lock in UI rules before code generation
+- Use `docs/examples/DESIGN.md` to lock in UI rules before code generation
 - Use AI in the terminal / VS Code with repo access to implement the actual code
 - Build one reusable page system with themes and section variants instead of 11 separate codebases
 
@@ -102,7 +102,7 @@ High-level approach:
 
 - Do not design all 11 pages from scratch in code
 - Use Stitch to create a small number of visual directions
-- Turn those directions into reusable design rules in `DESIGN.md`
+- Turn those directions into reusable design rules in `docs/examples/DESIGN.md`
 - Have AI implement the shared system and fill in the industry configs
 - Spend extra polish time only on the highest-value demo pages
 
@@ -118,13 +118,13 @@ Use Stitch for:
 - Color and typography direction
 - Section composition ideas
 - Fast exploration of multiple visual directions
-- Producing design rules that can be translated into `DESIGN.md`
+- Producing design rules that can be translated into `docs/examples/DESIGN.md`
 
 Do not use Stitch as a second codebase or try to fully handcraft all 11 demos inside it.
 
 ### DESIGN.md
 
-Use `DESIGN.md` as the single source of truth for how AI should style and compose the example pages.
+Use `docs/examples/DESIGN.md` as the single source of truth for how AI should style and compose the example pages.
 
 Its purpose is to:
 
@@ -160,7 +160,7 @@ This gives enough variation to avoid cloned pages without exploding the implemen
 
 ## DESIGN.md Plan
 
-Create a `DESIGN.md` file at the repo root before implementation starts.
+Create `docs/examples/DESIGN.md` before implementation starts.
 
 The file should define:
 
@@ -200,18 +200,19 @@ This is enough structure to meaningfully improve AI-generated UI.
 
 ## How To Create DESIGN.md
 
-1. Create a new file named `DESIGN.md` in the repo root.
-2. Add a short purpose statement at the top explaining that this file defines the visual system for all `/examples` pages.
-3. Add global UI rules:
+1. Create `docs/examples/` if it does not already exist.
+2. Create a new file at `docs/examples/DESIGN.md`.
+3. Add a short purpose statement at the top explaining that this file defines the visual system for all `/examples` pages only.
+4. Add global UI rules:
    layout rhythm, spacing scale, grid preferences, button behavior, card behavior, image handling, and mobile CTA rules.
-4. Add theme-family rules:
+5. Add theme-family rules:
    warm/editorial, bold/trust-first, premium/professional, energetic/performance.
-5. Add one subsection per industry with:
+6. Add one subsection per industry with:
    mood, palette, typography tone, section emphasis, CTA tone, and anti-patterns.
-6. Add a short "do not do this" section to block generic AI habits.
-7. When prompting AI to implement pages, explicitly tell it to follow `DESIGN.md`.
+7. Add a short "do not do this" section to block generic AI habits.
+8. When prompting AI to implement pages, explicitly tell it to follow `docs/examples/DESIGN.md`.
 
-The point of `DESIGN.md` is not to be perfect or overly formal. It is a persistent visual rulebook for AI.
+The point of `docs/examples/DESIGN.md` is not to be perfect or overly formal. It is a persistent visual rulebook for the examples system only.
 
 ## How To Use Google Stitch
 
@@ -226,7 +227,7 @@ Suggested process:
 3. Prompt Stitch with the business objective, target user feeling, and industry tone.
 4. Generate hero and section concepts first.
 5. Ask Stitch for alternate palettes, type directions, and section treatments.
-6. Save the strongest ideas and write them down as rules in `DESIGN.md`.
+6. Save the strongest ideas and write them down as rules in `docs/examples/DESIGN.md`.
 7. Only after the rulebook is stable should AI start coding.
 
 What to include in a Stitch prompt:
@@ -253,20 +254,21 @@ After generating concepts in Stitch:
 - pick the best palette direction
 - pick the best typography tone
 - pick the best card style
-- convert those decisions into written rules inside `DESIGN.md`
+- convert those decisions into written rules inside `docs/examples/DESIGN.md`
 
 ## AI Prompting Plan
 
-Once `DESIGN.md` exists, AI should be prompted against it every time.
+Once `docs/examples/DESIGN.md` exists, AI should be prompted against it every time.
 
 Prompting pattern:
 
 - Tell AI to read `DESIGN.md`
+- Tell AI to read `docs/examples/DESIGN.md`
 - Tell AI which theme family and industry it is implementing
 - Tell AI which route or component to build
 - Tell AI to preserve the universal section structure
 - Tell AI to keep the page conversion-focused and mobile-first
-- Tell AI to avoid banned patterns from `DESIGN.md`
+- Tell AI to avoid banned patterns from `docs/examples/DESIGN.md`
 
 AI should not be asked to "make it look good" with no constraints.
 AI should be asked to implement a specific page or section while following the visual system.
@@ -453,7 +455,7 @@ These are the tasks to do manually before asking AI to build the code.
 
 - Create 2 to 4 visual families in Google Stitch
 - Use Stitch to explore hero layouts, palette directions, typography feel, and section compositions
-- Convert the strongest design decisions into a repo-level `DESIGN.md`
+- Convert the strongest design decisions into `docs/examples/DESIGN.md`
 - Decide the theme family for each of the 11 industries
 - Decide which 4 pages deserve the most polish for pitching
 
@@ -473,9 +475,9 @@ These are likely the best sales tools, so they should receive the most visual at
 3. Keep only the strongest direction in each family.
 4. Write down what specifically works:
    palette, contrast level, typography feel, imagery style, CTA treatment, card treatment, spacing density.
-5. Create `DESIGN.md` and document those rules in plain language.
+5. Create `docs/examples/DESIGN.md` and document those rules in plain language.
 6. Add one short subsection per industry so AI knows how each page should differ.
-7. Once `DESIGN.md` feels clear enough to guide implementation, stop designing and move to coding.
+7. Once `docs/examples/DESIGN.md` feels clear enough to guide implementation, stop designing and move to coding.
 
 ### Phase 1: Content Model + Shared Template
 
@@ -486,7 +488,7 @@ These are likely the best sales tools, so they should receive the most visual at
 
 #### Tasks for AI
 
-- Create `DESIGN.md`-aware page architecture
+- Create `docs/examples/DESIGN.md`-aware page architecture
 - Define the shared TypeScript types for industry data, theme objects, and section variants
 - Build the reusable page shell
 - Build shared section components
@@ -522,7 +524,7 @@ These are likely the best sales tools, so they should receive the most visual at
 #### Tasks for me
 
 - Review the first finished page from each visual family before AI mass-produces the remaining ones
-- Tighten any visual direction in `DESIGN.md` if the outputs start drifting or looking repetitive
+- Tighten any visual direction in `docs/examples/DESIGN.md` if the outputs start drifting or looking repetitive
 - Approve or revise the highest-priority pitch pages before final polish
 
 ### Phase 4: SEO + Mobile Polish
@@ -571,7 +573,7 @@ The goal is to improve UI quality without turning this branch into a long design
 
 Recommended time allocation:
 
-- Spend 2 to 3 hours on Stitch exploration and `DESIGN.md`
+- Spend 2 to 3 hours on Stitch exploration and `docs/examples/DESIGN.md`
 - Spend 1 focused session defining the reusable architecture
 - Let AI implement the shared system and industry pages
 - Spend your remaining manual time reviewing and polishing only the highest-value pages
@@ -596,3 +598,11 @@ This should be much faster than trying to hand-design 11 separate sites.
 - Restaurants, salons, landscaping, and contractors need especially strong visual treatment.
 - The strongest workflow is: design directions first, rulebook second, code generation third.
 - The AI should always be guided by an explicit visual rule system, not open-ended prompts alone.
+
+## Post-Implementation Notes
+
+- Keep `AGENTS.md` as durable repo-wide AI guidance.
+- Keep `docs/examples/DESIGN.md` as scoped design guidance for the examples system if it is still useful for future edits.
+- Keep `plan.md` only during active implementation of this branch.
+- After implementation, either remove `plan.md` or shrink it into brief notes only.
+- Replace temporary planning with durable human-facing documentation, likely `docs/examples/README.md`, if the examples system needs ongoing explanation.
