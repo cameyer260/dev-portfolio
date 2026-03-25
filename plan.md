@@ -272,6 +272,48 @@ Prompting pattern:
 AI should not be asked to "make it look good" with no constraints.
 AI should be asked to implement a specific page or section while following the visual system.
 
+### Reusable Phase Prompt
+
+Use this prompt when you want AI to complete a specific implementation phase from this plan:
+
+```text
+Task: Complete Phase X from `plan.md` for this repo. Read the phase definition, execute the AI-owned tasks end to end, and move the implementation forward as far as possible in the current turn.
+
+Context:
+- This repo is a Next.js developer portfolio site.
+- The `/examples` area is a reusable local-business landing page showcase system.
+- The implementation plan, architecture, task split, and success criteria are defined in `plan.md`.
+- The scoped visual system for the examples pages is defined in `docs/examples/DESIGN.md`.
+- Durable repo-level AI guidance is defined in `AGENTS.md`.
+- The main portfolio UI and the `/examples` UI are separate design contexts.
+
+Constraints:
+- Read `AGENTS.md`, `plan.md`, and `docs/examples/DESIGN.md` before making implementation decisions.
+- Complete the requested phase according to the plan, not a reinvented plan.
+- Execute AI-owned tasks directly instead of stopping at analysis when the work can be done safely.
+- Preserve the existing main portfolio design unless the requested phase explicitly requires changes there.
+- Apply `/examples` design rules only to the examples system.
+- Reuse structure, content schema, themes, and variants instead of building one-off pages.
+- If you encounter tasks in the implementation plan that are assigned to me, explicitly tell me what they are, why they matter, and how to do them briefly.
+- If a user-owned task blocks further implementation, stop at the right boundary and state exactly what I need to do next.
+- If a phase is only partially complete, finish the completed parts, then clearly list what remains.
+- Suggest a conventional commit message after meaningful implementation work.
+
+Output format:
+- Start with a short execution summary stating what phase you are completing.
+- Then include a `User Tasks` section only if the plan contains tasks for me that are relevant at this point.
+- Then include a `Work Completed` section summarizing what you implemented.
+- Then include a `Remaining` section with any unfinished items inside the phase.
+- End with a `Suggested Commit` line if meaningful changes were made.
+
+Quality bar:
+- Follow the actual implementation plan in `plan.md`.
+- Be proactive and implementation-focused, not just advisory.
+- Keep the work aligned with `docs/examples/DESIGN.md` and the architecture defined in the plan.
+- Surface user-owned tasks early and clearly so I know exactly what I need to do.
+- Avoid generic UI, unnecessary rewrites, and vague next steps.
+```
+
 ## Industry Notes
 
 ### Restaurants
