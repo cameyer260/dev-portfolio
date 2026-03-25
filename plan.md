@@ -538,6 +538,18 @@ These are likely the best sales tools, so they should receive the most visual at
 - Add a theme + variant layer so industries can share structure without sharing the exact same UI
 - Make styling themeable via props / config values instead of hardcoding
 
+Status: complete
+
+Completed:
+
+- Added the shared `/examples` TypeScript content schema in `lib/examples/types.ts`
+- Added the family theme system and default section variants in `lib/examples/themes/families.ts`
+- Added reusable template components in `components/templates/`
+- Added the shared `ExamplePageTemplate` page shell
+- Wired theme values through CSS variables so styling stays config-driven
+- Kept the implementation aligned with `docs/examples/DESIGN.md`
+- Verified the new shared template layer with `npm run lint`
+
 #### Tasks for AI
 
 - Create `docs/examples/DESIGN.md`-aware page architecture
