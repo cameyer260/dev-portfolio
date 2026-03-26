@@ -17,7 +17,7 @@ export const plumberExamplePage = buildExampleLandingPage({
     title: "Fast dispatch for leaks, backups, and water heater failures.",
     highlight: "across Edwardsville and Glen Carbon",
     description:
-      "This bold trust-first demo is designed to turn urgent local searches into calls and estimate requests within the first screen.",
+      "When something goes wrong, homeowners need a local plumber who answers quickly and makes the next step obvious.",
     imageLabel: "Plumbing tools and emergency service van",
     primaryCta: {
       label: "Request Fast Dispatch",
@@ -39,62 +39,62 @@ export const plumberExamplePage = buildExampleLandingPage({
   },
   services: {
     eyebrow: "Core plumbing work",
-    title: "Structured to answer the exact jobs homeowners search for when something goes wrong.",
+    title: "The work homeowners look for first, without extra clutter.",
     description:
-      "The service section stays compact and high-clarity because trust businesses win by reducing uncertainty fast.",
+      "When a pipe bursts or a drain backs up, people want clear service details and a fast way to reach you.",
     items: [
       {
         title: "Emergency Repairs",
         description:
-          "Burst pipes, active leaks, and urgent issues positioned with direct response language and phone-first conversion.",
+          "Burst pipes, active leaks, and other urgent repairs handled with quick response and clear communication.",
         icon: "wrench",
       },
       {
         title: "Drain Cleaning",
         description:
-          "Kitchen, bath, and main-line blockages explained with straightforward scope and trust-focused copy.",
+          "Kitchen, bathroom, and main-line clogs explained in plain language.",
         icon: "check",
       },
       {
         title: "Water Heaters",
         description:
-          "Repair and replacement services framed around speed, reliability, and honest recommendations.",
+          "Repairs and replacements backed by practical recommendations and reliable scheduling.",
         icon: "clock",
       },
     ],
   },
   whyChooseUs: {
     eyebrow: "Trust-first proof",
-    title: "The strongest plumbing pages make the next action obvious and the business feel credible immediately.",
+    title: "A strong plumbing page makes the next step feel simple.",
     description:
-      "The layout pushes trust signals early because plumbing traffic is often urgent and comparison-driven.",
+      "Urgent service traffic moves fast, so trust and contact details need to show up early.",
     imageLabel: "Plumber at work in utility room",
     items: [
       {
         title: "Licensed local response",
         description:
-          "Proof language, badges, and operational copy give the page weight before the user ever scrolls far.",
+          "Clear proof points help homeowners feel comfortable calling right away.",
         icon: "shield",
       },
       {
         title: "Phone-first mobile UX",
         description:
-          "The sticky call bar and above-the-fold form support emergency behavior instead of forcing slow browsing.",
+          "The phone number, mobile call bar, and form are easy to find when someone is dealing with an urgent issue.",
         icon: "phone",
       },
       {
         title: "Service-area clarity",
         description:
-          "Edwardsville, Glen Carbon, and nearby communities are surfaced clearly to match local search intent.",
+          "Nearby towns are listed plainly so people know you actually serve their area.",
         icon: "map",
       },
     ],
   },
   testimonials: {
     eyebrow: "Recent reviews",
-    title: "Short, direct trust proof is stronger here than delicate editorial treatment.",
+    title: "Short, direct reviews work best here.",
     description:
-      "The testimonial format is intentionally compact and review-like so it supports urgency and credibility.",
+      "Homeowners looking for a plumber want proof that the company shows up, communicates well, and does solid work.",
     items: [
       {
         quote:
@@ -124,9 +124,9 @@ export const plumberExamplePage = buildExampleLandingPage({
   },
   process: {
     eyebrow: "Dispatch process",
-    title: "A plumbing landing page should make the response timeline feel simple and predictable.",
+    title: "A simple dispatch process helps people act fast.",
     description:
-      "The process band reinforces that the customer can act now and understand what happens next.",
+      "The page should answer the first question immediately: how do I get someone out here?",
     steps: [
       {
         title: "Call or submit the issue",
@@ -138,34 +138,34 @@ export const plumberExamplePage = buildExampleLandingPage({
       },
       {
         title: "Repair with confidence",
-        description: "Trust language carries through the whole page so the customer feels safe choosing the business.",
+        description: "Clear communication and solid proof help the customer feel comfortable choosing the business.",
       },
     ],
   },
   serviceArea: {
     eyebrow: "Coverage area",
-    title: "Local service-area language is part of the conversion path, not an afterthought.",
+    title: "Make it clear where you can get to quickly.",
     description:
-      "Plumbing customers want to know the company is nearby and available. This section keeps that information operational and easy to scan.",
+      "People want to know the company is nearby and can actually take the call.",
     areas: [...metroEastAreas, "Bethalto", "Alton"],
     mapLabel: "Plumbing coverage across Edwardsville and surrounding towns",
   },
   cta: {
     eyebrow: "Need service now?",
-    title: "Build the kind of plumbing page that turns stress into a clear next step.",
+    title: "When people need help fast, the site should make calling easy.",
     description:
-      "This demo is intentionally direct, phone-heavy, and local-search ready so it works like a real lead machine for a plumbing company.",
+      "The right layout helps stressed homeowners reach out without hunting for the next step.",
     primaryCta: {
-      label: "Start A Plumbing Demo",
+      label: "Request Service",
       href: "#contact",
       tone: "primary",
     },
   },
   contact: {
     eyebrow: "Request service",
-    title: "Use the same system for emergency calls, estimates, and routine plumbing work.",
+    title: "Reach out for emergency repairs, estimates, or routine plumbing work.",
     description:
-      "The contact section stays practical and fast so homeowners can act without digging through extra pages.",
+      "Keep the contact section fast and practical so people can get help without digging around.",
     address: "510 Plum Street, Edwardsville, IL 62025",
     email: "dispatch@riverbendplumbing.example",
     fields: createContactFields("Service needed", [
@@ -175,7 +175,7 @@ export const plumberExamplePage = buildExampleLandingPage({
       "General estimate",
     ]),
     primaryCta: {
-      label: "Request Dispatch",
+      label: "Request Service",
       href: "#contact",
     },
   },

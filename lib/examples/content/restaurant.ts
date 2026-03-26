@@ -16,7 +16,7 @@ export const restaurantExamplePage = buildExampleLandingPage({
     title: "Seasonal plates and a room that invites you to stay awhile.",
     highlight: "for date nights, birthdays, and long Saturday dinners",
     description:
-      "Ash & Olive Kitchen is a local restaurant concept built to show how an elevated dining site can turn first-time visitors into reservations, private events, and repeat regulars.",
+      "Ash & Olive Kitchen brings together seasonal cooking, thoughtful service, and a room people want to come back to for dinner, brunch, and private events.",
     imageLabel: "Restaurant interior and plated dinner",
     primaryCta: {
       label: "Book A Table",
@@ -31,67 +31,67 @@ export const restaurantExamplePage = buildExampleLandingPage({
   },
   services: {
     eyebrow: "What guests can book",
-    title: "Dining experiences built to feel local, warm, and worth returning for.",
+    title: "Dinner, brunch, and private events with a polished local feel.",
     description:
-      "The structure stays conversion-focused while still giving hospitality businesses room for atmosphere, featured menus, and event bookings.",
+      "The page gives each offer room to breathe while keeping reservations and event inquiries easy to find.",
     items: [
       {
         title: "Dinner Service",
         description:
-          "A seasonal dinner program with chef-driven specials, local ingredients, and a polished dine-in experience.",
+          "Seasonal menus, chef specials, and a dine-in experience that feels worth planning around.",
         icon: "utensils",
       },
       {
         title: "Private Events",
         description:
-          "Rehearsal dinners, team celebrations, and small receptions with custom menus and simple inquiry flow.",
+          "Rehearsal dinners, celebrations, and small receptions with a simple path to ask about dates and menus.",
         icon: "sparkles",
       },
       {
         title: "Weekend Brunch",
         description:
-          "High-traffic brunch service positioned for easy reservations, featured dishes, and local search visibility.",
+          "A busy weekend service with featured dishes, easy booking, and clear details for first-time guests.",
         icon: "star",
       },
     ],
   },
   whyChooseUs: {
     eyebrow: "Why locals choose us",
-    title: "The site sells the room, the menu, and the confidence to make a reservation.",
+    title: "A restaurant site should sell the atmosphere as much as the menu.",
     description:
-      "For a restaurant, the page has to carry visual appetite, trust, and a clear path to reserve without feeling like a template.",
+      "Guests want to know what the place feels like, what kind of night to expect, and how easy it is to book.",
     imageLabel: "Editorial restaurant dining scene",
     stat: {
       value: "4.9",
       label: "Average guest rating",
-      detail: "Pulled forward as a premium proof moment instead of burying it in footer clutter.",
+      detail: "Strong reviews help new guests feel comfortable booking before they have ever been in the room.",
     },
     items: [
       {
         title: "Image-led first impression",
         description:
-          "Warm, editorial visual treatment gives the restaurant an atmosphere before a guest ever visits in person.",
+          "Warm photography and clean spacing give the restaurant a feel before a guest ever walks through the door.",
         icon: "quote",
       },
       {
         title: "Private dining inquiries",
         description:
-          "The structure supports event leads alongside table reservations without diluting the main CTA.",
+          "Private dining and events get their own path without pulling attention away from everyday reservations.",
         icon: "check",
       },
       {
-        title: "Local SEO language",
+        title: "Local neighborhood focus",
         description:
-          "Service-area style copy can still work for hospitality by targeting Edwardsville, Glen Carbon, and neighboring traffic patterns.",
+          "Clear local references help nearby diners find the restaurant and know it is worth the drive.",
         icon: "map",
       },
     ],
   },
   testimonials: {
     eyebrow: "Guest notes",
-    title: "A restaurant site should make the experience feel real before the first visit.",
+    title: "The site should make dinner feel worth booking before the first visit.",
     description:
-      "These testimonials are written as realistic proof blocks to demonstrate the tone and trust level the demo pages should carry.",
+      "A few believable reviews do more for a restaurant than a crowded page full of widgets.",
     items: [
       {
         quote:
@@ -118,9 +118,9 @@ export const restaurantExamplePage = buildExampleLandingPage({
   },
   process: {
     eyebrow: "Reservation flow",
-    title: "A cleaner guest journey from discovery to booking.",
+    title: "A smoother path from first look to reservation.",
     description:
-      "The demo shows how a local restaurant site can reduce friction for both everyday diners and higher-value event inquiries.",
+      "Whether someone wants a Saturday table or a private event, the next step stays easy to find.",
     steps: [
       {
         title: "Find the menu and mood",
@@ -132,37 +132,37 @@ export const restaurantExamplePage = buildExampleLandingPage({
       },
       {
         title: "Book or inquire",
-        description: "The call to action stays visible so the page converts traffic instead of just showing photos.",
+        description: "Guests can reserve a table or ask about an event without hunting for the next step.",
       },
     ],
   },
   serviceArea: {
     eyebrow: "Draw from nearby communities",
-    title: "Built to pull diners from across the Metro East, not just one block radius.",
+    title: "Built for diners coming from across the Metro East.",
     description:
-      "Local intent copy is still useful for restaurants when it mirrors where guests actually drive from for dinner, brunch, and events.",
+      "Good restaurant traffic often comes from beyond the immediate block, especially for dinner, brunch, and group events.",
     areas: metroEastAreas,
   },
   cta: {
-    eyebrow: "Private dining and reservations",
-    title: "Need a restaurant site that feels more like a destination than a menu PDF?",
+    eyebrow: "Reservations and private events",
+    title: "Ready for a restaurant site that makes booking feel easy?",
     description:
-      "This example pairs hospitality visuals with a clear conversion path so a local restaurant can win reservations and event leads.",
+      "A stronger first impression and a clearer reservation path can help the right guests act sooner.",
     primaryCta: {
-      label: "Start A Restaurant Demo",
+      label: "Book a Table",
       href: "#contact",
     },
     secondaryCta: {
-      label: "Review Service Sections",
+      label: "Private Dining Details",
       href: "#services",
       tone: "ghost",
     },
   },
   contact: {
-    eyebrow: "Plan a dining site refresh",
-    title: "Showcase your menu, your atmosphere, and your next booking opportunity.",
+    eyebrow: "Reservations and event inquiries",
+    title: "Reach out for a table, a private dinner, or a catered event.",
     description:
-      "Use the contact area for reservations, private dining requests, or consultation-style inquiries for a redesign project.",
+      "The contact section works for everyday reservations, larger group inquiries, and special occasions.",
     address: "112 North Main Street, Edwardsville, IL 62025",
     email: "hello@ashandolive.example",
     fields: createContactFields("Inquiry type", [
@@ -172,7 +172,7 @@ export const restaurantExamplePage = buildExampleLandingPage({
       "Website redesign",
     ]),
     primaryCta: {
-      label: "Send Reservation Request",
+      label: "Send Inquiry",
       href: "#contact",
     },
   },

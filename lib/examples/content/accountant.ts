@@ -13,11 +13,11 @@ export const accountantExamplePage = buildExampleLandingPage({
   ctaText: "Book Consultation",
   themeFamily: "bold-trust",
   hero: {
-    eyebrow: "Tax and advisory firm demo",
+    eyebrow: "Tax and advisory services",
     title: "Reliable local accounting with a more confident first impression.",
     highlight: "for taxes, payroll, and business support",
     description:
-      "This example uses the bold trust-first family with lower urgency, shifting the tone toward steady professionalism and consultation-driven leads.",
+      "Local businesses and families need an accountant who feels organized, steady, and easy to reach.",
     imageLabel: "Accounting desk and advisory workspace",
     primaryCta: {
       label: "Book Consultation",
@@ -39,47 +39,47 @@ export const accountantExamplePage = buildExampleLandingPage({
   },
   services: {
     eyebrow: "Core services",
-    title: "The structure stays direct and trustworthy without feeling like a field-service page.",
+    title: "Accounting services presented with clarity and confidence.",
     description:
-      "For accountants, the same family works well when the copy emphasizes reliability, credentials, and calm advisory support.",
+      "The page stays straightforward so people can quickly understand what the firm handles.",
     items: [
       {
         title: "Tax Preparation",
         description:
-          "Personal and business returns positioned with clarity, organization, and local trust rather than seasonal panic.",
+          "Personal and business returns handled with clarity, organization, and steady support.",
         icon: "calculator",
       },
       {
         title: "Bookkeeping",
         description:
-          "Monthly reporting and clean books framed as dependable support for growing local businesses.",
+          "Monthly reporting and clean books for local businesses that want reliable day-to-day support.",
         icon: "briefcase",
       },
       {
         title: "Payroll Support",
         description:
-          "Operational help for employers who need consistency, timeliness, and a simpler internal workflow.",
+          "Payroll help for employers who need consistency, timeliness, and fewer internal headaches.",
         icon: "check",
       },
     ],
   },
   whyChooseUs: {
     eyebrow: "Firm positioning",
-    title: "The page should feel steady, credible, and easy to trust with sensitive information.",
+    title: "An accounting site should feel steady and credible.",
     description:
-      "The layout avoids startup polish and instead leans into operational clarity, local credibility, and consultation language.",
+      "People are trusting you with sensitive work, so the tone needs to feel calm, clear, and professional.",
     imageLabel: "Professional advisor meeting",
     items: [
       {
         title: "Calm trust language",
         description:
-          "The tone is intentionally direct and competent so it fits an accounting firm better than urgent service-business copy.",
+          "The tone stays direct and competent so it fits an accounting firm better than urgent service-business copy.",
         icon: "shield",
       },
       {
         title: "Service clarity for business owners",
         description:
-          "The cards help prospects understand exactly what the firm handles before they book a call.",
+          "The cards help people understand exactly what the firm handles before they book a call.",
         icon: "briefcase",
       },
       {
@@ -92,9 +92,9 @@ export const accountantExamplePage = buildExampleLandingPage({
   },
   testimonials: {
     eyebrow: "Client confidence",
-    title: "Short review blocks reinforce reliability, responsiveness, and follow-through.",
+    title: "Reviews should reinforce reliability, responsiveness, and follow-through.",
     description:
-      "This format stays consistent with the family while softening the urgency to fit a professional services firm.",
+      "For accounting, a few grounded reviews can do more than a page full of generic praise.",
     items: [
       {
         quote:
@@ -124,9 +124,9 @@ export const accountantExamplePage = buildExampleLandingPage({
   },
   process: {
     eyebrow: "Consultation process",
-    title: "The page should make the handoff into an accounting conversation feel simple and low-friction.",
+    title: "The page should make the handoff into an accounting conversation feel simple.",
     description:
-      "A straightforward process section helps reduce hesitation and clarifies what happens after a form submission.",
+      "A straightforward process section reduces hesitation and clarifies what happens after the form is sent.",
     steps: [
       {
         title: "Choose the service",
@@ -134,7 +134,7 @@ export const accountantExamplePage = buildExampleLandingPage({
       },
       {
         title: "Book the consultation",
-        description: "The contact path stays clear so the site captures higher-intent local leads efficiently.",
+        description: "The contact path stays clear so people can reach out without feeling like they are starting a sales process.",
       },
       {
         title: "Start organized",
@@ -144,28 +144,28 @@ export const accountantExamplePage = buildExampleLandingPage({
   },
   serviceArea: {
     eyebrow: "Local client base",
-    title: "Service-area coverage reinforces that the firm understands the nearby business community.",
+    title: "Local coverage reinforces that the firm understands the nearby business community.",
     description:
-      "The service area section is useful for accountants when it supports local trust instead of feeling like generic filler.",
+      "Nearby towns and business corridors help the page feel grounded in a real local market.",
     areas: [...metroEastAreas, "Alton", "Highland"],
     mapLabel: "Accounting clients served across Edwardsville and nearby towns",
   },
   cta: {
-    eyebrow: "Professional services demo",
-    title: "Need an accounting site that looks established, local, and easy to trust?",
+    eyebrow: "Start with a consultation",
+    title: "Present the firm like the steady partner clients want.",
     description:
-      "This example shows how the shared system can support a calmer professional-services tone without losing the conversion structure.",
+      "Clear service descriptions and a simple consultation path help the right clients reach out.",
     primaryCta: {
-      label: "Start An Accounting Demo",
+      label: "Book Consultation",
       href: "#contact",
       tone: "primary",
     },
   },
   contact: {
     eyebrow: "Book the consultation",
-    title: "Adapt this section for tax prep, payroll support, bookkeeping, or year-round advisory work.",
+    title: "Use the form for taxes, bookkeeping, payroll, or year-round support.",
     description:
-      "The same contact pattern works well for both individual tax clients and local businesses comparing firms.",
+      "It works for both individuals and local businesses comparing firms.",
     address: "205 South Kansas Street, Edwardsville, IL 62025",
     email: "hello@ledgerandoak.example",
     fields: createContactFields("Service needed", [

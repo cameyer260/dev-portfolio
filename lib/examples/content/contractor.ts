@@ -17,7 +17,7 @@ export const contractorExamplePage = buildExampleLandingPage({
     title: "Project-ready estimates backed by local proof and clear next steps.",
     highlight: "for roofs, siding, and full exterior upgrades",
     description:
-      "This contractor demo keeps the trust-first structure but shifts the emphasis toward project proof, finished work, and estimate requests.",
+      "Roofing, siding, and exterior work presented with the kind of clarity that helps homeowners request an estimate.",
     imageLabel: "Contractor crew and finished exterior project",
     primaryCta: {
       label: "Request Estimate",
@@ -39,39 +39,39 @@ export const contractorExamplePage = buildExampleLandingPage({
   },
   services: {
     eyebrow: "Exterior services",
-    title: "The service cards stay direct because homeowners compare contractors quickly.",
+    title: "Roofing and exterior services with clear scope and strong proof.",
     description:
-      "Contractor pages need practical scope, strong trust language, and a path toward the estimate request without extra friction.",
+      "Homeowners compare contractors quickly, so the page keeps the work easy to understand.",
     items: [
       {
         title: "Roof Replacement",
         description:
-          "Full roof projects positioned around inspection clarity, financing conversations, and durable local credibility.",
+          "Full roof replacements with clear inspection, material, and estimate details.",
         icon: "hammer",
       },
       {
         title: "Siding & Trim",
         description:
-          "Exterior refresh work framed with finished-result language and stronger visual proof opportunities.",
+          "Siding, trim, and exterior updates that show the finished result homeowners are paying for.",
         icon: "home",
       },
       {
         title: "Storm Repair",
         description:
-          "Urgent but trust-heavy copy for homeowners dealing with damage, insurance questions, or fast timelines.",
+          "Storm damage repair with a straightforward path for urgent questions and insurance-related work.",
         icon: "shield",
       },
     ],
   },
   whyChooseUs: {
     eyebrow: "Why this version works",
-    title: "A contractor page has to feel dependable, capable, and estimate-ready within seconds.",
+    title: "A contractor site should feel capable and dependable within seconds.",
     description:
-      "The page leans into practical proof and project confidence rather than decorative design choices.",
+      "People want to see real project confidence, clear process, and an obvious way to ask for an estimate.",
     imageLabel: "Contractor project walkthrough",
     items: [
       {
-        title: "Estimate-first conversion path",
+        title: "Estimate-first layout",
         description:
           "The hero, process, and contact section all reinforce the exact action homeowners want: a clear next step toward a quote.",
         icon: "check",
@@ -79,13 +79,13 @@ export const contractorExamplePage = buildExampleLandingPage({
       {
         title: "Before-and-after friendly layout",
         description:
-          "The service and proof sections are easy to customize later with project galleries and finished work.",
+          "The proof sections leave room for finished work, project photos, and before-and-after results.",
         icon: "badge",
       },
       {
         title: "Local area trust language",
         description:
-          "Service-zone coverage and local references help the contractor feel established instead of anonymous.",
+          "Service-area details and local references help the company feel established instead of anonymous.",
         icon: "map",
       },
     ],
@@ -94,7 +94,7 @@ export const contractorExamplePage = buildExampleLandingPage({
     eyebrow: "Project reviews",
     title: "The testimonial treatment stays compact, direct, and credibility-heavy.",
     description:
-      "For contractors, homeowners are looking for confidence, communication, and visible finished-work proof.",
+      "For contractors, homeowners are looking for confidence, communication, and proof the work will be done right.",
     items: [
       {
         quote:
@@ -126,7 +126,7 @@ export const contractorExamplePage = buildExampleLandingPage({
     eyebrow: "Estimate workflow",
     title: "The process section helps larger-ticket projects feel organized and lower-risk.",
     description:
-      "That matters for contractor pages because trust comes from competence as much as from visuals.",
+      "That matters because trust comes from competence as much as from visuals.",
     steps: [
       {
         title: "Schedule the walkthrough",
@@ -138,34 +138,34 @@ export const contractorExamplePage = buildExampleLandingPage({
       },
       {
         title: "Start with confidence",
-        description: "Testimonials and proof sections keep supporting the decision after the quote request is sent.",
+        description: "Testimonials and project proof keep supporting the decision after the quote request is sent.",
       },
     ],
   },
   serviceArea: {
     eyebrow: "Project coverage",
-    title: "The service-area block reinforces local credibility for estimate-ready homeowners.",
+    title: "Keep the nearby towns visible for homeowners ready to book a walkthrough.",
     description:
-      "This format works well for contractors because it stays highly scannable and keeps nearby communities visible.",
+      "The service area list stays easy to scan while reinforcing that the company works in the communities it names.",
     areas: [...metroEastAreas, "Bethalto", "Highland"],
     mapLabel: "Exterior contractor service area across the Metro East",
   },
   cta: {
-    eyebrow: "Ready for a stronger pitch page?",
-    title: "Use this contractor demo to sell trust, finished work, and a clear estimate path.",
+    eyebrow: "Request an estimate",
+    title: "Give homeowners a clearer path from first visit to estimate.",
     description:
-      "The shared system keeps the page reusable while still feeling tailored to roofing, exterior, and renovation businesses.",
+      "Clear services, stronger proof, and a direct estimate path help the right homeowners reach out.",
     primaryCta: {
-      label: "Request A Contractor Demo",
+      label: "Request Estimate",
       href: "#contact",
       tone: "primary",
     },
   },
   contact: {
     eyebrow: "Project inquiry",
-    title: "Tailor the form for estimates, inspections, or storm-related exterior work.",
+    title: "Use the form for estimates, inspections, or storm-related work.",
     description:
-      "This section is intentionally practical because most contractor leads want to get to the estimate conversation quickly.",
+      "The final section should make it easy to start the conversation, whether the job is planned or urgent.",
     address: "740 University Drive, Edwardsville, IL 62025",
     email: "projects@summitridge.example",
     fields: createContactFields("Project type", [

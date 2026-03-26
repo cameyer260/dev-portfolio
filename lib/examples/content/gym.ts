@@ -12,11 +12,11 @@ export const gymExamplePage = buildExampleLandingPage({
   ctaText: "Start Trial",
   themeFamily: "energetic-performance",
   hero: {
-    eyebrow: "Performance-driven gym demo",
+    eyebrow: "Strength and coaching",
     title: "Train harder, stay consistent, and see real progress.",
     highlight: "with coaching that keeps momentum high",
     description:
-      "This energetic performance example pushes stronger typography, bigger contrast, and a more motivating CTA structure for gyms and fitness brands.",
+      "Forge Fitness is built for people who want serious training, strong coaching, and a place that keeps them showing up.",
     imageLabel: "Gym floor and strength training",
     badges: ["Strength floor", "Coach-led classes", "7-day trial"],
     primaryCta: {
@@ -32,50 +32,50 @@ export const gymExamplePage = buildExampleLandingPage({
   },
   services: {
     eyebrow: "Programs",
-    title: "The service cards should feel like outcomes, not bland feature blocks.",
+    title: "Programs that speak to goals, not just amenities.",
     description:
-      "For gyms, the shared system becomes more visual and momentum-driven while keeping the CTA visible and mobile-friendly.",
+      "The page keeps the energy up while making it easy to see how someone gets started.",
     items: [
       {
         title: "Strength Coaching",
         description:
-          "Progressive strength programs built around coaching, accountability, and measurable results.",
+          "Strength training built around coaching, accountability, and steady progress.",
         icon: "dumbbell",
         imageLabel: "Strength coaching and barbell training",
       },
       {
         title: "Small Group Classes",
         description:
-          "High-energy class schedules with community-driven positioning and a clear trial CTA.",
+          "High-energy class schedules with a clear path into a first visit or free trial.",
         icon: "star",
         imageLabel: "Small group fitness class",
       },
       {
         title: "Nutrition Support",
         description:
-          "Habit-building and goal support presented as part of the transformation story, not an afterthought.",
+          "Habit-building and nutrition support that help members stay consistent outside the gym.",
         icon: "check",
         imageLabel: "Nutrition coaching and athlete plan",
       },
     ],
   },
   whyChooseUs: {
-    eyebrow: "Why this format works",
-    title: "The page keeps the energy high without turning chaotic or generic.",
+    eyebrow: "Why members stay",
+    title: "A gym site should feel motivating without becoming chaotic.",
     description:
-      "The energetic family uses contrast, stronger section transitions, and proof-oriented language to sell transformation and community.",
+      "The energy matters, but so does making the next step easy to act on.",
     imageLabel: "Athlete training with dramatic contrast",
     items: [
       {
         title: "High-energy CTA structure",
         description:
-          "The hero and sticky mobile action both support trials and first visits without burying the ask.",
+          "The hero and mobile CTA both support trials and first visits without burying the ask.",
         icon: "dumbbell",
       },
       {
         title: "Outcome-driven sections",
         description:
-          "Programs, testimonials, and process all reinforce momentum and visible progress instead of abstract branding.",
+          "Programs, testimonials, and process all reinforce momentum and visible progress instead of vague branding.",
         icon: "check",
       },
       {
@@ -88,9 +88,9 @@ export const gymExamplePage = buildExampleLandingPage({
   },
   testimonials: {
     eyebrow: "Results and proof",
-    title: "The testimonial block should feel energetic, specific, and motivating.",
+    title: "Reviews should feel specific, upbeat, and believable.",
     description:
-      "This family is designed to support stronger transformation language and more visible momentum toward the CTA.",
+      "People join when they can picture themselves in the room and trust the coaching.",
     items: [
       {
         quote:
@@ -120,9 +120,9 @@ export const gymExamplePage = buildExampleLandingPage({
   },
   process: {
     eyebrow: "Getting started",
-    title: "The process should build momentum toward the first session.",
+    title: "Make it easy to go from interest to first session.",
     description:
-      "This section works well for gyms because it translates motivation into a clear, low-friction next step.",
+      "People should be able to pick a goal, book a visit, and know what happens next.",
     steps: [
       {
         title: "Choose your goal",
@@ -134,30 +134,30 @@ export const gymExamplePage = buildExampleLandingPage({
       },
       {
         title: "Start training",
-        description: "The page closes by reinforcing transformation, structure, and community.",
+        description: "The page closes by reinforcing structure, coaching, and the kind of momentum people want to keep.",
       },
     ],
   },
   serviceArea: {
     eyebrow: "Who we pull from",
-    title: "Local visibility matters even for gyms because proximity is part of the buying decision.",
+    title: "Most members come from a short drive away.",
     description:
-      "The service area block helps fitness businesses show where members typically come from without slowing down the page.",
+      "Keeping nearby towns visible helps the gym feel convenient as well as motivating.",
     areas: metroEastAreas,
     mapLabel: "Gym members coming from Edwardsville and nearby towns",
   },
   cta: {
-    eyebrow: "Momentum-driven demo",
-    title: "Want a gym site that feels bold, motivating, and easier to convert from mobile?",
+    eyebrow: "Start your first week",
+    title: "Make the next step feel as strong as the brand.",
     description:
-      "This example shows how the shared system can support fitness brands without collapsing into generic startup styling.",
+      "Clear programs and a strong trial path help people stop browsing and come in.",
     primaryCta: {
-      label: "Start A Gym Demo",
+      label: "Start Free Trial",
       href: "#contact",
       tone: "accent",
     },
     secondaryCta: {
-      label: "Review Program Cards",
+      label: "View Programs",
       href: "#services",
       tone: "secondary",
     },
@@ -166,7 +166,7 @@ export const gymExamplePage = buildExampleLandingPage({
     eyebrow: "Book the trial",
     title: "Use the final section for trial requests, coaching consults, or membership questions.",
     description:
-      "The energetic split contact area is designed to feel like the final push toward action without adding extra friction.",
+      "Keep the last step simple so the first visit feels easy to book.",
     address: "908 Plum Street, Edwardsville, IL 62025",
     email: "train@forgefitness.example",
     fields: createContactFields("Goal", [

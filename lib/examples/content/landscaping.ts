@@ -12,11 +12,11 @@ export const landscapingExamplePage = buildExampleLandingPage({
   ctaText: "Get Free Quote",
   themeFamily: "energetic-performance",
   hero: {
-    eyebrow: "Outdoor transformation demo",
+    eyebrow: "Outdoor transformations",
     title: "Bold landscape upgrades with proof that homeowners can picture instantly.",
     highlight: "from curb appeal to outdoor living",
     description:
-      "This landscaping example uses the energetic performance family to highlight visible transformation, stronger imagery, and a decisive quote-focused CTA.",
+      "Everline Outdoor Works helps homeowners picture the finished project and take the next step toward a quote.",
     imageLabel: "Landscaping crew and premium backyard project",
     badges: ["Design-build", "Seasonal maintenance", "Outdoor living"],
     primaryCta: {
@@ -32,9 +32,9 @@ export const landscapingExamplePage = buildExampleLandingPage({
   },
   services: {
     eyebrow: "Project focus",
-    title: "The service cards emphasize visible upgrades and premium outdoor results.",
+    title: "Services built around visible improvements homeowners actually want.",
     description:
-      "Landscaping sits well in the energetic family because contrast, imagery, and transformation carry so much of the selling work.",
+      "The page leans on strong imagery and clear scope so the work feels tangible.",
     items: [
       {
         title: "Landscape Design",
@@ -46,7 +46,7 @@ export const landscapingExamplePage = buildExampleLandingPage({
       {
         title: "Outdoor Living",
         description:
-          "Patios, lighting, and gathering spaces positioned around premium transformation and long-term value.",
+          "Patios, lighting, and gathering spaces built around comfort, function, and long-term value.",
         icon: "home",
         imageLabel: "Patio and outdoor living installation",
       },
@@ -61,27 +61,27 @@ export const landscapingExamplePage = buildExampleLandingPage({
   },
   whyChooseUs: {
     eyebrow: "Transformation proof",
-    title: "The page should make homeowners imagine the finished result before they request the quote.",
+    title: "A landscaping site should help homeowners picture the finished yard.",
     description:
-      "This variation keeps the high-energy structure but grounds it in craftsmanship, before-and-after thinking, and premium outdoor visuals.",
+      "Good landscaping work is visual, so the page leads with the result and keeps the quote path easy.",
     imageLabel: "Premium backyard transformation",
     items: [
       {
         title: "Visual proof first",
         description:
-          "The image-forward cards and contrast-heavy sections help landscaping feel outcome-driven instead of generic.",
+          "Strong visuals and project-focused sections help the work feel real instead of generic.",
         icon: "leaf",
       },
       {
         title: "Quote-ready structure",
         description:
-          "The CTA language is direct and built around project inquiries, not vague brochure-site browsing.",
+          "The CTA language stays direct and built around real project inquiries.",
         icon: "check",
       },
       {
         title: "Local service-area strength",
         description:
-          "The page keeps Edwardsville, Glen Carbon, and nearby neighborhoods visible because proximity matters for service scheduling.",
+          "The page keeps nearby neighborhoods visible because proximity matters for scheduling and site visits.",
         icon: "map",
       },
     ],
@@ -90,7 +90,7 @@ export const landscapingExamplePage = buildExampleLandingPage({
     eyebrow: "Project reactions",
     title: "Testimonials should feel specific enough that a homeowner can imagine their own yard next.",
     description:
-      "The proof section supports a more visual, transformation-driven sales story than most contractor or home-service pages.",
+      "A few grounded testimonials do more than broad marketing claims.",
     items: [
       {
         quote:
@@ -120,9 +120,9 @@ export const landscapingExamplePage = buildExampleLandingPage({
   },
   process: {
     eyebrow: "Quote flow",
-    title: "The process should move from vision to visible result without losing momentum.",
+    title: "Move from idea to quote without slowing the momentum.",
     description:
-      "Landscaping pages convert best when they connect aspiration, local trust, and a simple quote request.",
+      "The page should help homeowners explain the job, understand the scope, and feel ready to move forward.",
     steps: [
       {
         title: "Share the project",
@@ -134,39 +134,39 @@ export const landscapingExamplePage = buildExampleLandingPage({
       },
       {
         title: "Transform the property",
-        description: "The proof sections keep reinforcing craftsmanship and visible outcome all the way to the close.",
+        description: "The proof sections keep reinforcing craftsmanship and visible results all the way to the close.",
       },
     ],
   },
   serviceArea: {
     eyebrow: "Service radius",
-    title: "Local coverage matters because landscaping buyers want a nearby team they can picture on-site.",
+    title: "Nearby coverage matters when homeowners are hiring for on-site work.",
     description:
-      "A clean map-split section keeps nearby communities visible while still matching the family’s stronger visual rhythm.",
+      "The page keeps service towns visible without making the layout feel busy.",
     areas: [...metroEastAreas, "Bethalto", "Highland"],
     mapLabel: "Landscaping projects across Edwardsville and nearby communities",
   },
   cta: {
-    eyebrow: "Outcome-driven demo",
-    title: "Need a landscaping page that sells visible transformation instead of a bland service list?",
+    eyebrow: "Request a quote",
+    title: "Show the result, then make the quote request easy.",
     description:
-      "This example pushes stronger imagery, sharper contrast, and a more decisive quote flow while staying reusable for future client work.",
+      "Better imagery and a clearer quote path help the right projects come in.",
     primaryCta: {
-      label: "Start A Landscaping Demo",
+      label: "Get Free Quote",
       href: "#contact",
       tone: "accent",
     },
     secondaryCta: {
-      label: "Review Services",
+      label: "See Services",
       href: "#services",
       tone: "secondary",
     },
   },
   contact: {
     eyebrow: "Request the quote",
-    title: "Tailor the final section for design-build work, outdoor living upgrades, or recurring maintenance.",
+    title: "Use the final section for design-build work, outdoor living projects, or recurring maintenance.",
     description:
-      "The contact area is designed to feel like the decisive final push toward a real project conversation.",
+      "Keep the quote form easy to use so homeowners can reach out while the project is still top of mind.",
     address: "1415 South State Route 157, Edwardsville, IL 62025",
     email: "projects@everlineoutdoor.example",
     fields: createContactFields("Project type", [

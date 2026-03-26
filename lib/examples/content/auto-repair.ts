@@ -17,7 +17,7 @@ export const autoRepairExamplePage = buildExampleLandingPage({
     title: "Clear diagnostics, fair recommendations, and a service page built for trust.",
     highlight: "not pressure",
     description:
-      "This auto repair demo uses the bold trust-first family while shifting the tone toward transparency, certifications, and reducing fear of being overcharged.",
+      "Drivers want clear answers, fair recommendations, and a shop that feels easy to trust.",
     imageLabel: "Auto repair bay and technician",
     primaryCta: {
       label: "Request Service",
@@ -39,9 +39,9 @@ export const autoRepairExamplePage = buildExampleLandingPage({
   },
   services: {
     eyebrow: "Shop services",
-    title: "The structure is built to make drivers feel informed instead of intimidated.",
+    title: "Services explained clearly so drivers know what to expect.",
     description:
-      "Auto repair pages convert better when they explain scope clearly and frame the business as transparent, local, and dependable.",
+      "The page keeps the work easy to understand and the scheduling path easy to find.",
     items: [
       {
         title: "Diagnostics",
@@ -52,7 +52,7 @@ export const autoRepairExamplePage = buildExampleLandingPage({
       {
         title: "Brake & Safety Work",
         description:
-          "High-trust repair categories supported by clear proof and honest service positioning.",
+          "Brake inspections and repairs explained with the kind of clarity people want for safety work.",
         icon: "shield",
       },
       {
@@ -65,21 +65,21 @@ export const autoRepairExamplePage = buildExampleLandingPage({
   },
   whyChooseUs: {
     eyebrow: "Shop credibility",
-    title: "Drivers need the page to feel straightforward, competent, and low-pressure.",
+    title: "A repair shop page should feel straightforward and low-pressure.",
     description:
-      "The design stays bold enough to feel professional while softening the urgency compared to plumbing or emergency field service.",
+      "Most people are already stressed when they start looking, so the site should make the choice easier.",
     imageLabel: "Trusted mechanic inspection",
     items: [
       {
         title: "Transparent recommendations",
         description:
-          "The page copy is written to reduce the common fear that the customer will be sold work they do not need.",
+          "The wording helps reduce the fear that the customer will be sold work they do not need.",
         icon: "check",
       },
       {
         title: "Certification-friendly proof",
         description:
-          "Trust rows can be adapted later for ASE badges, warranties, and inspection details without changing the layout.",
+          "There is room for certifications, warranties, and inspection details without cluttering the page.",
         icon: "badge",
       },
       {
@@ -151,21 +151,21 @@ export const autoRepairExamplePage = buildExampleLandingPage({
     mapLabel: "Auto repair service area around Edwardsville and Glen Carbon",
   },
   cta: {
-    eyebrow: "Honest shop positioning",
-    title: "Need an auto repair page that feels more credible than the usual coupon-heavy template?",
+    eyebrow: "Book service",
+    title: "Help drivers feel comfortable booking before they ever call.",
     description:
-      "This example shows how the shared system can present a shop as trustworthy, clear, and easy to book from a phone.",
+      "A clear service list and an easy scheduling path go a long way.",
     primaryCta: {
-      label: "Start An Auto Repair Demo",
+      label: "Schedule Service",
       href: "#contact",
       tone: "primary",
     },
   },
   contact: {
     eyebrow: "Book the service",
-    title: "Use the same structure for diagnostics, routine maintenance, and trust-building second opinions.",
+    title: "Use the form for diagnostics, maintenance, or a second opinion.",
     description:
-      "The form is easy to adapt for shops that want appointment requests, quote intake, or first-time customer questions.",
+      "Keep the final step simple so drivers can reach out without feeling pressured.",
     address: "615 Troy Road, Edwardsville, IL 62025",
     email: "service@route157autocare.example",
     fields: createContactFields("Service needed", [

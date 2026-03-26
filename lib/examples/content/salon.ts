@@ -12,11 +12,11 @@ export const salonExamplePage = buildExampleLandingPage({
   ctaText: "Book Now",
   themeFamily: "warm-editorial",
   hero: {
-    eyebrow: "Style-led salon demo",
+    eyebrow: "Edwardsville salon",
     title: "Polished color, lived-in cuts, and a booking flow that feels high-touch.",
     highlight: "without losing the local studio warmth",
     description:
-      "This salon example uses the warm editorial family to make appointment booking feel refined, visual, and highly conversion-focused on mobile.",
+      "Willow & Steel is built around polished color, strong cuts, and a booking experience that feels personal from the start.",
     imageLabel: "Salon chair and styling station",
     primaryCta: {
       label: "Book Appointment",
@@ -31,67 +31,67 @@ export const salonExamplePage = buildExampleLandingPage({
   },
   services: {
     eyebrow: "Signature services",
-    title: "A cleaner service presentation for salons that sell style, trust, and repeat bookings.",
+    title: "Color, cuts, and bridal services presented with clarity.",
     description:
-      "The page structure keeps the booking CTA obvious while giving enough visual room for gallery-forward, premium salon positioning.",
+      "The page keeps booking easy while giving the work room to speak for itself.",
     items: [
       {
         title: "Custom Color",
         description:
-          "Dimensional blonding, brunettes, and lived-in color work positioned with premium language and photo-first trust.",
+          "Dimensional blonding, brunettes, and lived-in color with photo-led proof and clear service options.",
         icon: "sparkles",
       },
       {
         title: "Cuts & Styling",
         description:
-          "Signature cuts, blowouts, and event-ready styling with room for stylist specialties and pricing tiers.",
+          "Signature cuts, blowouts, and styling appointments with room for specialty services and add-ons.",
         icon: "scissors",
       },
       {
         title: "Bridal Prep",
         description:
-          "Bridal trials, wedding-day styling, and team bookings supported by a higher-intent inquiry flow.",
+          "Trials, wedding-day styling, and group bookings with a straightforward inquiry flow.",
         icon: "star",
       },
     ],
   },
   whyChooseUs: {
-    eyebrow: "What this layout proves",
-    title: "A salon site should feel like the brand experience, not a generic services list.",
+    eyebrow: "Why clients book",
+    title: "A salon site should feel like the studio, not a generic service list.",
     description:
-      "This page balances gallery energy with direct appointment conversion so the site sells both the look and the professionalism.",
+      "Clients are judging style and professionalism at the same time, so the page stays visual, calm, and easy to book.",
     imageLabel: "Editorial salon portrait",
     stat: {
       value: "82%",
       label: "Appointments booked on mobile",
-      detail: "The example keeps booking visible early because most salon discovery traffic happens on phones.",
+      detail: "Keeping the booking path visible early matters because most first visits start on a phone.",
     },
     items: [
       {
         title: "Gallery-forward trust",
         description:
-          "Warm surfaces and image-led rhythm make style work feel premium without drifting into fashion-magazine abstraction.",
+          "Strong photography and warm details help the work feel premium without overdoing it.",
         icon: "quote",
       },
       {
         title: "Stylist-specific positioning",
         description:
-          "Sections can be tailored later for team bios, specialty services, and higher-ticket packages.",
+          "The layout leaves room for specialties, stylist bios, pricing notes, and service add-ons.",
         icon: "badge",
       },
       {
         title: "Appointment-focused mobile UX",
         description:
-          "The booking CTA stays clear above the fold and in the sticky mobile action so the page remains conversion-first.",
+          "The booking path stays easy to spot on mobile, where most clients first check availability.",
         icon: "phone",
       },
     ],
   },
   testimonials: {
     eyebrow: "Client proof",
-    title: "The trust section stays polished instead of looking like a noisy review widget.",
+    title: "The trust section should feel polished without looking overproduced.",
     description:
-      "For salons, believable testimonials should reinforce confidence, consistency, and the in-studio experience.",
+      "For salons, the best reviews speak to consistency, comfort, and the final result.",
     items: [
       {
         quote:
@@ -118,9 +118,9 @@ export const salonExamplePage = buildExampleLandingPage({
   },
   process: {
     eyebrow: "Booking flow",
-    title: "A streamlined path from inspiration to appointment request.",
+    title: "A simple path from inspiration to appointment.",
     description:
-      "The example demonstrates how a stylist-led business can keep the site emotional and visual without sacrificing clarity.",
+      "Clients should be able to browse, understand the service, and reach out without second-guessing the next step.",
     steps: [
       {
         title: "Choose your service",
@@ -132,37 +132,37 @@ export const salonExamplePage = buildExampleLandingPage({
       },
       {
         title: "Confirm the appointment",
-        description: "The CTA structure keeps the next step obvious whether the goal is a routine visit or higher-ticket booking.",
+        description: "The next step stays obvious whether someone is booking a routine visit or a bigger appointment.",
       },
     ],
   },
   serviceArea: {
     eyebrow: "Local reach",
-    title: "Styled for the local search terms that actually drive appointments.",
+    title: "Built to show up for the nearby clients most likely to book.",
     description:
-      "The service area block helps salons target nearby clients searching in Edwardsville, Glen Carbon, Maryville, and surrounding communities.",
+      "Local salon traffic usually comes from a short radius, so the page keeps nearby communities easy to spot.",
     areas: metroEastAreas,
   },
   cta: {
-    eyebrow: "Appointment-ready demo",
-    title: "Want a salon site that sells your work before a client ever sits in the chair?",
+    eyebrow: "Appointments",
+    title: "Make it easier for the right clients to book with confidence.",
     description:
-      "This example shows how a modern salon page can feel brand-forward while still prioritizing bookings and inquiries.",
+      "A cleaner layout, stronger photography, and an easier booking path help the right clients reach out.",
     primaryCta: {
-      label: "Build A Salon Demo",
+      label: "Book Appointment",
       href: "#contact",
     },
     secondaryCta: {
-      label: "See Booking Layout",
-      href: "#contact",
+      label: "See Services",
+      href: "#services",
       tone: "ghost",
     },
   },
   contact: {
     eyebrow: "Start the refresh",
-    title: "Position your salon for better bookings, stronger visuals, and clearer mobile conversion.",
+    title: "Use the form for appointments, bridal requests, or questions before booking.",
     description:
-      "Use this form for appointments, bridal requests, or a project conversation about tailoring the demo into a real salon site.",
+      "The same setup works for everyday visits, color consults, and wedding weekends.",
     address: "18 South Buchanan Street, Edwardsville, IL 62025",
     email: "studio@willowandsteel.example",
     fields: createContactFields("Appointment type", [

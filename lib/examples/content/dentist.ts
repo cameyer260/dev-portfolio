@@ -12,11 +12,11 @@ export const dentistExamplePage = buildExampleLandingPage({
   ctaText: "Book Appointment",
   themeFamily: "premium-professional",
   hero: {
-    eyebrow: "Modern dental clinic demo",
+    eyebrow: "Modern dental clinic",
     title: "Confident care in a calm, polished setting.",
     highlight: "designed to build trust before the first visit",
     description:
-      "This premium professional example softens the tone slightly for dentistry, balancing authority with comfort, cleanliness, and appointment clarity.",
+      "Patients want a practice that feels calm, clean, and easy to trust before they ever walk in.",
     imageLabel: "Dental clinic and treatment room",
     primaryCta: {
       label: "Book Appointment",
@@ -32,26 +32,26 @@ export const dentistExamplePage = buildExampleLandingPage({
     eyebrow: "Treatment focus",
     title: "A dental page should feel precise, calm, and easy to trust on the first visit.",
     description:
-      "The structured-column treatment keeps the page polished and professional while allowing each service to read clearly.",
+      "The page keeps treatments easy to scan while maintaining a calm, professional tone.",
     items: [
       {
         title: "Preventive Care",
         description:
-          "Routine cleanings, exams, and long-term care positioning for families and returning patients.",
+          "Routine cleanings, exams, and long-term care for families and returning patients.",
         icon: "stethoscope",
         imageLabel: "Preventive dental care",
       },
       {
         title: "Cosmetic Dentistry",
         description:
-          "Whitening, veneers, and smile planning framed with comfort and confidence rather than flashy marketing.",
+          "Whitening, veneers, and smile planning framed with comfort and confidence rather than flashy claims.",
         icon: "sparkles",
         imageLabel: "Cosmetic dental consultation",
       },
       {
         title: "Restorative Work",
         description:
-          "Crowns, implants, and restorative treatment presented with reassuring, high-trust language.",
+          "Crowns, implants, and restorative treatment explained in reassuring, high-trust language.",
         icon: "shield",
         imageLabel: "Restorative dental treatment",
       },
@@ -59,30 +59,30 @@ export const dentistExamplePage = buildExampleLandingPage({
   },
   whyChooseUs: {
     eyebrow: "Practice credibility",
-    title: "The page creates a premium first impression while still making the appointment CTA easy to find.",
+    title: "A dental site should feel professional, calm, and easy to book from a phone.",
     description:
-      "Dental prospects are weighing expertise and comfort at the same time, so the tone stays polished but approachable.",
+      "Dental patients are weighing expertise and comfort at the same time, so the tone stays polished but approachable.",
     imageLabel: "Dentist portrait and bright clinical calm",
     stat: {
       value: "1,200+",
       label: "Patient visits each year",
-      detail: "Operational trust and care quality can be communicated without cluttering the page with badges.",
+      detail: "A few grounded trust markers help new patients feel comfortable booking.",
     },
     items: [
       {
         title: "Clean, calm visual tone",
         description:
-          "The premium family is softened here to feel brighter and more reassuring than the law firm variation.",
+          "Bright surfaces and clean spacing help the practice feel reassuring without looking cold.",
       },
       {
         title: "Appointment-first hierarchy",
         description:
-          "Primary actions remain obvious above the fold and in the final contact section for mobile users.",
+          "Primary actions remain easy to find above the fold and again at the bottom of the page.",
       },
       {
         title: "Comfort and confidence",
         description:
-          "The copy supports patients who want professionalism without feeling like they are entering a sterile corporate site.",
+          "The copy supports patients who want professionalism without feeling like they are walking into a sterile corporate office.",
       },
     ],
   },
@@ -137,25 +137,25 @@ export const dentistExamplePage = buildExampleLandingPage({
     mapLabel: "Dental patients served around Edwardsville and nearby communities",
   },
   cta: {
-    eyebrow: "Premium patient experience",
-    title: "Need a dental page that feels cleaner, calmer, and more trustworthy than the average practice site?",
+    eyebrow: "Patient appointments",
+    title: "A calmer first impression helps patients book sooner.",
     description:
-      "This example shows how the reusable system can support appointments and local trust without drifting into generic healthcare design.",
+      "A cleaner presentation can make a practice feel more modern, approachable, and easy to trust.",
     primaryCta: {
-      label: "Build A Dental Demo",
+      label: "Book Appointment",
       href: "#contact",
     },
     secondaryCta: {
-      label: "See Treatment Layout",
+      label: "View Treatments",
       href: "#services",
       tone: "secondary",
     },
   },
   contact: {
     eyebrow: "Book the visit",
-    title: "Use the contact section for new patients, cosmetic consultations, or restorative treatment inquiries.",
+    title: "Use the form for new patients, cosmetic consults, or restorative care questions.",
     description:
-      "The quieter form treatment supports a more premium patient experience while still keeping conversion friction low.",
+      "The section stays calm and straightforward so booking never feels like work.",
     address: "326 South State Route 157, Edwardsville, IL 62025",
     email: "appointments@northbluffdental.example",
     fields: createContactFields("Visit type", [

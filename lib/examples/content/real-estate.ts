@@ -12,11 +12,11 @@ export const realEstateExamplePage = buildExampleLandingPage({
   ctaText: "Schedule Tour",
   themeFamily: "warm-editorial",
   hero: {
-    eyebrow: "Metro East real estate demo",
+    eyebrow: "Metro East real estate",
     title: "Local market guidance with a more premium first impression.",
     highlight: "from listing consult to closing table",
     description:
-      "This example shows how a real estate site can feel refined and trustworthy while still guiding buyers and sellers toward a consultation.",
+      "Monarch Home Group helps buyers and sellers move with clear guidance, steady communication, and real local knowledge.",
     imageLabel: "Real estate living room and front entry",
     primaryCta: {
       label: "Request Consultation",
@@ -31,67 +31,67 @@ export const realEstateExamplePage = buildExampleLandingPage({
   },
   services: {
     eyebrow: "How the page sells expertise",
-    title: "A real estate landing page should project calm authority, local knowledge, and next-step clarity.",
+    title: "Buyer and seller services presented with calm authority.",
     description:
-      "The shared system keeps the conversion structure intact while the visual family shifts the tone closer to premium advisory service.",
+      "The page keeps the next step clear while giving people enough context to trust the process.",
     items: [
       {
         title: "Buyer Representation",
         description:
-          "Discovery calls, neighborhood guidance, tours, and offer strategy packaged with strong local confidence.",
+          "Neighborhood guidance, home tours, offer strategy, and support from first showing to closing.",
         icon: "home",
       },
       {
         title: "Listing Strategy",
         description:
-          "Staging, pricing, launch plans, and marketing support positioned as a premium seller consultation.",
+          "Pricing, prep, launch planning, and marketing support for sellers who want a clear plan.",
         icon: "star",
       },
       {
         title: "Relocation Support",
         description:
-          "A clean path for out-of-town buyers comparing Edwardsville, Glen Carbon, and nearby communities.",
+          "A welcoming path for buyers comparing Edwardsville, Glen Carbon, and nearby communities.",
         icon: "map",
       },
     ],
   },
   whyChooseUs: {
     eyebrow: "Why this tone works",
-    title: "The page feels composed and premium because the service is high-trust and high-value.",
+    title: "A real estate site should feel steady, local, and easy to trust.",
     description:
-      "Real estate sits comfortably in the warm editorial family when the layout emphasizes consultation flow, market proof, and local credibility.",
+      "People are making big decisions, so the page leads with clarity, experience, and a simple way to start the conversation.",
     imageLabel: "Elegant home exterior and neighborhood feel",
     stat: {
       value: "21",
       label: "Average days to accepted offer",
-      detail: "Trust metrics can be framed elegantly instead of dropping into flashy dashboard-style stats.",
+      detail: "A few grounded numbers can reassure buyers and sellers without turning the page into a sales dashboard.",
     },
     items: [
       {
         title: "Consultation-first structure",
         description:
-          "The call to action is positioned like an advisory service, which fits real estate better than aggressive lead-gen copy.",
+          "The first step feels like a conversation, which fits real estate better than a pushy lead form.",
         icon: "briefcase",
       },
       {
         title: "Neighborhood credibility",
         description:
-          "Service-area content becomes local proof when it highlights the communities buyers actually compare.",
+          "The nearby communities people already compare are easy to spot throughout the page.",
         icon: "map",
       },
       {
         title: "Premium testimonial treatment",
         description:
-          "The editorial quote style keeps the page calm and credible instead of noisy or sales-heavy.",
+          "Reviews are presented in a way that feels calm and credible instead of loud or sales-heavy.",
         icon: "quote",
       },
     ],
   },
   testimonials: {
     eyebrow: "Client perspective",
-    title: "The proof reads like trusted referrals instead of generic review snippets.",
+    title: "The strongest reviews feel like personal referrals.",
     description:
-      "For real estate, the tone needs to feel steady and personal because the stakes are higher than a typical brochure page.",
+      "For real estate, trust comes from calm communication and local knowledge, not flashy language.",
     items: [
       {
         quote:
@@ -118,9 +118,9 @@ export const realEstateExamplePage = buildExampleLandingPage({
   },
   process: {
     eyebrow: "Consultation journey",
-    title: "From first inquiry to signed contract, the next step always stays clear.",
+    title: "From first conversation to closing, the next step stays clear.",
     description:
-      "The process section works especially well for real estate because buyers and sellers want confidence in the timeline.",
+      "Buyers and sellers both want to know how the relationship starts and what to expect after they reach out.",
     steps: [
       {
         title: "Book the consultation",
@@ -132,37 +132,37 @@ export const realEstateExamplePage = buildExampleLandingPage({
       },
       {
         title: "Move with confidence",
-        description: "The page supports the trust and clarity needed to convert a browser into a serious client.",
+        description: "Clear communication and steady follow-through help turn interest into a serious client relationship.",
       },
     ],
   },
   serviceArea: {
     eyebrow: "Communities served",
-    title: "Built for the markets local buyers and sellers compare every day.",
+    title: "Focused on the communities buyers and sellers compare every day.",
     description:
-      "A real estate demo should use local geography as trust-building context, not filler. Edwardsville and Glen Carbon belong in the structure.",
+      "Local market familiarity matters, so the page keeps those communities visible without overdoing it.",
     areas: [...metroEastAreas, "St. Louis relocations"],
   },
   cta: {
-    eyebrow: "Premium local demo",
-    title: "Need a real estate site that feels more consultative than templated?",
+    eyebrow: "Buying and selling",
+    title: "Make the first impression feel as strong as the service.",
     description:
-      "This example shows how a shared system can still create a tailored, premium real estate presentation for buyer and seller leads.",
+      "A cleaner presentation helps buyers and sellers trust the first call sooner.",
     primaryCta: {
-      label: "Request A Real Estate Demo",
+      label: "Request Consultation",
       href: "#contact",
     },
     secondaryCta: {
-      label: "See Area Coverage",
+      label: "See Areas We Serve",
       href: "#service-area",
       tone: "ghost",
     },
   },
   contact: {
-    eyebrow: "Start the project",
-    title: "Tailor the demo for buyer leads, seller listings, or a full local brokerage refresh.",
+    eyebrow: "Start the conversation",
+    title: "Reach out about buying, selling, or moving into the area.",
     description:
-      "The contact section can handle consult requests, listing strategy questions, and relocation inquiries without breaking the shared system.",
+      "Use the form for listing conversations, buyer questions, or relocation help.",
     address: "221 East Vandalia Street, Edwardsville, IL 62025",
     email: "hello@monarchhomegroup.example",
     fields: createContactFields("Inquiry type", [

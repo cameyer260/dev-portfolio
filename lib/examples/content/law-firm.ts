@@ -12,11 +12,11 @@ export const lawFirmExamplePage = buildExampleLandingPage({
   ctaText: "Request Consultation",
   themeFamily: "premium-professional",
   hero: {
-    eyebrow: "Premium legal services demo",
+    eyebrow: "Trusted legal counsel",
     title: "Serious counsel for complex moments.",
     highlight: "clear strategy, local trust, and restrained authority",
     description:
-      "This law firm example stays closest to the premium professional source direction, emphasizing authority, consultation flow, and high-stakes trust.",
+      "When the matter is important, people want counsel that feels measured, prepared, and trustworthy.",
     imageLabel: "Law office interior and legal materials",
     primaryCta: {
       label: "Request Consultation",
@@ -30,28 +30,28 @@ export const lawFirmExamplePage = buildExampleLandingPage({
   },
   services: {
     eyebrow: "Practice areas",
-    title: "The service layout stays composed so the firm feels established, not over-marketed.",
+    title: "Practice areas presented with clarity and restraint.",
     description:
-      "This family gives legal pages more restraint, better hierarchy, and a consultation-led path than generic lead-gen templates.",
+      "The page gives each service room to feel established without turning the site into a sales pitch.",
     items: [
       {
         title: "Personal Injury",
         description:
-          "Case evaluation, negotiation, and litigation support positioned with calm authority and stronger trust cues.",
+          "Case evaluation, negotiation, and litigation support presented with calm authority.",
         icon: "gavel",
         imageLabel: "Law consultation and case review",
       },
       {
         title: "Business Disputes",
         description:
-          "Premium service presentation for partnership issues, contract matters, and strategic legal guidance.",
+          "Counsel for partnership issues, contract matters, and other business disputes that require careful handling.",
         icon: "briefcase",
         imageLabel: "Professional legal strategy meeting",
       },
       {
         title: "Estate Planning",
         description:
-          "Structured advisory language for wills, trusts, and long-term family planning conversations.",
+          "Wills, trusts, and long-term planning handled with the same clear, steady tone.",
         icon: "shield",
         imageLabel: "Estate planning consultation",
       },
@@ -59,14 +59,14 @@ export const lawFirmExamplePage = buildExampleLandingPage({
   },
   whyChooseUs: {
     eyebrow: "Authority markers",
-    title: "The site feels more credible because it does less visual shouting and more strategic framing.",
+    title: "A law firm site builds confidence by staying measured.",
     description:
-      "For a law firm, premium restraint creates trust. The structure still converts, but it does so with a more formal tone.",
+      "People looking for legal help are already weighing risk. The site should feel serious, clear, and easy to contact.",
     imageLabel: "Attorney portrait and city context",
     stat: {
       value: "18+",
       label: "Years of courtroom and advisory experience",
-      detail: "Results and authority can be presented quietly while still carrying real weight.",
+      detail: "Experience can be presented clearly without turning the page into a list of loud claims.",
     },
     items: [
       {
@@ -77,20 +77,20 @@ export const lawFirmExamplePage = buildExampleLandingPage({
       {
         title: "Formal visual hierarchy",
         description:
-          "Serif headlines, restrained spacing, and premium surfaces fit legal services better than loud badges and gimmicks.",
+          "Serif headlines, restrained spacing, and clean surfaces fit legal services better than loud badges and gimmicks.",
       },
       {
         title: "High-trust local positioning",
         description:
-          "Edwardsville and Metro East language supports proximity and familiarity without reducing the premium tone.",
+          "Edwardsville and Metro East references support proximity and familiarity without reducing the premium tone.",
       },
     ],
   },
   testimonials: {
     eyebrow: "Client confidence",
-    title: "The testimonial treatment stays elegant because authority matters more than volume.",
+    title: "The right reviews feel measured and credible.",
     description:
-      "This layout works well for higher-stakes legal work where credibility, discretion, and clarity are central.",
+      "For legal services, a few strong testimonials carry more weight than a long list of generic praise.",
     items: [
       {
         quote:
@@ -110,9 +110,9 @@ export const lawFirmExamplePage = buildExampleLandingPage({
   },
   process: {
     eyebrow: "Consultation method",
-    title: "The process section supports clarity without making the page feel procedural or cold.",
+    title: "The process should feel clear without sounding mechanical.",
     description:
-      "For legal services, the method should feel intelligent, deliberate, and confidence-building.",
+      "People want to know what happens after they reach out, especially when the stakes are high.",
     steps: [
       {
         title: "Initial conversation",
@@ -124,7 +124,7 @@ export const lawFirmExamplePage = buildExampleLandingPage({
       },
       {
         title: "Strategic guidance",
-        description: "The final CTA and contact section reinforce authority while keeping the conversion path clear.",
+        description: "The final CTA and contact section reinforce authority while keeping the next step clear.",
       },
     ],
   },
@@ -137,25 +137,25 @@ export const lawFirmExamplePage = buildExampleLandingPage({
     mapLabel: "Legal service area across Edwardsville and surrounding counties",
   },
   cta: {
-    eyebrow: "Formal consultation flow",
-    title: "Need a law firm page that feels credible, restrained, and built for higher-trust inquiries?",
+    eyebrow: "Request a consultation",
+    title: "Set the tone for a serious first conversation.",
     description:
-      "This example shows how a reusable system can still produce a distinctly premium legal presentation.",
+      "A cleaner presentation helps the first consultation feel more serious from the start.",
     primaryCta: {
-      label: "Build A Law Firm Demo",
+      label: "Request Consultation",
       href: "#contact",
     },
     secondaryCta: {
-      label: "Review Practice Area Layout",
+      label: "View Practice Areas",
       href: "#services",
       tone: "secondary",
     },
   },
   contact: {
     eyebrow: "Start the conversation",
-    title: "Tailor the premium contact flow for consultations, case reviews, or practice-area specific intake.",
+    title: "Use the form for consultations, case reviews, or questions about your matter.",
     description:
-      "The underline form treatment keeps the section calm and bespoke while still making the action obvious.",
+      "The contact section should feel straightforward and respectful, not pushy.",
     address: "105 North Main Street, Edwardsville, IL 62025",
     email: "counsel@hawthornetrial.example",
     fields: createContactFields("Matter type", [
@@ -165,7 +165,7 @@ export const lawFirmExamplePage = buildExampleLandingPage({
       "General consultation",
     ]),
     primaryCta: {
-      label: "Submit Inquiry",
+      label: "Request Consultation",
       href: "#contact",
     },
   },
