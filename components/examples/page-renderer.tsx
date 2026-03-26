@@ -36,8 +36,10 @@ export function ExamplePageRenderer({ page }: ExamplePageProps) {
 
   return (
     <ThemeStyleVariables theme={theme}>
-      <main className="min-h-screen pb-20 md:pb-0">
+      <main id="top" className="min-h-screen pb-20 md:pb-0">
+        <ExampleSiteHeader page={page} />
         <Component page={page} />
+        <ExampleSiteFooter page={page} />
         <MobileCallBar phone={page.phone} label={page.ctaText} />
       </main>
     </ThemeStyleVariables>
@@ -57,6 +59,132 @@ const pageRenderers: Record<string, (props: ExamplePageProps) => ReactElement> =
   gym: GymExamplePage,
   landscaping: LandscapingExamplePage,
 };
+
+function ExampleSiteHeader({ page }: ExamplePageProps) {
+  const navItems = [
+    { href: "#services", label: "Services" },
+    { href: "#reviews", label: "Reviews" },
+    { href: "#contact", label: "Contact" },
+  ];
+
+  const primaryAction = page.ctaText.toLowerCase().includes("call")
+    ? {
+        label: page.ctaText,
+        href: `tel:${page.phone.replace(/[^\d+]/g, "")}`,
+        tone: "accent" as const,
+      }
+    : {
+        label: page.ctaText,
+        href: "#contact",
+        tone: page.hero.primaryCta.tone ?? "primary",
+      };
+
+  return (
+    <header className="sticky top-0 z-30 border-b border-[var(--example-border)] bg-[color-mix(in_srgb,var(--example-background)_94%,transparent)] backdrop-blur-sm">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-4 md:px-8">
+        <a href="#top" className="min-w-0">
+          <p className="truncate text-xl [font-family:var(--example-font-display)] font-semibold text-[var(--example-text)]">
+            {page.businessName}
+          </p>
+          <p className="hidden text-[11px] font-bold uppercase tracking-[0.18em] text-[var(--example-muted)] md:block">
+            {page.industry} • {page.serviceArea.areas.slice(0, 2).join(" & ")}
+          </p>
+        </a>
+
+        <nav className="hidden items-center gap-6 md:flex">
+          {navItems.map((item) => (
+            <a
+              key={item.href}
+              href={item.href}
+              className="text-sm font-semibold text-[var(--example-muted)] transition-colors hover:text-[var(--example-text)]"
+            >
+              {item.label}
+            </a>
+          ))}
+        </nav>
+
+        <div className="flex items-center gap-3">
+          <a
+            href={`tel:${page.phone.replace(/[^\d+]/g, "")}`}
+            className="hidden text-sm font-semibold text-[var(--example-muted)] lg:inline-flex"
+          >
+            {page.phone}
+          </a>
+          <TemplateButton action={primaryAction} className="px-5 py-2.5 text-xs tracking-[0.1em]" />
+        </div>
+      </div>
+    </header>
+  );
+}
+
+function ExampleSiteFooter({ page }: ExamplePageProps) {
+  const quickLinks = [
+    { href: "#services", label: "Services" },
+    { href: "#reviews", label: "Reviews" },
+    { href: "#contact", label: "Contact" },
+  ];
+
+  return (
+    <footer className="border-t border-white/10 bg-[var(--example-primary)] text-[var(--example-primary-contrast)]">
+      <div className="mx-auto grid max-w-6xl gap-10 px-5 py-14 md:grid-cols-[minmax(0,1.15fr)_repeat(3,minmax(0,0.72fr))] md:px-8">
+        <div>
+          <p className="text-2xl [font-family:var(--example-font-display)] font-semibold">{page.businessName}</p>
+          <p className="mt-3 max-w-md text-sm leading-7 text-white/74">{page.hero.description}</p>
+          <div className="mt-6 space-y-2 text-sm leading-7 text-white/82">
+            <p>{page.phone}</p>
+            {page.contact.email ? <p>{page.contact.email}</p> : null}
+            {page.contact.address ? <p>{page.contact.address}</p> : null}
+          </div>
+        </div>
+
+        <div>
+          <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-white/60">Explore</p>
+          <div className="mt-4 space-y-3">
+            {quickLinks.map((item) => (
+              <a key={item.href} href={item.href} className="block text-sm text-white/80 transition-colors hover:text-white">
+                {item.label}
+              </a>
+            ))}
+          </div>
+        </div>
+
+        <div>
+          <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-white/60">Services</p>
+          <div className="mt-4 space-y-3">
+            {page.services.items.map((item) => (
+              <p key={item.title} className="text-sm text-white/80">
+                {item.title}
+              </p>
+            ))}
+          </div>
+        </div>
+
+        <div>
+          <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-white/60">Service Area</p>
+          <div className="mt-4 flex flex-wrap gap-2">
+            {page.serviceArea.areas.slice(0, 6).map((area) => (
+              <span
+                key={area}
+                className="rounded-[var(--example-radius-pill)] border border-white/12 bg-white/8 px-3 py-2 text-[11px] font-bold uppercase tracking-[0.14em] text-white/78"
+              >
+                {area}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="border-t border-white/10">
+        <div className="mx-auto flex max-w-6xl flex-col gap-3 px-5 py-4 text-[11px] font-bold uppercase tracking-[0.18em] text-white/58 md:flex-row md:items-center md:justify-between md:px-8">
+          <p>© {new Date().getFullYear()} {page.businessName}</p>
+          <a href="#top" className="transition-colors hover:text-white">
+            Back to top
+          </a>
+        </div>
+      </div>
+    </footer>
+  );
+}
 
 function RestaurantExamplePage({ page }: ExamplePageProps) {
   const [featuredReview, ...moreReviews] = page.testimonials.items;
@@ -169,7 +297,7 @@ function SalonExamplePage({ page }: ExamplePageProps) {
   return (
     <>
       <section className="px-5 pt-8 pb-12 md:px-8 md:pt-10 md:pb-18">
-        <div className="mx-auto grid max-w-6xl gap-6 md:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)]">
+        <div className="mx-auto grid max-w-6xl gap-6 md:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] md:items-start">
           <div className="rounded-[var(--example-radius-panel)] bg-[var(--example-surface)] p-8 md:p-12">
             <SectionEyebrow>{page.hero.eyebrow}</SectionEyebrow>
             <h1 className="text-5xl leading-[0.95] [font-family:var(--example-font-display)] font-semibold tracking-tight text-[var(--example-text)] md:text-7xl">
@@ -179,9 +307,14 @@ function SalonExamplePage({ page }: ExamplePageProps) {
             <p className="mt-6 max-w-xl text-lg leading-8 text-[var(--example-muted)]">{page.hero.description}</p>
             <ExampleHeroActions hero={page.hero} className="mt-8" />
           </div>
-          <div className="grid gap-4 md:grid-cols-[1.05fr_0.95fr]">
+          <div className="grid gap-4 md:grid-cols-[1.05fr_0.95fr] md:self-start">
             <PhotoPanel image={page.hero.image} aspect="aspect-[3/4]" />
-            <PhotoPanel image={page.whyChooseUs.image} aspect="aspect-[3/4]" className="md:translate-y-10" />
+            <PhotoPanel
+              image={page.whyChooseUs.image}
+              aspect="aspect-[3/4]"
+              className="md:mt-10"
+              imageClassName="object-[50%_22%]"
+            />
           </div>
         </div>
       </section>
@@ -201,26 +334,27 @@ function SalonExamplePage({ page }: ExamplePageProps) {
         description={page.whyChooseUs.description}
         className="bg-[var(--example-surface)]"
       >
-        <div className="grid gap-10 md:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] md:items-start">
-          {page.whyChooseUs.stat ? (
-            <StatBadge
-              value={page.whyChooseUs.stat.value}
-              label={page.whyChooseUs.stat.label}
-              detail={page.whyChooseUs.stat.detail}
-            />
-          ) : (
+        <div className="grid gap-8 md:grid-cols-[minmax(0,0.88fr)_minmax(0,1.12fr)] md:items-start">
+          <div className="space-y-4">
+            {page.whyChooseUs.stat ? (
+              <StatBadge
+                value={page.whyChooseUs.stat.value}
+                label={page.whyChooseUs.stat.label}
+                detail={page.whyChooseUs.stat.detail}
+              />
+            ) : null}
             <SurfaceCard emphasis="accent">
-              <p className="text-sm uppercase tracking-[0.18em] text-[var(--example-muted)]">Studio feel</p>
+              <p className="text-sm uppercase tracking-[0.18em] text-[var(--example-muted)]">Booking rhythm</p>
               <p className="mt-3 text-2xl [font-family:var(--example-font-display)] font-semibold text-[var(--example-text)]">
-                Gallery-led, appointment-first, and built to feel personal.
+                Keep the booking action visible, then let the service story feel warm instead of rushed.
               </p>
             </SurfaceCard>
-          )}
+          </div>
           <TrustPoints section={page.whyChooseUs} />
         </div>
       </ExampleSection>
 
-      <ExampleSection eyebrow={page.testimonials.eyebrow} title={page.testimonials.title} description={page.testimonials.description}>
+      <ExampleSection id="reviews" eyebrow={page.testimonials.eyebrow} title={page.testimonials.title} description={page.testimonials.description}>
         <ReviewCards items={page.testimonials.items} />
       </ExampleSection>
 
@@ -283,7 +417,7 @@ function RealEstateExamplePage({ page }: ExamplePageProps) {
         </div>
       </ExampleSection>
 
-      <ExampleSection eyebrow={page.testimonials.eyebrow} title={page.testimonials.title} description={page.testimonials.description}>
+      <ExampleSection id="reviews" eyebrow={page.testimonials.eyebrow} title={page.testimonials.title} description={page.testimonials.description}>
         <HighlightQuote item={featuredReview} />
         {otherReviews.length ? <div className="mt-6"><ReviewCards items={otherReviews} /></div> : null}
       </ExampleSection>
@@ -384,7 +518,7 @@ function PlumberExamplePage({ page }: ExamplePageProps) {
         </div>
       </ExampleSection>
 
-      <ExampleSection eyebrow={page.testimonials.eyebrow} title={page.testimonials.title} description={page.testimonials.description}>
+      <ExampleSection id="reviews" eyebrow={page.testimonials.eyebrow} title={page.testimonials.title} description={page.testimonials.description}>
         <ReviewCards items={page.testimonials.items} />
       </ExampleSection>
 
@@ -457,7 +591,7 @@ function ContractorExamplePage({ page }: ExamplePageProps) {
         </div>
       </ExampleSection>
 
-      <ExampleSection eyebrow={page.testimonials.eyebrow} title={page.testimonials.title} description={page.testimonials.description}>
+      <ExampleSection id="reviews" eyebrow={page.testimonials.eyebrow} title={page.testimonials.title} description={page.testimonials.description}>
         <ReviewCards items={page.testimonials.items} />
       </ExampleSection>
 
@@ -510,7 +644,7 @@ function AutoRepairExamplePage({ page }: ExamplePageProps) {
         </div>
       </ExampleSection>
 
-      <ExampleSection eyebrow={page.testimonials.eyebrow} title={page.testimonials.title} description={page.testimonials.description}>
+      <ExampleSection id="reviews" eyebrow={page.testimonials.eyebrow} title={page.testimonials.title} description={page.testimonials.description}>
         <ReviewCards items={page.testimonials.items} />
       </ExampleSection>
 
@@ -567,7 +701,7 @@ function AccountantExamplePage({ page }: ExamplePageProps) {
         </div>
       </ExampleSection>
 
-      <ExampleSection eyebrow={page.testimonials.eyebrow} title={page.testimonials.title} description={page.testimonials.description}>
+      <ExampleSection id="reviews" eyebrow={page.testimonials.eyebrow} title={page.testimonials.title} description={page.testimonials.description}>
         <ReviewCards items={page.testimonials.items} />
       </ExampleSection>
 
@@ -627,7 +761,7 @@ function LawFirmExamplePage({ page }: ExamplePageProps) {
         </div>
       </ExampleSection>
 
-      <ExampleSection eyebrow={page.testimonials.eyebrow} title={page.testimonials.title} description={page.testimonials.description}>
+      <ExampleSection id="reviews" eyebrow={page.testimonials.eyebrow} title={page.testimonials.title} description={page.testimonials.description}>
         <HighlightQuote item={featuredReview} />
         {otherReviews.length ? <div className="mt-6 max-w-xl"><ReviewCards items={otherReviews} /></div> : null}
       </ExampleSection>
@@ -686,7 +820,7 @@ function DentistExamplePage({ page }: ExamplePageProps) {
         </div>
       </ExampleSection>
 
-      <ExampleSection eyebrow={page.testimonials.eyebrow} title={page.testimonials.title} description={page.testimonials.description}>
+      <ExampleSection id="reviews" eyebrow={page.testimonials.eyebrow} title={page.testimonials.title} description={page.testimonials.description}>
         <ReviewCards items={page.testimonials.items} />
       </ExampleSection>
 
@@ -755,7 +889,7 @@ function GymExamplePage({ page }: ExamplePageProps) {
         </div>
       </ExampleSection>
 
-      <ExampleSection eyebrow={page.testimonials.eyebrow} title={page.testimonials.title} description={page.testimonials.description} className="bg-[var(--example-surface)]">
+      <ExampleSection id="reviews" eyebrow={page.testimonials.eyebrow} title={page.testimonials.title} description={page.testimonials.description} className="bg-[var(--example-surface)]">
         <ReviewCards items={page.testimonials.items} />
       </ExampleSection>
 
@@ -823,7 +957,7 @@ function LandscapingExamplePage({ page }: ExamplePageProps) {
         </div>
       </ExampleSection>
 
-      <ExampleSection eyebrow={page.testimonials.eyebrow} title={page.testimonials.title} description={page.testimonials.description}>
+      <ExampleSection id="reviews" eyebrow={page.testimonials.eyebrow} title={page.testimonials.title} description={page.testimonials.description}>
         <ReviewCards items={page.testimonials.items} />
       </ExampleSection>
 
@@ -866,7 +1000,7 @@ function GenericExamplePage({ page }: ExamplePageProps) {
       <ExampleSection eyebrow={page.whyChooseUs.eyebrow} title={page.whyChooseUs.title} description={page.whyChooseUs.description} className="bg-[var(--example-surface)]">
         <TrustPoints section={page.whyChooseUs} />
       </ExampleSection>
-      <ExampleSection eyebrow={page.testimonials.eyebrow} title={page.testimonials.title} description={page.testimonials.description}>
+      <ExampleSection id="reviews" eyebrow={page.testimonials.eyebrow} title={page.testimonials.title} description={page.testimonials.description}>
         <ReviewCards items={page.testimonials.items} />
       </ExampleSection>
       <ProcessSection process={page.process?.steps} title={page.process?.title} eyebrow={page.process?.eyebrow} description={page.process?.description} />
