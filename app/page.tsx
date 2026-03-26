@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { 
@@ -111,12 +112,12 @@ export default function PortfolioPage() {
                 >
                   Start a Project <ArrowRight className="h-4 w-4" />
                 </a>
-                <a
-                  href="#work"
+                <Link
+                  href="/examples"
                   className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-white/[0.08]"
                 >
-                  View Technical Work
-                </a>
+                  View Examples
+                </Link>
                 <a
                   href="#resume"
                   className="inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-5 py-3 text-sm font-medium text-emerald-100 transition-colors hover:bg-emerald-500/15"
@@ -267,6 +268,12 @@ export default function PortfolioPage() {
                   <p className="text-zinc-400 text-sm md:text-base leading-relaxed max-w-md">
                     Growing a freelance development business building bespoke dashboards, marketing sites, and workflow automation for local businesses. Owning the stack end-to-end.
                   </p>
+                  <Link
+                    href="/examples"
+                    className="mt-6 inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-4 py-2 text-sm font-medium text-emerald-100 transition-colors hover:bg-emerald-500/15"
+                  >
+                    Browse Business Examples <ArrowRight className="h-4 w-4" />
+                  </Link>
                 </div>
                 <div className="mt-8 flex flex-wrap gap-2">
                   {['Next.js', 'Tailwind CSS', 'PostgreSQL', 'Vercel'].map(tech => (
@@ -544,6 +551,12 @@ export default function PortfolioPage() {
             <p className="text-zinc-400 text-lg">
               If you need a website for your business, want to improve your current site, or you&apos;re reaching out about an internship, feel free to email or text me directly. I respond quickly.
             </p>
+            <Link
+              href="/examples"
+              className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-emerald-200 transition-colors hover:text-emerald-100"
+            >
+              Want to see examples first? View examples <ArrowRight className="h-4 w-4" />
+            </Link>
           </div>
 
           <div className="grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">

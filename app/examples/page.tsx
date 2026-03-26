@@ -24,7 +24,7 @@ export default function ExamplesIndexPage() {
         <div className="mx-auto max-w-6xl">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-[#5f5a54] transition-colors hover:text-[#1d1d1b]"
+            className="inline-flex items-center gap-2 rounded-full border border-[#d8d0c5] bg-[#fffaf5] px-4 py-2.5 text-sm font-semibold text-[#3e3a35] shadow-sm transition-colors hover:border-[#c6bbb0] hover:text-[#1d1d1b]"
           >
             <ArrowLeft className="h-4 w-4" />
             Back to portfolio
