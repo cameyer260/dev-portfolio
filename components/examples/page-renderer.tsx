@@ -296,8 +296,8 @@ function RestaurantExamplePage({ page }: ExamplePageProps) {
 function SalonExamplePage({ page }: ExamplePageProps) {
   return (
     <>
-      <section className="px-5 pt-8 pb-12 md:px-8 md:pt-10 md:pb-18">
-        <div className="mx-auto grid max-w-6xl gap-6 md:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] md:items-start">
+      <section className="px-5 pt-6 pb-12 md:px-8 md:pt-8 md:pb-18">
+        <div className="mx-auto grid max-w-[94rem] gap-6 md:grid-cols-[minmax(0,0.6fr)_minmax(0,1.4fr)] md:items-center">
           <div className="rounded-[var(--example-radius-panel)] bg-[var(--example-surface)] p-8 md:p-12">
             <SectionEyebrow>{page.hero.eyebrow}</SectionEyebrow>
             <h1 className="text-5xl leading-[0.95] [font-family:var(--example-font-display)] font-semibold tracking-tight text-[var(--example-text)] md:text-7xl">
@@ -307,13 +307,18 @@ function SalonExamplePage({ page }: ExamplePageProps) {
             <p className="mt-6 max-w-xl text-lg leading-8 text-[var(--example-muted)]">{page.hero.description}</p>
             <ExampleHeroActions hero={page.hero} className="mt-8" />
           </div>
-          <div className="grid gap-4 md:grid-cols-[1.05fr_0.95fr] md:self-start">
-            <PhotoPanel image={page.hero.image} aspect="aspect-[3/4]" />
+          <div className="grid gap-4 md:grid-cols-[1.02fr_0.98fr] md:self-center">
+            <PhotoPanel
+              image={page.hero.image}
+              aspect="aspect-[4/5]"
+              className="md:-translate-y-4"
+              imageClassName="scale-[1.06] object-[50%_32%]"
+            />
             <PhotoPanel
               image={page.whyChooseUs.image}
-              aspect="aspect-[3/4]"
-              className="md:mt-10"
-              imageClassName="object-[50%_22%]"
+              aspect="aspect-[4/5]"
+              className="md:translate-y-8"
+              imageClassName="scale-[1.1] object-[50%_18%]"
             />
           </div>
         </div>
