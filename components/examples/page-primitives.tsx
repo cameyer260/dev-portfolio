@@ -7,6 +7,7 @@ import {
   TemplateButton,
 } from "@/components/templates/template-shared";
 import type {
+  ExampleAction,
   ExampleContactSection,
   ExampleFeatureItem,
   ExampleHeroSection,
@@ -18,22 +19,26 @@ import type {
 import { cn } from "@/lib/utils";
 
 export function ExampleSection({
+  id,
   eyebrow,
   title,
   description,
   children,
   className,
   align = "left",
+  tone = "default",
 }: {
+  id?: string;
   eyebrow?: string;
   title?: string;
   description?: string;
   children: ReactNode;
   className?: string;
   align?: "left" | "center";
+  tone?: "default" | "inverse";
 }) {
   return (
-    <section className={cn("px-5 py-18 md:px-8 md:py-24", className)}>
+    <section id={id} className={cn("px-5 py-18 md:px-8 md:py-24", className)}>
       <div className="mx-auto max-w-6xl">
         {title ? (
           <div
@@ -42,14 +47,29 @@ export function ExampleSection({
               align === "center" ? "mx-auto max-w-3xl text-center" : "max-w-3xl",
             )}
           >
-            <SectionEyebrow className={align === "center" ? "text-center" : undefined}>
+            <SectionEyebrow
+              className={cn(
+                align === "center" && "text-center",
+                tone === "inverse" && "text-white/64",
+              )}
+            >
               {eyebrow}
             </SectionEyebrow>
-            <h2 className="text-4xl leading-tight [font-family:var(--example-font-display)] font-semibold tracking-tight text-[var(--example-text)] md:text-5xl">
+            <h2
+              className={cn(
+                "text-4xl leading-tight [font-family:var(--example-font-display)] font-semibold tracking-tight md:text-5xl",
+                tone === "inverse" ? "text-white" : "text-[var(--example-text)]",
+              )}
+            >
               {title}
             </h2>
             {description ? (
-              <p className="mt-4 text-base leading-8 text-[var(--example-muted)] md:text-lg">
+              <p
+                className={cn(
+                  "mt-4 text-base leading-8 md:text-lg",
+                  tone === "inverse" ? "text-white/76" : "text-[var(--example-muted)]",
+                )}
+              >
                 {description}
               </p>
             ) : null}
@@ -61,12 +81,26 @@ export function ExampleSection({
   );
 }
 
-export function ExampleHeroActions({ hero, className }: { hero: ExampleHeroSection; className?: string }) {
+export function ExampleHeroActions({
+  hero,
+  className,
+  tone = "default",
+}: {
+  hero: ExampleHeroSection;
+  className?: string;
+  tone?: "default" | "inverse";
+}) {
   return (
     <div className={cn("flex flex-wrap gap-3", className)}>
-      <TemplateButton action={{ ...hero.primaryCta, tone: hero.primaryCta.tone ?? "primary" }} />
+      <TemplateButton
+        action={{ ...hero.primaryCta, tone: hero.primaryCta.tone ?? "primary" }}
+        className={heroActionClassName(hero.primaryCta.tone ?? "primary", tone)}
+      />
       {hero.secondaryCta ? (
-        <TemplateButton action={{ ...hero.secondaryCta, tone: hero.secondaryCta.tone ?? "secondary" }} />
+        <TemplateButton
+          action={{ ...hero.secondaryCta, tone: hero.secondaryCta.tone ?? "secondary" }}
+          className={heroActionClassName(hero.secondaryCta.tone ?? "secondary", tone)}
+        />
       ) : null}
     </div>
   );
@@ -114,15 +148,21 @@ export function PhotoPanel({
   className,
   aspect = "aspect-[4/3]",
   overlay,
+  imageClassName,
 }: {
   image?: ExampleImageType;
   className?: string;
   aspect?: string;
   overlay?: ReactNode;
+  imageClassName?: string;
 }) {
   return (
     <div className={cn("relative overflow-hidden rounded-[var(--example-radius-panel)] bg-[var(--example-surface-strong)]", className)}>
-      <div className={aspect}>{image ? <ExampleImage src={image.src} alt={image.alt} /> : null}</div>
+      <div className={aspect}>
+        {image ? (
+          <ExampleImage src={image.src} alt={image.alt} imageClassName={imageClassName} />
+        ) : null}
+      </div>
       {overlay ? <div className="absolute inset-0">{overlay}</div> : null}
     </div>
   );
@@ -255,7 +295,16 @@ export function ReviewCards({
   tone?: "light" | "dark";
 }) {
   return (
-    <div className="grid gap-5 md:grid-cols-3">
+    <div
+      className={cn(
+        "grid gap-5",
+        items.length === 1
+          ? "max-w-xl"
+          : items.length === 2
+            ? "md:grid-cols-2"
+            : "md:grid-cols-3",
+      )}
+    >
       {items.map((item, index) => (
         <div
           key={`${item.name}-${index}`}
@@ -367,36 +416,77 @@ export function ContactBlock({
   formMode = "surface",
   cardClassName,
   buttonTone = "primary",
+  tone = "default",
 }: {
   section: ExampleContactSection;
   formMode?: "surface" | "underline" | "contrast";
   cardClassName?: string;
   buttonTone?: "primary" | "secondary" | "ghost" | "accent";
+  tone?: "default" | "inverse";
 }) {
   return (
     <div className="grid gap-10 md:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)]">
       <div>
-        <SectionEyebrow>{section.eyebrow}</SectionEyebrow>
-        <h2 className="text-4xl [font-family:var(--example-font-display)] font-semibold text-[var(--example-text)] md:text-5xl">
+        <SectionEyebrow className={tone === "inverse" ? "text-white/64" : undefined}>
+          {section.eyebrow}
+        </SectionEyebrow>
+        <h2
+          className={cn(
+            "text-4xl [font-family:var(--example-font-display)] font-semibold md:text-5xl",
+            tone === "inverse" ? "text-white" : "text-[var(--example-text)]",
+          )}
+        >
           {section.title}
         </h2>
         {section.description ? (
-          <p className="mt-5 max-w-lg text-base leading-8 text-[var(--example-muted)]">{section.description}</p>
+          <p
+            className={cn(
+              "mt-5 max-w-lg text-base leading-8",
+              tone === "inverse" ? "text-white/78" : "text-[var(--example-muted)]",
+            )}
+          >
+            {section.description}
+          </p>
         ) : null}
         <a
           href={`tel:${section.phone.replace(/[^\d+]/g, "")}`}
-          className="mt-8 inline-flex text-3xl [font-family:var(--example-font-display)] font-semibold text-[var(--example-primary)]"
+          className={cn(
+            "mt-8 inline-flex text-3xl [font-family:var(--example-font-display)] font-semibold",
+            tone === "inverse" ? "text-white" : "text-[var(--example-primary)]",
+          )}
         >
           {section.phone}
         </a>
         {section.address ? (
-          <p className="mt-4 text-sm leading-7 text-[var(--example-muted)]">{section.address}</p>
+          <p
+            className={cn(
+              "mt-4 text-sm leading-7",
+              tone === "inverse" ? "text-white/72" : "text-[var(--example-muted)]",
+            )}
+          >
+            {section.address}
+          </p>
         ) : null}
         {section.email ? (
-          <p className="mt-2 text-sm leading-7 text-[var(--example-muted)]">{section.email}</p>
+          <p
+            className={cn(
+              "mt-2 text-sm leading-7",
+              tone === "inverse" ? "text-white/72" : "text-[var(--example-muted)]",
+            )}
+          >
+            {section.email}
+          </p>
         ) : null}
       </div>
-      <div className={cn("rounded-[var(--example-radius-panel)] p-6 md:p-8", cardClassName ?? "border border-[var(--example-border)] bg-[var(--example-surface)]")}>
+      <div
+        className={cn(
+          "rounded-[var(--example-radius-panel)] p-6 md:p-8",
+          cardClassName ??
+            (tone === "inverse"
+              ? "border border-white/16 bg-white/8 text-white"
+              : "border border-[var(--example-border)] bg-[var(--example-surface)]"),
+        )}
+      >
         <ExampleFormFields fields={section.fields} mode={formMode} />
         <TemplateButton
           action={{
@@ -475,4 +565,23 @@ export function FeatureRows({ items }: { items: ExampleFeatureItem[] }) {
       ))}
     </div>
   );
+}
+
+function heroActionClassName(
+  actionTone: NonNullable<ExampleAction["tone"]>,
+  tone: "default" | "inverse",
+) {
+  if (tone !== "inverse") {
+    return undefined;
+  }
+
+  if (actionTone === "secondary" || actionTone === "ghost") {
+    return "border-white/16 bg-white/8 text-white hover:bg-white/14";
+  }
+
+  if (actionTone === "primary") {
+    return "bg-white text-[var(--example-primary)] hover:bg-white/92";
+  }
+
+  return undefined;
 }

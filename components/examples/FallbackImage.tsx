@@ -9,6 +9,7 @@ type FallbackImageProps = {
   src: string;
   alt: string;
   className?: string;
+  imageClassName?: string;
   fallbackLabel?: string;
 };
 
@@ -16,6 +17,7 @@ export function FallbackImage({
   src,
   alt,
   className,
+  imageClassName,
   fallbackLabel,
 }: FallbackImageProps) {
   const [failed, setFailed] = useState(false);
@@ -46,7 +48,7 @@ export function FallbackImage({
         alt={alt}
         fill
         sizes="100vw"
-        className="object-cover"
+        className={cn("object-cover", imageClassName)}
         onError={() => setFailed(true)}
         unoptimized
       />

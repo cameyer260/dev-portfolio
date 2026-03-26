@@ -72,13 +72,44 @@ function RestaurantExamplePage({ page }: ExamplePageProps) {
               {page.hero.highlight ? <span className="block italic font-normal">{page.hero.highlight}</span> : null}
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-8 text-white/76">{page.hero.description}</p>
-            <ExampleHeroActions hero={page.hero} className="mt-8" />
+            <ExampleHeroActions hero={page.hero} className="mt-8" tone="inverse" />
+            <div className="mt-8 grid gap-4 sm:grid-cols-[auto_minmax(0,1fr)] sm:items-center">
+              {page.whyChooseUs.stat ? (
+                <div className="rounded-[var(--example-radius-panel)] border border-white/12 bg-white/8 px-5 py-4">
+                  <p className="text-3xl [font-family:var(--example-font-display)] font-semibold">
+                    {page.whyChooseUs.stat.value}
+                  </p>
+                  <p className="mt-1 text-[11px] font-bold uppercase tracking-[0.2em] text-white/64">
+                    {page.whyChooseUs.stat.label}
+                  </p>
+                </div>
+              ) : null}
+              <div className="flex flex-wrap gap-2">
+                {page.services.items.map((item) => (
+                  <span
+                    key={item.title}
+                    className="rounded-[var(--example-radius-pill)] border border-white/12 bg-white/8 px-4 py-2 text-[11px] font-bold uppercase tracking-[0.18em] text-white/80"
+                  >
+                    {item.title}
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
-          <PhotoPanel image={page.hero.image} aspect="aspect-[4/5] md:aspect-auto md:h-full" />
+          <div className="grid gap-4 md:grid-rows-[minmax(0,1fr)_auto]">
+            <PhotoPanel image={page.hero.image} aspect="aspect-[4/5] md:aspect-auto md:h-full" />
+            <PhotoPanel
+              image={page.whyChooseUs.image}
+              aspect="aspect-[5/4]"
+              className="md:ml-12"
+              imageClassName="object-[50%_38%]"
+            />
+          </div>
         </div>
       </section>
 
       <ExampleSection
+        id="services"
         eyebrow={page.services.eyebrow}
         title={page.services.title}
         description={page.services.description}
@@ -92,18 +123,14 @@ function RestaurantExamplePage({ page }: ExamplePageProps) {
         title={page.whyChooseUs.title}
         description={page.whyChooseUs.description}
       >
-        <div className="grid gap-10 md:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] md:items-center">
-          <div className="relative">
-            <PhotoPanel image={page.whyChooseUs.image} aspect="aspect-[4/5]" />
-            {page.whyChooseUs.stat ? (
-              <StatBadge
-                value={page.whyChooseUs.stat.value}
-                label={page.whyChooseUs.stat.label}
-                detail={page.whyChooseUs.stat.detail}
-                className="mt-5 md:absolute md:right-[-1.5rem] md:bottom-[-1.5rem] md:mt-0"
-              />
-            ) : null}
-          </div>
+        <div className="grid gap-10 md:grid-cols-[minmax(0,0.72fr)_minmax(0,1.28fr)] md:items-start">
+          {page.whyChooseUs.stat ? (
+            <StatBadge
+              value={page.whyChooseUs.stat.value}
+              label={page.whyChooseUs.stat.label}
+              detail={page.whyChooseUs.stat.detail}
+            />
+          ) : null}
           <TrustPoints section={page.whyChooseUs} />
         </div>
       </ExampleSection>
@@ -120,6 +147,7 @@ function RestaurantExamplePage({ page }: ExamplePageProps) {
       <ProcessSection process={page.process?.steps} title={page.process?.title} eyebrow={page.process?.eyebrow} description={page.process?.description} />
 
       <ExampleSection
+        id="service-area"
         eyebrow={page.serviceArea.eyebrow}
         title={page.serviceArea.title}
         description={page.serviceArea.description}
@@ -130,7 +158,7 @@ function RestaurantExamplePage({ page }: ExamplePageProps) {
 
       <ClosingBand page={page} tone="soft" />
 
-      <ExampleSection className="bg-[var(--example-background)]">
+      <ExampleSection id="contact" className="bg-[var(--example-background)]">
         <ContactBlock section={page.contact} />
       </ExampleSection>
     </>
@@ -159,6 +187,7 @@ function SalonExamplePage({ page }: ExamplePageProps) {
       </section>
 
       <ExampleSection
+        id="services"
         eyebrow={page.services.eyebrow}
         title={page.services.title}
         description={page.services.description}
@@ -197,13 +226,13 @@ function SalonExamplePage({ page }: ExamplePageProps) {
 
       <ProcessSection process={page.process?.steps} title={page.process?.title} eyebrow={page.process?.eyebrow} description={page.process?.description} tone="soft" />
 
-      <ExampleSection eyebrow={page.serviceArea.eyebrow} title={page.serviceArea.title} description={page.serviceArea.description}>
+      <ExampleSection id="service-area" eyebrow={page.serviceArea.eyebrow} title={page.serviceArea.title} description={page.serviceArea.description}>
         <AreaChips areas={page.serviceArea.areas} />
       </ExampleSection>
 
       <ClosingBand page={page} tone="soft" />
 
-      <ExampleSection className="bg-[var(--example-surface)]">
+      <ExampleSection id="contact" className="bg-[var(--example-surface)]">
         <ContactBlock section={page.contact} />
       </ExampleSection>
     </>
@@ -233,7 +262,7 @@ function RealEstateExamplePage({ page }: ExamplePageProps) {
         </div>
       </section>
 
-      <ExampleSection eyebrow={page.services.eyebrow} title={page.services.title} description={page.services.description}>
+      <ExampleSection id="services" eyebrow={page.services.eyebrow} title={page.services.title} description={page.services.description}>
         <ServicesMosaic services={page.services} layout="feature-left" />
       </ExampleSection>
 
@@ -261,13 +290,13 @@ function RealEstateExamplePage({ page }: ExamplePageProps) {
 
       <ProcessSection process={page.process?.steps} title={page.process?.title} eyebrow={page.process?.eyebrow} description={page.process?.description} />
 
-      <ExampleSection eyebrow={page.serviceArea.eyebrow} title={page.serviceArea.title} description={page.serviceArea.description} className="bg-[var(--example-surface)]">
+      <ExampleSection id="service-area" eyebrow={page.serviceArea.eyebrow} title={page.serviceArea.title} description={page.serviceArea.description} className="bg-[var(--example-surface)]">
         <AreaChips areas={page.serviceArea.areas} />
       </ExampleSection>
 
       <ClosingBand page={page} tone="minimal" />
 
-      <ExampleSection>
+      <ExampleSection id="contact">
         <ContactBlock section={page.contact} formMode="underline" cardClassName="bg-transparent" />
       </ExampleSection>
     </>
@@ -275,14 +304,32 @@ function RealEstateExamplePage({ page }: ExamplePageProps) {
 }
 
 function PlumberExamplePage({ page }: ExamplePageProps) {
+  const heroStats = [
+    {
+      value: "24/7",
+      label: "Urgent calls",
+      detail: "The first screen makes emergency intent obvious.",
+    },
+    {
+      value: "Phone-first",
+      label: "Mobile CTA",
+      detail: "Call, submit, and service-area trust stay visible fast.",
+    },
+    {
+      value: "Metro East",
+      label: "Nearby coverage",
+      detail: "Local service language shows up before the user has to hunt for it.",
+    },
+  ];
+
   return (
     <>
-      <section className="relative overflow-hidden bg-[var(--example-primary)] px-5 py-12 text-[var(--example-primary-contrast)] md:px-8 md:py-20">
-        <div className="absolute inset-0 opacity-20">
+      <section className="relative overflow-hidden bg-[var(--example-primary)] px-5 py-14 text-[var(--example-primary-contrast)] md:px-8 md:py-22">
+        <div className="absolute inset-0 opacity-24">
           {page.hero.image ? <ExampleImage src={page.hero.image.src} alt={page.hero.image.alt} /> : null}
         </div>
         <div className="absolute inset-0 bg-[linear-gradient(135deg,var(--example-hero-overlay-from),var(--example-hero-overlay-to))]" />
-        <div className="relative mx-auto grid max-w-6xl gap-8 md:grid-cols-[minmax(0,1fr)_24rem] md:items-start">
+        <div className="relative mx-auto grid max-w-6xl gap-8 md:grid-cols-[minmax(0,1.05fr)_24rem] md:items-start">
           <div>
             <span className="inline-flex rounded-[var(--example-radius-pill)] bg-[var(--example-accent)] px-4 py-2 text-[11px] font-black uppercase tracking-[0.22em] text-[var(--example-accent-contrast)]">
               {page.hero.eyebrow}
@@ -292,26 +339,45 @@ function PlumberExamplePage({ page }: ExamplePageProps) {
               {page.hero.highlight ? <span className="block text-[var(--example-accent-soft)]">{page.hero.highlight}</span> : null}
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-white/76">{page.hero.description}</p>
-            <ExampleHeroActions hero={page.hero} className="mt-8" />
+            <ExampleHeroActions hero={page.hero} className="mt-8" tone="inverse" />
+            <div className="mt-8 max-w-4xl">
+              <ExampleStats stats={heroStats} inverse={true} />
+            </div>
           </div>
-          <div className="rounded-[var(--example-radius-panel)] bg-white p-6 text-[var(--example-text)]">
+          <div className="rounded-[var(--example-radius-panel)] bg-white p-6 text-[var(--example-text)] shadow-[var(--example-shadow-strong)]">
+            <p className="text-[11px] font-black uppercase tracking-[0.22em] text-[var(--example-accent)]">
+              Same-day lead capture
+            </p>
             <h2 className="text-2xl [font-family:var(--example-font-display)] font-bold">
               {page.hero.formTitle ?? page.hero.primaryCta.label}
             </h2>
+            <p className="mt-3 text-sm leading-7 text-[var(--example-muted)]">
+              Keep the request short, route the call fast, and make the next step feel immediate.
+            </p>
             {page.hero.formFields ? <div className="mt-5"><ExampleFormFields fields={page.hero.formFields} /></div> : null}
             <TemplateButton
               action={{ ...page.hero.primaryCta, tone: "accent" }}
               className="mt-6 w-full justify-center font-black uppercase"
             />
+            <div className="mt-5 space-y-2 border-t border-[var(--example-border)] pt-4 text-[11px] font-bold uppercase tracking-[0.18em] text-[var(--example-muted)]">
+              <p>Emergency repairs, drain cleaning, and water heaters</p>
+              <p>Edwardsville, Glen Carbon, Maryville, and nearby towns</p>
+            </div>
           </div>
         </div>
       </section>
 
-      <ExampleSection eyebrow={page.services.eyebrow} title={page.services.title} description={page.services.description}>
-        <ServicesMosaic services={page.services} />
+      <ExampleSection id="services" eyebrow={page.services.eyebrow} title={page.services.title} description={page.services.description}>
+        <ServicesMosaic services={page.services} layout="feature-left" />
       </ExampleSection>
 
-      <ExampleSection eyebrow={page.whyChooseUs.eyebrow} title={page.whyChooseUs.title} description={page.whyChooseUs.description} className="bg-[var(--example-primary)] text-white">
+      <ExampleSection
+        eyebrow={page.whyChooseUs.eyebrow}
+        title={page.whyChooseUs.title}
+        description={page.whyChooseUs.description}
+        className="bg-[var(--example-primary)] text-white"
+        tone="inverse"
+      >
         <div className="grid gap-10 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] md:items-center">
           <PhotoPanel image={page.whyChooseUs.image} aspect="aspect-[4/5]" className="border border-white/10" />
           <TrustPoints section={page.whyChooseUs} tone="dark" />
@@ -324,13 +390,13 @@ function PlumberExamplePage({ page }: ExamplePageProps) {
 
       <ProcessSection process={page.process?.steps} title={page.process?.title} eyebrow={page.process?.eyebrow} description={page.process?.description} tone="accent" />
 
-      <ExampleSection eyebrow={page.serviceArea.eyebrow} title={page.serviceArea.title} description={page.serviceArea.description}>
+      <ExampleSection id="service-area" eyebrow={page.serviceArea.eyebrow} title={page.serviceArea.title} description={page.serviceArea.description}>
         <AreaChips areas={page.serviceArea.areas} />
       </ExampleSection>
 
       <ClosingBand page={page} tone="accent" />
 
-      <ExampleSection>
+      <ExampleSection id="contact">
         <ContactBlock section={page.contact} buttonTone="accent" />
       </ExampleSection>
     </>
@@ -357,15 +423,22 @@ function ContractorExamplePage({ page }: ExamplePageProps) {
             }
           />
           <div className="rounded-[var(--example-radius-panel)] bg-[var(--example-primary)] p-8 text-[var(--example-primary-contrast)] md:p-10">
+            {page.hero.highlight ? (
+              <p className="text-sm font-black uppercase tracking-[0.18em] text-[var(--example-accent-soft)]">
+                {page.hero.highlight}
+              </p>
+            ) : null}
             <p className="text-lg leading-8 text-white/76">{page.hero.description}</p>
-            <ExampleHeroActions hero={page.hero} className="mt-8" />
+            <ExampleHeroActions hero={page.hero} className="mt-8" tone="inverse" />
             <div className="mt-8 rounded-[var(--example-radius-panel)] bg-white/8 p-5">
-              <p className="text-[11px] font-black uppercase tracking-[0.2em] text-white/62">Built for</p>
-              <div className="mt-3 space-y-3">
+              <p className="text-[11px] font-black uppercase tracking-[0.2em] text-white/62">Project scope</p>
+              <div className="mt-4 grid gap-3 sm:grid-cols-2">
                 {page.services.items.map((item) => (
-                  <p key={item.title} className="text-sm font-semibold uppercase tracking-[0.12em] text-white">
-                    {item.title}
-                  </p>
+                  <div key={item.title} className="rounded-[var(--example-radius-pill)] border border-white/10 px-4 py-3">
+                    <p className="text-sm font-semibold uppercase tracking-[0.12em] text-white">
+                      {item.title}
+                    </p>
+                  </div>
                 ))}
               </div>
             </div>
@@ -373,8 +446,8 @@ function ContractorExamplePage({ page }: ExamplePageProps) {
         </div>
       </section>
 
-      <ExampleSection eyebrow={page.services.eyebrow} title={page.services.title} description={page.services.description} className="bg-[var(--example-surface)]">
-        <ServicesMosaic services={page.services} />
+      <ExampleSection id="services" eyebrow={page.services.eyebrow} title={page.services.title} description={page.services.description} className="bg-[var(--example-surface)]">
+        <ServicesMosaic services={page.services} layout="feature-left" />
       </ExampleSection>
 
       <ExampleSection eyebrow={page.whyChooseUs.eyebrow} title={page.whyChooseUs.title} description={page.whyChooseUs.description}>
@@ -390,13 +463,13 @@ function ContractorExamplePage({ page }: ExamplePageProps) {
 
       <ProcessSection process={page.process?.steps} title={page.process?.title} eyebrow={page.process?.eyebrow} description={page.process?.description} tone="dark" />
 
-      <ExampleSection eyebrow={page.serviceArea.eyebrow} title={page.serviceArea.title} description={page.serviceArea.description}>
+      <ExampleSection id="service-area" eyebrow={page.serviceArea.eyebrow} title={page.serviceArea.title} description={page.serviceArea.description}>
         <AreaChips areas={page.serviceArea.areas} />
       </ExampleSection>
 
       <ClosingBand page={page} tone="accent" />
 
-      <ExampleSection className="bg-[var(--example-surface)]">
+      <ExampleSection id="contact" className="bg-[var(--example-surface)]">
         <ContactBlock section={page.contact} buttonTone="accent" />
       </ExampleSection>
     </>
@@ -421,12 +494,12 @@ function AutoRepairExamplePage({ page }: ExamplePageProps) {
               {page.hero.highlight ? <span className="block text-[var(--example-accent-soft)]">{page.hero.highlight}</span> : null}
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-white/72">{page.hero.description}</p>
-            <ExampleHeroActions hero={page.hero} className="mt-8" />
+            <ExampleHeroActions hero={page.hero} className="mt-8" tone="inverse" />
           </div>
         </div>
       </section>
 
-      <ExampleSection eyebrow={page.services.eyebrow} title={page.services.title} description={page.services.description}>
+      <ExampleSection id="services" eyebrow={page.services.eyebrow} title={page.services.title} description={page.services.description}>
         <ServicesMosaic services={page.services} layout="stacked" />
       </ExampleSection>
 
@@ -443,13 +516,13 @@ function AutoRepairExamplePage({ page }: ExamplePageProps) {
 
       <ProcessSection process={page.process?.steps} title={page.process?.title} eyebrow={page.process?.eyebrow} description={page.process?.description} tone="accent" />
 
-      <ExampleSection eyebrow={page.serviceArea.eyebrow} title={page.serviceArea.title} description={page.serviceArea.description}>
+      <ExampleSection id="service-area" eyebrow={page.serviceArea.eyebrow} title={page.serviceArea.title} description={page.serviceArea.description}>
         <AreaChips areas={page.serviceArea.areas} />
       </ExampleSection>
 
       <ClosingBand page={page} tone="accent" />
 
-      <ExampleSection>
+      <ExampleSection id="contact">
         <ContactBlock section={page.contact} buttonTone="accent" />
       </ExampleSection>
     </>
@@ -474,19 +547,22 @@ function AccountantExamplePage({ page }: ExamplePageProps) {
         </div>
       </section>
 
-      <ExampleSection eyebrow={page.services.eyebrow} title={page.services.title} description={page.services.description} className="bg-[var(--example-surface)]">
+      <ExampleSection id="services" eyebrow={page.services.eyebrow} title={page.services.title} description={page.services.description} className="bg-[var(--example-surface)]">
         <ServicesMosaic services={page.services} />
       </ExampleSection>
 
       <ExampleSection eyebrow={page.whyChooseUs.eyebrow} title={page.whyChooseUs.title} description={page.whyChooseUs.description}>
         <div className="grid gap-8 md:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)]">
-          {page.whyChooseUs.stat ? (
-            <StatBadge
-              value={page.whyChooseUs.stat.value}
-              label={page.whyChooseUs.stat.label}
-              detail={page.whyChooseUs.stat.detail}
-            />
-          ) : null}
+          <div className="space-y-6">
+            {page.whyChooseUs.stat ? (
+              <StatBadge
+                value={page.whyChooseUs.stat.value}
+                label={page.whyChooseUs.stat.label}
+                detail={page.whyChooseUs.stat.detail}
+              />
+            ) : null}
+            <PhotoPanel image={page.whyChooseUs.image} aspect="aspect-[16/11]" />
+          </div>
           <TrustPoints section={page.whyChooseUs} />
         </div>
       </ExampleSection>
@@ -497,13 +573,13 @@ function AccountantExamplePage({ page }: ExamplePageProps) {
 
       <ProcessSection process={page.process?.steps} title={page.process?.title} eyebrow={page.process?.eyebrow} description={page.process?.description} />
 
-      <ExampleSection eyebrow={page.serviceArea.eyebrow} title={page.serviceArea.title} description={page.serviceArea.description} className="bg-[var(--example-surface)]">
+      <ExampleSection id="service-area" eyebrow={page.serviceArea.eyebrow} title={page.serviceArea.title} description={page.serviceArea.description} className="bg-[var(--example-surface)]">
         <AreaChips areas={page.serviceArea.areas} />
       </ExampleSection>
 
       <ClosingBand page={page} tone="accent" />
 
-      <ExampleSection>
+      <ExampleSection id="contact">
         <ContactBlock section={page.contact} />
       </ExampleSection>
     </>
@@ -525,46 +601,46 @@ function LawFirmExamplePage({ page }: ExamplePageProps) {
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-[var(--example-muted)]">{page.hero.description}</p>
             <ExampleHeroActions hero={page.hero} className="mt-8" />
+            {page.whyChooseUs.stat ? (
+              <div className="mt-8 max-w-sm rounded-[var(--example-radius-panel)] border border-[var(--example-border)] bg-[var(--example-surface)] px-6 py-5">
+                <p className="text-3xl [font-family:var(--example-font-display)] font-semibold text-[var(--example-text)]">
+                  {page.whyChooseUs.stat.value}
+                </p>
+                <p className="mt-2 text-[11px] font-bold uppercase tracking-[0.18em] text-[var(--example-muted)]">
+                  {page.whyChooseUs.stat.label}
+                </p>
+              </div>
+            ) : null}
           </div>
           <PhotoPanel image={page.hero.image} aspect="aspect-[4/5]" />
         </div>
       </section>
 
-      <ExampleSection eyebrow={page.services.eyebrow} title={page.services.title} description={page.services.description} className="bg-[var(--example-surface)]">
-        <ServicesMosaic services={page.services} layout="stacked" />
+      <ExampleSection id="services" eyebrow={page.services.eyebrow} title={page.services.title} description={page.services.description} className="bg-[var(--example-surface)]">
+        <ServicesMosaic services={page.services} layout="feature-left" />
       </ExampleSection>
 
       <ExampleSection eyebrow={page.whyChooseUs.eyebrow} title={page.whyChooseUs.title} description={page.whyChooseUs.description}>
         <div className="grid gap-10 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] md:items-center">
-          <div className="relative">
-            <PhotoPanel image={page.whyChooseUs.image} aspect="aspect-[4/5]" />
-            {page.whyChooseUs.stat ? (
-              <StatBadge
-                value={page.whyChooseUs.stat.value}
-                label={page.whyChooseUs.stat.label}
-                detail={page.whyChooseUs.stat.detail}
-                className="mt-5 md:absolute md:right-[-1.5rem] md:bottom-[-1.5rem] md:mt-0"
-              />
-            ) : null}
-          </div>
+          <PhotoPanel image={page.whyChooseUs.image} aspect="aspect-[16/11]" imageClassName="object-[50%_36%]" />
           <FeatureRows items={page.whyChooseUs.items} />
         </div>
       </ExampleSection>
 
       <ExampleSection eyebrow={page.testimonials.eyebrow} title={page.testimonials.title} description={page.testimonials.description}>
         <HighlightQuote item={featuredReview} />
-        {otherReviews.length ? <div className="mt-6"><ReviewCards items={otherReviews} /></div> : null}
+        {otherReviews.length ? <div className="mt-6 max-w-xl"><ReviewCards items={otherReviews} /></div> : null}
       </ExampleSection>
 
       <ProcessSection process={page.process?.steps} title={page.process?.title} eyebrow={page.process?.eyebrow} description={page.process?.description} />
 
-      <ExampleSection eyebrow={page.serviceArea.eyebrow} title={page.serviceArea.title} description={page.serviceArea.description} className="bg-[var(--example-surface)]">
+      <ExampleSection id="service-area" eyebrow={page.serviceArea.eyebrow} title={page.serviceArea.title} description={page.serviceArea.description} className="bg-[var(--example-surface)]">
         <AreaChips areas={page.serviceArea.areas} />
       </ExampleSection>
 
       <ClosingBand page={page} tone="minimal" />
 
-      <ExampleSection>
+      <ExampleSection id="contact">
         <ContactBlock section={page.contact} formMode="underline" cardClassName="bg-transparent" />
       </ExampleSection>
     </>
@@ -589,7 +665,7 @@ function DentistExamplePage({ page }: ExamplePageProps) {
         </div>
       </section>
 
-      <ExampleSection eyebrow={page.services.eyebrow} title={page.services.title} description={page.services.description}>
+      <ExampleSection id="services" eyebrow={page.services.eyebrow} title={page.services.title} description={page.services.description}>
         <ServicesMosaic services={page.services} />
       </ExampleSection>
 
@@ -616,13 +692,13 @@ function DentistExamplePage({ page }: ExamplePageProps) {
 
       <ProcessSection process={page.process?.steps} title={page.process?.title} eyebrow={page.process?.eyebrow} description={page.process?.description} />
 
-      <ExampleSection eyebrow={page.serviceArea.eyebrow} title={page.serviceArea.title} description={page.serviceArea.description}>
+      <ExampleSection id="service-area" eyebrow={page.serviceArea.eyebrow} title={page.serviceArea.title} description={page.serviceArea.description}>
         <AreaChips areas={page.serviceArea.areas} />
       </ExampleSection>
 
       <ClosingBand page={page} tone="minimal" />
 
-      <ExampleSection className="bg-[var(--example-surface)]">
+      <ExampleSection id="contact" className="bg-[var(--example-surface)]">
         <ContactBlock section={page.contact} formMode="underline" cardClassName="bg-transparent" />
       </ExampleSection>
     </>
@@ -646,15 +722,33 @@ function GymExamplePage({ page }: ExamplePageProps) {
             {page.hero.highlight ? <span className="text-[var(--example-accent-soft)]"> {page.hero.highlight}</span> : null}
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-white/74">{page.hero.description}</p>
-          <ExampleHeroActions hero={page.hero} className="mt-8" />
+          <ExampleHeroActions hero={page.hero} className="mt-8" tone="inverse" />
+          {page.hero.badges?.length ? (
+            <div className="mt-8 flex flex-wrap gap-2">
+              {page.hero.badges.map((badge) => (
+                <span
+                  key={badge}
+                  className="rounded-[var(--example-radius-pill)] border border-white/12 bg-white/8 px-4 py-2 text-[11px] font-bold uppercase tracking-[0.16em] text-white/84"
+                >
+                  {badge}
+                </span>
+              ))}
+            </div>
+          ) : null}
         </div>
       </section>
 
-      <ExampleSection eyebrow={page.services.eyebrow} title={page.services.title} description={page.services.description}>
+      <ExampleSection id="services" eyebrow={page.services.eyebrow} title={page.services.title} description={page.services.description}>
         <ServicesMosaic services={page.services} />
       </ExampleSection>
 
-      <ExampleSection eyebrow={page.whyChooseUs.eyebrow} title={page.whyChooseUs.title} description={page.whyChooseUs.description} className="bg-[var(--example-primary)] text-white">
+      <ExampleSection
+        eyebrow={page.whyChooseUs.eyebrow}
+        title={page.whyChooseUs.title}
+        description={page.whyChooseUs.description}
+        className="bg-[var(--example-primary)] text-white"
+        tone="inverse"
+      >
         <div className="grid gap-10 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] md:items-center">
           <TrustPoints section={page.whyChooseUs} tone="dark" />
           <PhotoPanel image={page.whyChooseUs.image} aspect="aspect-[4/5]" className="border border-white/10" />
@@ -667,7 +761,7 @@ function GymExamplePage({ page }: ExamplePageProps) {
 
       <ProcessSection process={page.process?.steps} title={page.process?.title} eyebrow={page.process?.eyebrow} description={page.process?.description} tone="dark" />
 
-      <ExampleSection eyebrow={page.serviceArea.eyebrow} title={page.serviceArea.title} description={page.serviceArea.description}>
+      <ExampleSection id="service-area" eyebrow={page.serviceArea.eyebrow} title={page.serviceArea.title} description={page.serviceArea.description}>
         <AreaChips areas={page.serviceArea.areas} />
       </ExampleSection>
 
@@ -680,6 +774,7 @@ function GymExamplePage({ page }: ExamplePageProps) {
             formMode="contrast"
             cardClassName="bg-white/6 text-white"
             buttonTone="primary"
+            tone="inverse"
           />
         </div>
       </section>
@@ -700,18 +795,30 @@ function LandscapingExamplePage({ page }: ExamplePageProps) {
               {page.hero.highlight ? <span className="block text-[var(--example-accent-soft)]">{page.hero.highlight}</span> : null}
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-8 text-white/74">{page.hero.description}</p>
-            <ExampleHeroActions hero={page.hero} className="mt-8" />
+            <ExampleHeroActions hero={page.hero} className="mt-8" tone="inverse" />
+            {page.hero.badges?.length ? (
+              <div className="mt-8 flex flex-wrap gap-2">
+                {page.hero.badges.map((badge) => (
+                  <span
+                    key={badge}
+                    className="rounded-[var(--example-radius-pill)] border border-white/12 bg-white/8 px-4 py-2 text-[11px] font-bold uppercase tracking-[0.16em] text-white/82"
+                  >
+                    {badge}
+                  </span>
+                ))}
+              </div>
+            ) : null}
           </div>
         </div>
       </section>
 
-      <ExampleSection eyebrow={page.services.eyebrow} title={page.services.title} description={page.services.description}>
+      <ExampleSection id="services" eyebrow={page.services.eyebrow} title={page.services.title} description={page.services.description}>
         <ServicesMosaic services={page.services} layout="stacked" />
       </ExampleSection>
 
       <ExampleSection eyebrow={page.whyChooseUs.eyebrow} title={page.whyChooseUs.title} description={page.whyChooseUs.description} className="bg-[var(--example-surface)]">
         <div className="grid gap-10 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] md:items-center">
-          <PhotoPanel image={page.whyChooseUs.image} aspect="aspect-[4/5]" />
+          <PhotoPanel image={page.whyChooseUs.image} aspect="aspect-[16/11]" imageClassName="object-[50%_42%]" />
           <TrustPoints section={page.whyChooseUs} />
         </div>
       </ExampleSection>
@@ -722,7 +829,7 @@ function LandscapingExamplePage({ page }: ExamplePageProps) {
 
       <ProcessSection process={page.process?.steps} title={page.process?.title} eyebrow={page.process?.eyebrow} description={page.process?.description} tone="dark" />
 
-      <ExampleSection eyebrow={page.serviceArea.eyebrow} title={page.serviceArea.title} description={page.serviceArea.description}>
+      <ExampleSection id="service-area" eyebrow={page.serviceArea.eyebrow} title={page.serviceArea.title} description={page.serviceArea.description}>
         <AreaChips areas={page.serviceArea.areas} />
       </ExampleSection>
 
@@ -753,7 +860,7 @@ function GenericExamplePage({ page }: ExamplePageProps) {
           <PhotoPanel image={page.hero.image} aspect="aspect-[4/5]" />
         </div>
       </section>
-      <ExampleSection eyebrow={page.services.eyebrow} title={page.services.title} description={page.services.description}>
+      <ExampleSection id="services" eyebrow={page.services.eyebrow} title={page.services.title} description={page.services.description}>
         <ServicesMosaic services={page.services} />
       </ExampleSection>
       <ExampleSection eyebrow={page.whyChooseUs.eyebrow} title={page.whyChooseUs.title} description={page.whyChooseUs.description} className="bg-[var(--example-surface)]">
@@ -763,11 +870,11 @@ function GenericExamplePage({ page }: ExamplePageProps) {
         <ReviewCards items={page.testimonials.items} />
       </ExampleSection>
       <ProcessSection process={page.process?.steps} title={page.process?.title} eyebrow={page.process?.eyebrow} description={page.process?.description} />
-      <ExampleSection eyebrow={page.serviceArea.eyebrow} title={page.serviceArea.title} description={page.serviceArea.description}>
+      <ExampleSection id="service-area" eyebrow={page.serviceArea.eyebrow} title={page.serviceArea.title} description={page.serviceArea.description}>
         <AreaChips areas={page.serviceArea.areas} />
       </ExampleSection>
       <ClosingBand page={page} />
-      <ExampleSection>
+      <ExampleSection id="contact">
         <ContactBlock section={page.contact} />
       </ExampleSection>
     </>
@@ -799,7 +906,13 @@ function ProcessSection({
   } as const;
 
   return (
-    <ExampleSection eyebrow={eyebrow} title={title} description={description} className={classes[tone]}>
+    <ExampleSection
+      eyebrow={eyebrow}
+      title={title}
+      description={description}
+      className={classes[tone]}
+      tone={tone === "accent" || tone === "dark" ? "inverse" : "default"}
+    >
       <div className="grid gap-5 md:grid-cols-3">
         {process.map((step, index) => (
           <div
@@ -866,7 +979,13 @@ function ClosingBand({
                   ? page.cta.primaryCta.tone ?? "primary"
                   : page.cta.primaryCta.tone ?? "primary",
             }}
-            className={tone === "accent" || tone === "dark" ? "bg-[var(--example-primary)] text-[var(--example-primary-contrast)]" : undefined}
+            className={
+              tone === "dark"
+                ? "bg-white text-[var(--example-primary)] hover:bg-white/92"
+                : tone === "accent"
+                  ? "bg-[var(--example-primary)] text-[var(--example-primary-contrast)]"
+                  : undefined
+            }
           />
           {page.cta.secondaryCta ? (
             <TemplateButton

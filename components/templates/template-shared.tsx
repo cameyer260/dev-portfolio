@@ -204,12 +204,21 @@ export function ExampleImage({
   src,
   alt,
   className,
+  imageClassName,
 }: {
   src: string;
   alt: string;
   className?: string;
+  imageClassName?: string;
 }) {
-  return <FallbackImage src={src} alt={alt} className={className} />;
+  return (
+    <FallbackImage
+      src={src}
+      alt={alt}
+      className={className}
+      imageClassName={imageClassName}
+    />
+  );
 }
 
 export function ThemeStyleVariables({

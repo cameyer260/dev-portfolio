@@ -154,7 +154,7 @@ export const realEstateExamplePage = buildExampleLandingPage({
     },
     secondaryCta: {
       label: "See Area Coverage",
-      href: "#services",
+      href: "#service-area",
       tone: "ghost",
     },
   },
