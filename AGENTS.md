@@ -29,7 +29,9 @@ Follow these rules:
 - Apply example-page visual rules only to the examples system.
 - Do not apply `/examples` design rules to the main portfolio pages.
 - Keep the examples system easy to customize for future client work.
-- Prefer shared structure, shared content schema, themes, and section variants over cloned page implementations.
+- Prefer shared structure, shared content schema, theme tokens, and shared page primitives.
+- Do not force all examples through one finished template or one small variant matrix if that makes the pages feel cloned.
+- Industry-specific page renderers are acceptable when they preserve shared infrastructure and make the examples stronger sales assets.
 
 ## Active Planning
 

@@ -23,6 +23,7 @@ import {
   Leaf,
   BadgeCheck,
 } from "lucide-react";
+import { FallbackImage } from "@/components/examples/FallbackImage";
 import { cn } from "@/lib/utils";
 import type { ExampleAction, ExampleIconName, ExampleTheme } from "@/lib/examples";
 
@@ -208,10 +209,7 @@ export function ExampleImage({
   alt: string;
   className?: string;
 }) {
-  // Example pages need to support arbitrary local or remote marketing imagery.
-  // Using a plain img keeps Phase 1 flexible until route/content-level image handling is finalized.
-  // eslint-disable-next-line @next/next/no-img-element
-  return <img src={src} alt={alt} className={cn("h-full w-full object-cover", className)} />;
+  return <FallbackImage src={src} alt={alt} className={className} />;
 }
 
 export function ThemeStyleVariables({
