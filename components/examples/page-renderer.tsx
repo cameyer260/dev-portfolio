@@ -212,7 +212,7 @@ function RestaurantExamplePage({ page }: ExamplePageProps) {
         <div className="mx-auto grid max-w-6xl gap-6 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] md:items-stretch">
           <div className="flex flex-col justify-end rounded-[var(--example-radius-panel)] bg-[var(--example-primary)] p-8 text-[var(--example-primary-contrast)] md:p-12">
             <SectionEyebrow className="text-white/64">{page.hero.eyebrow}</SectionEyebrow>
-            <h1 className="text-5xl leading-[0.96] [font-family:var(--example-font-display)] font-semibold tracking-tight md:text-7xl">
+            <h1 className="text-5xl leading-[0.96] [font-family:var(--example-font-display)] font-semibold tracking-tight md:text-6xl lg:text-7xl">
               {page.hero.title}
               {page.hero.highlight ? <span className="block italic font-normal">{page.hero.highlight}</span> : null}
             </h1>
@@ -317,7 +317,7 @@ function SalonExamplePage({ page }: ExamplePageProps) {
         <div className="mx-auto grid max-w-[94rem] gap-6 md:grid-cols-[minmax(0,0.6fr)_minmax(0,1.4fr)] md:items-center">
           <div className="rounded-[var(--example-radius-panel)] bg-[var(--example-surface)] p-8 md:p-12">
             <SectionEyebrow>{page.hero.eyebrow}</SectionEyebrow>
-            <h1 className="text-5xl leading-[0.95] [font-family:var(--example-font-display)] font-semibold tracking-tight text-[var(--example-text)] md:text-7xl">
+            <h1 className="text-5xl leading-[0.95] [font-family:var(--example-font-display)] font-semibold tracking-tight text-[var(--example-text)] md:text-6xl lg:text-7xl">
               {page.hero.title}
               {page.hero.highlight ? <span className="block italic font-normal">{page.hero.highlight}</span> : null}
             </h1>
@@ -408,7 +408,7 @@ function RealEstateExamplePage({ page }: ExamplePageProps) {
         <div className="relative mx-auto max-w-6xl">
           <div className="max-w-3xl rounded-[var(--example-radius-panel)] bg-[color-mix(in_srgb,var(--example-background)_84%,transparent)] p-8 backdrop-blur-sm md:p-12">
             <SectionEyebrow>{page.hero.eyebrow}</SectionEyebrow>
-            <h1 className="text-5xl leading-[0.96] [font-family:var(--example-font-display)] font-semibold tracking-tight text-[var(--example-text)] md:text-7xl">
+            <h1 className="text-5xl leading-[0.96] [font-family:var(--example-font-display)] font-semibold tracking-tight text-[var(--example-text)] md:text-6xl lg:text-7xl">
               {page.hero.title}
               {page.hero.highlight ? <span className="block italic font-normal">{page.hero.highlight}</span> : null}
             </h1>
@@ -490,7 +490,7 @@ function PlumberExamplePage({ page }: ExamplePageProps) {
             <span className="inline-flex rounded-[var(--example-radius-pill)] bg-[var(--example-accent)] px-4 py-2 text-[11px] font-black uppercase tracking-[0.22em] text-[var(--example-accent-contrast)]">
               {page.hero.eyebrow}
             </span>
-            <h1 className="mt-6 text-5xl leading-[0.92] [font-family:var(--example-font-display)] font-black uppercase tracking-tight md:text-7xl">
+            <h1 className="mt-6 text-5xl leading-[0.92] [font-family:var(--example-font-display)] font-black uppercase tracking-tight md:text-6xl lg:text-7xl">
               {page.hero.title}
               {page.hero.highlight ? <span className="block text-[var(--example-accent-soft)]">{page.hero.highlight}</span> : null}
             </h1>
@@ -645,7 +645,7 @@ function AutoRepairExamplePage({ page }: ExamplePageProps) {
             <span className="inline-flex rounded-[var(--example-radius-pill)] bg-[var(--example-accent)] px-4 py-2 text-[11px] font-black uppercase tracking-[0.22em] text-[var(--example-accent-contrast)]">
               {page.hero.eyebrow}
             </span>
-            <h1 className="mt-6 text-5xl leading-[0.92] [font-family:var(--example-font-display)] font-black uppercase md:text-7xl">
+            <h1 className="mt-6 text-5xl leading-[0.92] [font-family:var(--example-font-display)] font-black uppercase md:text-6xl lg:text-7xl">
               {page.hero.title}
               {page.hero.highlight ? <span className="block text-[var(--example-accent-soft)]">{page.hero.highlight}</span> : null}
             </h1>
@@ -692,7 +692,7 @@ function AccountantExamplePage({ page }: ExamplePageProps) {
         <div className="mx-auto grid max-w-6xl gap-8 md:grid-cols-[minmax(0,1fr)_24rem] md:items-center">
           <div>
             <SectionEyebrow>{page.hero.eyebrow}</SectionEyebrow>
-            <h1 className="text-5xl leading-[0.94] [font-family:var(--example-font-display)] font-black uppercase tracking-tight text-[var(--example-text)] md:text-7xl">
+            <h1 className="text-5xl leading-[0.94] [font-family:var(--example-font-display)] font-black uppercase tracking-tight text-[var(--example-text)] md:text-6xl lg:text-7xl">
               {page.hero.title}
               {page.hero.highlight ? <span className="block text-[var(--example-accent)]">{page.hero.highlight}</span> : null}
             </h1>
@@ -751,7 +751,7 @@ function LawFirmExamplePage({ page }: ExamplePageProps) {
         <div className="mx-auto grid max-w-6xl gap-8 md:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] md:items-center">
           <div>
             <SectionEyebrow>{page.hero.eyebrow}</SectionEyebrow>
-            <h1 className="text-5xl leading-[1.02] [font-family:var(--example-font-display)] font-semibold tracking-tight text-[var(--example-text)] md:text-7xl">
+            <h1 className="text-5xl leading-[1.02] [font-family:var(--example-font-display)] font-semibold tracking-tight text-[var(--example-text)] md:text-6xl lg:text-7xl">
               {page.hero.title}
               {page.hero.highlight ? <span className="block italic font-normal">{page.hero.highlight}</span> : null}
             </h1>
@@ -810,7 +810,7 @@ function DentistExamplePage({ page }: ExamplePageProps) {
         <div className="mx-auto grid max-w-6xl gap-8 md:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] md:items-center">
           <div className="rounded-[var(--example-radius-panel)] bg-[var(--example-surface)] p-8 md:p-12">
             <SectionEyebrow>{page.hero.eyebrow}</SectionEyebrow>
-            <h1 className="text-5xl leading-[1] [font-family:var(--example-font-display)] font-semibold tracking-tight text-[var(--example-text)] md:text-7xl">
+            <h1 className="text-5xl leading-[1] [font-family:var(--example-font-display)] font-semibold tracking-tight text-[var(--example-text)] md:text-6xl lg:text-7xl">
               {page.hero.title}
               {page.hero.highlight ? <span className="block italic font-normal">{page.hero.highlight}</span> : null}
             </h1>
@@ -873,7 +873,7 @@ function GymExamplePage({ page }: ExamplePageProps) {
           <span className="inline-flex bg-[var(--example-accent)] px-4 py-2 text-[11px] font-black uppercase tracking-[0.24em] text-[var(--example-accent-contrast)]">
             {page.hero.eyebrow}
           </span>
-          <h1 className="mt-6 max-w-4xl text-5xl leading-[0.9] [font-family:var(--example-font-display)] font-black uppercase tracking-tight md:text-8xl">
+          <h1 className="mt-6 max-w-4xl text-5xl leading-[0.9] [font-family:var(--example-font-display)] font-black uppercase tracking-tight md:text-7xl lg:text-8xl">
             {page.hero.title}
             {page.hero.highlight ? <span className="text-[var(--example-accent-soft)]"> {page.hero.highlight}</span> : null}
           </h1>
@@ -946,7 +946,7 @@ function LandscapingExamplePage({ page }: ExamplePageProps) {
           <PhotoPanel image={page.hero.image} aspect="aspect-[16/11] md:aspect-auto md:h-full" />
           <div className="rounded-[var(--example-radius-panel)] bg-[var(--example-primary)] p-8 text-[var(--example-primary-contrast)] md:p-10">
             <SectionEyebrow className="text-white/64">{page.hero.eyebrow}</SectionEyebrow>
-            <h1 className="text-5xl leading-[0.92] [font-family:var(--example-font-display)] font-black uppercase md:text-7xl">
+            <h1 className="text-5xl leading-[0.92] [font-family:var(--example-font-display)] font-black uppercase md:text-6xl lg:text-7xl">
               {page.hero.title}
               {page.hero.highlight ? <span className="block text-[var(--example-accent-soft)]">{page.hero.highlight}</span> : null}
             </h1>
@@ -1007,7 +1007,7 @@ function GenericExamplePage({ page }: ExamplePageProps) {
         <div className="mx-auto grid max-w-6xl gap-8 md:grid-cols-2 md:items-center">
           <div>
             <SectionEyebrow>{page.hero.eyebrow}</SectionEyebrow>
-            <h1 className="text-5xl leading-[0.95] [font-family:var(--example-font-display)] font-semibold tracking-tight text-[var(--example-text)] md:text-7xl">
+            <h1 className="text-5xl leading-[0.95] [font-family:var(--example-font-display)] font-semibold tracking-tight text-[var(--example-text)] md:text-6xl lg:text-7xl">
               {page.hero.title}
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-[var(--example-muted)]">{page.hero.description}</p>
