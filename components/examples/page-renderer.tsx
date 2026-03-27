@@ -52,13 +52,16 @@ export function ExamplePageRenderer({ page }: ExamplePageProps) {
 function ExamplesBackOverlay() {
   return (
     <div className="pointer-events-none fixed left-3 top-24 z-40 md:left-4 md:top-28 lg:top-24 xl:top-24">
-      <Link
-        href="/examples"
-        className="pointer-events-auto inline-flex items-center gap-2 rounded-full border border-[color-mix(in_srgb,var(--example-border)_78%,white_22%)] bg-[color-mix(in_srgb,var(--example-background)_76%,transparent)] px-3 py-2 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--example-text)] shadow-[0_12px_30px_rgba(0,0,0,0.14)] backdrop-blur-md md:px-4 md:py-2.5"
-      >
-        <ArrowLeft className="h-3.5 w-3.5 shrink-0" />
-        <span className="text-[var(--example-text)]">Back to Examples</span>
-      </Link>
+      <div className="flex max-w-[calc(100vw-1.5rem)] flex-wrap items-center gap-2">
+        <Link
+          href="/examples"
+          className="pointer-events-auto inline-flex items-center gap-2 rounded-full border border-[color-mix(in_srgb,var(--example-border)_78%,white_22%)] bg-[color-mix(in_srgb,var(--example-background)_76%,transparent)] px-3 py-2 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--example-text)] shadow-[0_12px_30px_rgba(0,0,0,0.14)] backdrop-blur-md md:px-4 md:py-2.5"
+        >
+          <ArrowLeft className="h-3.5 w-3.5 shrink-0" />
+          <span className="text-[var(--example-text)]">Back to Examples</span>
+        </Link>
+        <ExampleDisclosureTag className="pointer-events-auto bg-[color-mix(in_srgb,var(--example-background)_82%,transparent)]" />
+      </div>
     </div>
   );
 }
@@ -131,6 +134,19 @@ function ExampleSiteHeader({ page }: ExamplePageProps) {
         </div>
       </div>
     </header>
+  );
+}
+
+function ExampleDisclosureTag({ className }: { className?: string }) {
+  return (
+    <p
+      className={cn(
+        "inline-flex min-h-9 items-center rounded-[var(--example-radius-pill)] border border-[color-mix(in_srgb,var(--example-border)_84%,white_16%)] bg-[color-mix(in_srgb,var(--example-surface)_82%,white_18%)] px-3 py-2 text-[10px] font-black uppercase tracking-[0.2em] text-[var(--example-text)] shadow-[0_10px_24px_rgba(0,0,0,0.08)] md:px-4 md:text-[11px]",
+        className,
+      )}
+    >
+      Example Site / Fictional Business
+    </p>
   );
 }
 
@@ -292,6 +308,7 @@ function RestaurantExamplePage({ page }: ExamplePageProps) {
       </ExampleSection>
 
       <ExampleSection
+        id="reviews"
         eyebrow={page.testimonials.eyebrow}
         title={page.testimonials.title}
         description={page.testimonials.description}

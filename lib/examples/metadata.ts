@@ -2,11 +2,19 @@ import type { Metadata } from "next";
 import type { ExampleLandingPage } from "@/lib/examples/types";
 
 const siteUrl = "https://www.christophermeyer.dev";
+const exampleDetailRobots: NonNullable<Metadata["robots"]> = {
+  index: false,
+  follow: false,
+  googleBot: {
+    index: false,
+    follow: false,
+  },
+};
 
 export function createExamplesIndexMetadata(): Metadata {
   const title = "Local Business Website Examples | Christopher Meyer";
   const description =
-    "Browse 11 local-business landing page examples built with reusable themes for restaurants, plumbers, contractors, law firms, gyms, and more.";
+    "Browse industry-specific local-business website examples for restaurants, plumbers, contractors, law firms, gyms, and more. Built for Christopher Meyer's freelance portfolio with shared infrastructure and distinct per-industry layouts.";
 
   return {
     title,
@@ -31,13 +39,14 @@ export function createExamplesIndexMetadata(): Metadata {
 }
 
 export function createExamplePageMetadata(page: ExampleLandingPage): Metadata {
-  const title = page.seo?.title ?? `${page.industry} Website Example | ${page.businessName}`;
-  const description = page.seo?.description ?? page.hero.description;
+  const title = `Fictional ${page.industry} Website Example | ${page.businessName} | Christopher Meyer`;
+  const description = `Portfolio demo for a fictional ${page.industry.toLowerCase()} business. Part of Christopher Meyer's industry-specific local-business website examples.`;
   const path = `/examples/${page.slug}`;
 
   return {
     title,
     description,
+    robots: exampleDetailRobots,
     alternates: {
       canonical: path,
     },
