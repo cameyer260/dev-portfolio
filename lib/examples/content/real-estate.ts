@@ -16,7 +16,7 @@ export const realEstateExamplePage = buildExampleLandingPage({
     title: "Local market guidance with a more premium first impression.",
     highlight: "from listing consult to closing table",
     description:
-      "Monarch Home Group helps buyers and sellers move with clear guidance, steady communication, and real local knowledge.",
+      "Monarch Home Group helps buyers and sellers move with clear guidance and real local knowledge.",
     imageLabel: "Real estate living room and front entry",
     primaryCta: {
       label: "Request Consultation",

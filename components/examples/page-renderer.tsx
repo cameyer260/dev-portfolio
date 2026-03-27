@@ -208,17 +208,23 @@ function RestaurantExamplePage({ page }: ExamplePageProps) {
 
   return (
     <>
-      <section className="px-5 pt-8 pb-12 md:px-8 md:pt-10 md:pb-20">
-        <div className="mx-auto grid max-w-6xl gap-6 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] md:items-stretch">
-          <div className="flex flex-col justify-end rounded-[var(--example-radius-panel)] bg-[var(--example-primary)] p-8 text-[var(--example-primary-contrast)] md:p-12">
+      <section className="px-5 pt-8 pb-12 md:px-8 md:pt-10 md:pb-20 lg:pb-16">
+        <div className="mx-auto grid max-w-6xl gap-6 md:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] md:items-stretch lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)]">
+          <div className="flex flex-col justify-end rounded-[var(--example-radius-panel)] bg-[var(--example-primary)] p-8 text-[var(--example-primary-contrast)] md:p-10 lg:min-h-[36rem] lg:p-9">
             <SectionEyebrow className="text-white/64">{page.hero.eyebrow}</SectionEyebrow>
-            <h1 className="text-5xl leading-[0.96] [font-family:var(--example-font-display)] font-semibold tracking-tight md:text-6xl lg:text-7xl">
+            <h1 className="text-5xl leading-[0.94] [font-family:var(--example-font-display)] font-semibold tracking-tight md:text-[3.75rem] lg:text-[4rem] xl:text-[4.75rem]">
               {page.hero.title}
-              {page.hero.highlight ? <span className="block italic font-normal">{page.hero.highlight}</span> : null}
             </h1>
-            <p className="mt-6 max-w-xl text-lg leading-8 text-white/76">{page.hero.description}</p>
-            <ExampleHeroActions hero={page.hero} className="mt-8" tone="inverse" />
-            <div className="mt-8 grid gap-4 sm:grid-cols-[auto_minmax(0,1fr)] sm:items-center">
+            {page.hero.highlight ? (
+              <p className="mt-3 max-w-lg text-2xl leading-[1.08] italic text-white/78 md:text-3xl lg:text-[1.95rem] xl:text-[2.15rem]">
+                {page.hero.highlight}
+              </p>
+            ) : null}
+            <p className="mt-4 max-w-lg text-base leading-7 text-white/76 md:mt-5 md:text-lg md:leading-8 lg:text-[0.98rem] lg:leading-7">
+              {page.hero.description}
+            </p>
+            <ExampleHeroActions hero={page.hero} className="mt-6 md:mt-7" tone="inverse" />
+            <div className="mt-6 grid gap-4 sm:grid-cols-[auto_minmax(0,1fr)] sm:items-center lg:mt-7">
               {page.whyChooseUs.stat ? (
                 <div className="rounded-[var(--example-radius-panel)] border border-white/12 bg-white/8 px-5 py-4">
                   <p className="text-3xl [font-family:var(--example-font-display)] font-semibold">
@@ -241,13 +247,18 @@ function RestaurantExamplePage({ page }: ExamplePageProps) {
               </div>
             </div>
           </div>
-          <div className="grid gap-4 md:grid-rows-[minmax(0,1fr)_auto]">
-            <PhotoPanel image={page.hero.image} aspect="aspect-[4/5] md:aspect-auto md:h-full" />
+          <div className="grid gap-4 md:grid-rows-[minmax(0,1fr)_auto] lg:min-h-[36rem] lg:grid-rows-2">
+            <PhotoPanel
+              image={page.hero.image}
+              aspect="aspect-[4/5] md:aspect-auto md:h-full"
+              className="lg:h-full"
+              imageClassName="object-[50%_56%]"
+            />
             <PhotoPanel
               image={page.whyChooseUs.image}
-              aspect="aspect-[5/4]"
-              className="md:ml-12"
-              imageClassName="object-[50%_38%]"
+              aspect="aspect-[5/4] md:aspect-auto md:h-full"
+              className="md:ml-12 lg:ml-10 lg:h-full"
+              imageClassName="object-[50%_50%]"
             />
           </div>
         </div>
@@ -314,7 +325,7 @@ function SalonExamplePage({ page }: ExamplePageProps) {
   return (
     <>
       <section className="px-5 pt-6 pb-10 md:px-8 md:pt-8 md:pb-14 lg:pt-6 lg:pb-12">
-        <div className="mx-auto grid max-w-6xl gap-5 md:grid-cols-[minmax(0,0.72fr)_minmax(0,1.28fr)] md:items-center lg:max-w-[88rem] lg:gap-6 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
+        <div className="mx-auto grid max-w-6xl gap-5 md:grid-cols-[minmax(0,0.72fr)_minmax(0,1.28fr)] md:items-center lg:max-w-[88rem] lg:gap-6 lg:grid-cols-[minmax(0,0.84fr)_minmax(0,1.16fr)]">
           <div className="rounded-[var(--example-radius-panel)] bg-[var(--example-surface)] p-8 md:p-10 lg:p-9">
             <SectionEyebrow>{page.hero.eyebrow}</SectionEyebrow>
             <h1 className="text-5xl leading-[0.93] [font-family:var(--example-font-display)] font-semibold tracking-tight text-[var(--example-text)] md:text-[3.75rem] lg:text-[3.5rem] xl:text-[4.25rem]">
@@ -330,18 +341,18 @@ function SalonExamplePage({ page }: ExamplePageProps) {
             </p>
             <ExampleHeroActions hero={page.hero} className="mt-5 md:mt-6" />
           </div>
-          <div className="grid gap-4 md:grid-cols-[1.02fr_0.98fr] md:self-center">
+          <div className="grid items-start gap-4 md:grid-cols-2 md:self-center lg:gap-5">
             <PhotoPanel
               image={page.hero.image}
-              aspect="aspect-[4/5] lg:aspect-[16/11]"
-              className="md:-translate-y-2 lg:translate-y-0"
+              aspect="aspect-[4/5] lg:aspect-[4/5]"
+              className="md:-translate-y-3 lg:-translate-y-4"
               imageClassName="scale-[1.06] object-[50%_32%]"
             />
             <PhotoPanel
               image={page.whyChooseUs.image}
-              aspect="aspect-[4/5] lg:aspect-[16/11]"
-              className="md:translate-y-4 lg:translate-y-0"
-              imageClassName="scale-[1.1] object-[50%_18%]"
+              aspect="aspect-[4/5] lg:aspect-[4/5]"
+              className="md:translate-y-3 lg:translate-y-4"
+              imageClassName="scale-[1.06] object-[50%_38%]"
             />
           </div>
         </div>
@@ -406,20 +417,26 @@ function RealEstateExamplePage({ page }: ExamplePageProps) {
 
   return (
     <>
-      <section className="relative overflow-hidden px-5 py-12 md:px-8 md:py-18">
+      <section className="relative overflow-hidden px-5 py-12 md:px-8 md:py-14 lg:py-16">
         <div className="absolute inset-0">
           {page.hero.image ? <ExampleImage src={page.hero.image.src} alt={page.hero.image.alt} className="brightness-[0.82]" /> : null}
           <div className="absolute inset-0 bg-[linear-gradient(90deg,var(--example-hero-overlay-from),var(--example-hero-overlay-to))]" />
         </div>
-        <div className="relative mx-auto max-w-6xl">
-          <div className="max-w-3xl rounded-[var(--example-radius-panel)] bg-[color-mix(in_srgb,var(--example-background)_84%,transparent)] p-8 backdrop-blur-sm md:p-12">
+        <div className="relative mx-auto max-w-6xl lg:max-w-[82rem]">
+          <div className="max-w-3xl rounded-[var(--example-radius-panel)] bg-[color-mix(in_srgb,var(--example-background)_84%,transparent)] p-8 backdrop-blur-sm md:p-10 lg:max-w-[42rem] lg:p-9">
             <SectionEyebrow>{page.hero.eyebrow}</SectionEyebrow>
-            <h1 className="text-5xl leading-[0.96] [font-family:var(--example-font-display)] font-semibold tracking-tight text-[var(--example-text)] md:text-6xl lg:text-7xl">
+            <h1 className="text-5xl leading-[0.94] [font-family:var(--example-font-display)] font-semibold tracking-tight text-[var(--example-text)] md:text-[3.85rem] lg:text-[4.7rem]">
               {page.hero.title}
-              {page.hero.highlight ? <span className="block italic font-normal">{page.hero.highlight}</span> : null}
             </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-[var(--example-muted)]">{page.hero.description}</p>
-            <ExampleHeroActions hero={page.hero} className="mt-8" />
+            {page.hero.highlight ? (
+              <p className="mt-3 max-w-xl text-2xl leading-[1.08] italic text-[var(--example-text)]/78 md:text-3xl lg:text-[2.15rem]">
+                {page.hero.highlight}
+              </p>
+            ) : null}
+            <p className="mt-4 max-w-2xl text-base leading-7 text-[var(--example-muted)] md:mt-5 md:text-lg md:leading-8 lg:text-[0.98rem] lg:leading-7">
+              {page.hero.description}
+            </p>
+            <ExampleHeroActions hero={page.hero} className="mt-6 md:mt-7" />
           </div>
         </div>
       </section>
@@ -642,10 +659,16 @@ function AutoRepairExamplePage({ page }: ExamplePageProps) {
   return (
     <>
       <section className="relative overflow-hidden bg-[var(--example-primary)] px-5 py-14 text-[var(--example-primary-contrast)] md:px-8 md:py-20">
-        <div className="absolute inset-0 opacity-28">
-          {page.hero.image ? <ExampleImage src={page.hero.image.src} alt={page.hero.image.alt} /> : null}
+        <div className="absolute inset-0 opacity-62">
+          {page.hero.image ? (
+            <ExampleImage
+              src={page.hero.image.src}
+              alt={page.hero.image.alt}
+              imageClassName="scale-[1.02] object-[72%_32%] brightness-[1.02]"
+            />
+          ) : null}
         </div>
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,var(--example-hero-overlay-from),var(--example-hero-overlay-to))]" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,var(--example-hero-overlay-from),var(--example-hero-overlay-to))] opacity-64" />
         <div className="relative mx-auto max-w-6xl">
           <div className="max-w-3xl">
             <span className="inline-flex rounded-[var(--example-radius-pill)] bg-[var(--example-accent)] px-4 py-2 text-[11px] font-black uppercase tracking-[0.22em] text-[var(--example-accent-contrast)]">
@@ -948,18 +971,22 @@ function LandscapingExamplePage({ page }: ExamplePageProps) {
   return (
     <>
       <section className="px-5 pt-8 pb-12 md:px-8 md:pt-10 md:pb-18">
-        <div className="mx-auto grid max-w-6xl gap-6 md:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)]">
-          <PhotoPanel image={page.hero.image} aspect="aspect-[16/11] md:aspect-auto md:h-full" />
-          <div className="rounded-[var(--example-radius-panel)] bg-[var(--example-primary)] p-8 text-[var(--example-primary-contrast)] md:p-10">
+        <div className="mx-auto grid max-w-6xl gap-5 md:grid-cols-[minmax(0,1fr)_minmax(0,0.9fr)] lg:items-stretch">
+          <PhotoPanel image={page.hero.image} aspect="aspect-[16/11] md:aspect-auto md:h-full lg:min-h-[34rem]" />
+          <div className="rounded-[var(--example-radius-panel)] bg-[var(--example-primary)] p-8 text-[var(--example-primary-contrast)] md:p-8 lg:flex lg:min-h-[34rem] lg:flex-col lg:justify-between lg:p-9">
             <SectionEyebrow className="text-white/64">{page.hero.eyebrow}</SectionEyebrow>
-            <h1 className="text-5xl leading-[0.92] [font-family:var(--example-font-display)] font-black uppercase md:text-6xl lg:text-7xl">
+            <h1 className="mt-3 text-5xl leading-[0.92] [font-family:var(--example-font-display)] font-black uppercase md:text-[3.7rem] lg:text-[4.15rem]">
               {page.hero.title}
-              {page.hero.highlight ? <span className="block text-[var(--example-accent-soft)]">{page.hero.highlight}</span> : null}
+              {page.hero.highlight ? (
+                <span className="mt-3 block text-[2.55rem] leading-[0.94] text-[var(--example-accent-soft)] md:text-[2.85rem] lg:text-[3.15rem]">
+                  {page.hero.highlight}
+                </span>
+              ) : null}
             </h1>
-            <p className="mt-6 max-w-xl text-lg leading-8 text-white/74">{page.hero.description}</p>
-            <ExampleHeroActions hero={page.hero} className="mt-8" tone="inverse" />
+            <p className="mt-5 max-w-lg text-base leading-7 text-white/74 md:text-[1.02rem]">{page.hero.description}</p>
+            <ExampleHeroActions hero={page.hero} className="mt-7" tone="inverse" />
             {page.hero.badges?.length ? (
-              <div className="mt-8 flex flex-wrap gap-2">
+              <div className="mt-6 flex flex-wrap gap-2">
                 {page.hero.badges.map((badge) => (
                   <span
                     key={badge}

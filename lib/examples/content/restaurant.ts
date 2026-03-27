@@ -13,10 +13,10 @@ export const restaurantExamplePage = buildExampleLandingPage({
   themeFamily: "warm-editorial",
   hero: {
     eyebrow: "Downtown Edwardsville dining",
-    title: "Seasonal plates and a room that invites you to stay awhile.",
+    title: "Seasonal plates in a room worth lingering in.",
     highlight: "for date nights, birthdays, and long Saturday dinners",
     description:
-      "Ash & Olive Kitchen brings together seasonal cooking, thoughtful service, and a room people want to come back to for dinner, brunch, and private events.",
+      "Ash & Olive Kitchen pairs seasonal cooking with thoughtful service and a room people want to come back to.",
     imageLabel: "Restaurant interior and plated dinner",
     primaryCta: {
       label: "Book A Table",
