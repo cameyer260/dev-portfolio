@@ -54,7 +54,7 @@ function ExamplesBackOverlay() {
     <div className="pointer-events-none fixed left-3 top-24 z-40 md:left-4 md:top-28 lg:top-24 xl:top-24">
       <Link
         href="/examples"
-        className="pointer-events-auto inline-flex items-center gap-2 rounded-full border border-[var(--example-border)] bg-[color-mix(in_srgb,var(--example-background)_92%,white_8%)] px-3 py-2 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--example-text)] shadow-[0_12px_30px_rgba(0,0,0,0.18)] backdrop-blur md:px-4 md:py-2.5"
+        className="pointer-events-auto inline-flex items-center gap-2 rounded-full border border-[color-mix(in_srgb,var(--example-border)_78%,white_22%)] bg-[color-mix(in_srgb,var(--example-background)_76%,transparent)] px-3 py-2 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--example-text)] shadow-[0_12px_30px_rgba(0,0,0,0.14)] backdrop-blur-md md:px-4 md:py-2.5"
       >
         <ArrowLeft className="h-3.5 w-3.5 shrink-0" />
         <span className="text-[var(--example-text)]">Back to Examples</span>
