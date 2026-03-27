@@ -51,7 +51,7 @@ export function ExamplePageRenderer({ page }: ExamplePageProps) {
 
 function ExamplesBackOverlay() {
   return (
-    <div className="pointer-events-none fixed left-3 top-24 z-40 md:left-4 md:top-28 lg:top-4">
+    <div className="pointer-events-none fixed left-3 top-24 z-40 md:left-4 md:top-28 lg:top-24 xl:top-24">
       <Link
         href="/examples"
         className="pointer-events-auto inline-flex items-center gap-2 rounded-full border border-[var(--example-border)] bg-[color-mix(in_srgb,var(--example-background)_92%,white_8%)] px-3 py-2 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--example-text)] shadow-[0_12px_30px_rgba(0,0,0,0.18)] backdrop-blur md:px-4 md:py-2.5"
@@ -313,28 +313,34 @@ function RestaurantExamplePage({ page }: ExamplePageProps) {
 function SalonExamplePage({ page }: ExamplePageProps) {
   return (
     <>
-      <section className="px-5 pt-6 pb-12 md:px-8 md:pt-8 md:pb-18">
-        <div className="mx-auto grid max-w-[94rem] gap-6 md:grid-cols-[minmax(0,0.6fr)_minmax(0,1.4fr)] md:items-center">
-          <div className="rounded-[var(--example-radius-panel)] bg-[var(--example-surface)] p-8 md:p-12">
+      <section className="px-5 pt-6 pb-10 md:px-8 md:pt-8 md:pb-14 lg:pt-6 lg:pb-12">
+        <div className="mx-auto grid max-w-6xl gap-5 md:grid-cols-[minmax(0,0.72fr)_minmax(0,1.28fr)] md:items-center lg:max-w-[88rem] lg:gap-6 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
+          <div className="rounded-[var(--example-radius-panel)] bg-[var(--example-surface)] p-8 md:p-10 lg:p-9">
             <SectionEyebrow>{page.hero.eyebrow}</SectionEyebrow>
-            <h1 className="text-5xl leading-[0.95] [font-family:var(--example-font-display)] font-semibold tracking-tight text-[var(--example-text)] md:text-6xl lg:text-7xl">
+            <h1 className="text-5xl leading-[0.93] [font-family:var(--example-font-display)] font-semibold tracking-tight text-[var(--example-text)] md:text-[3.75rem] lg:text-[3.5rem] xl:text-[4.25rem]">
               {page.hero.title}
-              {page.hero.highlight ? <span className="block italic font-normal">{page.hero.highlight}</span> : null}
             </h1>
-            <p className="mt-6 max-w-xl text-lg leading-8 text-[var(--example-muted)]">{page.hero.description}</p>
-            <ExampleHeroActions hero={page.hero} className="mt-8" />
+            {page.hero.highlight ? (
+              <p className="mt-3 max-w-lg text-2xl leading-[1.08] italic text-[var(--example-text)]/78 md:text-3xl lg:text-[1.85rem] xl:text-[2.15rem]">
+                {page.hero.highlight}
+              </p>
+            ) : null}
+            <p className="mt-4 max-w-lg text-base leading-7 text-[var(--example-muted)] md:mt-5 md:text-lg md:leading-8 lg:text-[0.98rem] lg:leading-7">
+              {page.hero.description}
+            </p>
+            <ExampleHeroActions hero={page.hero} className="mt-5 md:mt-6" />
           </div>
           <div className="grid gap-4 md:grid-cols-[1.02fr_0.98fr] md:self-center">
             <PhotoPanel
               image={page.hero.image}
-              aspect="aspect-[4/5]"
-              className="md:-translate-y-4"
+              aspect="aspect-[4/5] lg:aspect-[16/11]"
+              className="md:-translate-y-2 lg:translate-y-0"
               imageClassName="scale-[1.06] object-[50%_32%]"
             />
             <PhotoPanel
               image={page.whyChooseUs.image}
-              aspect="aspect-[4/5]"
-              className="md:translate-y-8"
+              aspect="aspect-[4/5] lg:aspect-[16/11]"
+              className="md:translate-y-4 lg:translate-y-0"
               imageClassName="scale-[1.1] object-[50%_18%]"
             />
           </div>
