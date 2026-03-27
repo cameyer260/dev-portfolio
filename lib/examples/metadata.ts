@@ -39,8 +39,8 @@ export function createExamplesIndexMetadata(): Metadata {
 }
 
 export function createExamplePageMetadata(page: ExampleLandingPage): Metadata {
-  const title = `Fictional ${page.industry} Website Example | ${page.businessName} | Christopher Meyer`;
-  const description = `Portfolio demo for a fictional ${page.industry.toLowerCase()} business. Part of Christopher Meyer's industry-specific local-business website examples.`;
+  const title = page.seo?.title ?? `${page.industry} Website Example | ${page.businessName}`;
+  const description = page.seo?.description ?? page.hero.description;
   const path = `/examples/${page.slug}`;
 
   return {

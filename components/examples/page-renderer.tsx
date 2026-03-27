@@ -9,7 +9,7 @@ import {
   TemplateButton,
   ThemeStyleVariables,
 } from "@/components/templates/template-shared";
-import type { ExampleFeatureItem, ExampleLandingPage } from "@/lib/examples";
+import type { ExampleAction, ExampleFeatureItem, ExampleLandingPage } from "@/lib/examples";
 import { exampleThemes } from "@/lib/examples";
 import { cn } from "@/lib/utils";
 import {
@@ -35,18 +35,33 @@ type ExamplePageProps = {
 export function ExamplePageRenderer({ page }: ExamplePageProps) {
   const theme = exampleThemes[page.themeFamily];
   const Component = pageRenderers[page.slug] ?? GenericExamplePage;
+  const primaryAction = getPrimaryAction(page);
 
   return (
     <ThemeStyleVariables theme={theme}>
       <main id="top" className="min-h-screen pb-20 md:pb-0">
         <ExamplesBackOverlay />
-        <ExampleSiteHeader page={page} />
+        <ExampleSiteHeader page={page} primaryAction={primaryAction} />
         <Component page={page} />
         <ExampleSiteFooter page={page} />
-        <MobileCallBar phone={page.phone} label={page.ctaText} />
+        <MobileCallBar action={primaryAction} />
       </main>
     </ThemeStyleVariables>
   );
+}
+
+function getPrimaryAction(page: ExampleLandingPage): ExampleAction {
+  return page.ctaText.toLowerCase().includes("call")
+    ? {
+        label: page.ctaText,
+        href: `tel:${page.phone.replace(/[^\d+]/g, "")}`,
+        tone: "accent",
+      }
+    : {
+        label: page.ctaText,
+        href: "#contact",
+        tone: page.hero.primaryCta.tone ?? "primary",
+      };
 }
 
 function ExamplesBackOverlay() {
@@ -80,24 +95,17 @@ const pageRenderers: Record<string, (props: ExamplePageProps) => ReactElement> =
   landscaping: LandscapingExamplePage,
 };
 
-function ExampleSiteHeader({ page }: ExamplePageProps) {
+function ExampleSiteHeader({
+  page,
+  primaryAction,
+}: ExamplePageProps & {
+  primaryAction: ExampleAction;
+}) {
   const navItems = [
     { href: "#services", label: "Services" },
     { href: "#reviews", label: "Reviews" },
     { href: "#contact", label: "Contact" },
   ];
-
-  const primaryAction = page.ctaText.toLowerCase().includes("call")
-    ? {
-        label: page.ctaText,
-        href: `tel:${page.phone.replace(/[^\d+]/g, "")}`,
-        tone: "accent" as const,
-      }
-    : {
-        label: page.ctaText,
-        href: "#contact",
-        tone: page.hero.primaryCta.tone ?? "primary",
-      };
 
   return (
     <header className="sticky top-0 z-30 border-b border-[var(--example-border)] bg-[color-mix(in_srgb,var(--example-background)_94%,transparent)] backdrop-blur-sm">

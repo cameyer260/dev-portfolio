@@ -50,7 +50,6 @@ export function FallbackImage({
         sizes="100vw"
         className={cn("object-cover", imageClassName)}
         onError={() => setFailed(true)}
-        unoptimized
       />
     </div>
   );
