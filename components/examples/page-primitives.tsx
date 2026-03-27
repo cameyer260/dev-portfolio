@@ -12,6 +12,7 @@ import type {
   ExampleFeatureItem,
   ExampleHeroSection,
   ExampleImage as ExampleImageType,
+  ExampleServiceAreaSection,
   ExampleServicesSection,
   ExampleTestimonial,
   ExampleWhyChooseUsSection,
@@ -149,22 +150,45 @@ export function PhotoPanel({
   aspect = "aspect-[4/3]",
   overlay,
   imageClassName,
+  sizes = "(max-width: 768px) 100vw, 50vw",
 }: {
   image?: ExampleImageType;
   className?: string;
   aspect?: string;
   overlay?: ReactNode;
   imageClassName?: string;
+  sizes?: string;
 }) {
   return (
     <div className={cn("relative overflow-hidden rounded-[var(--example-radius-panel)] bg-[var(--example-surface-strong)]", className)}>
       <div className={aspect}>
         {image ? (
-          <ExampleImage src={image.src} alt={image.alt} imageClassName={imageClassName} />
+          <ExampleImage src={image.src} alt={image.alt} sizes={sizes} imageClassName={imageClassName} />
         ) : null}
       </div>
       {overlay ? <div className="absolute inset-0">{overlay}</div> : null}
     </div>
+  );
+}
+
+function ServiceImagePanel({
+  image,
+  aspect = "aspect-[16/10]",
+}: {
+  image?: ExampleFeatureItem["image"];
+  aspect?: string;
+}) {
+  if (!image) {
+    return null;
+  }
+
+  return (
+    <PhotoPanel
+      image={image}
+      aspect={aspect}
+      sizes="(max-width: 768px) 100vw, (max-width: 1280px) 33vw, 420px"
+      className="mb-5 border border-[var(--example-border)]"
+    />
   );
 }
 
@@ -182,6 +206,7 @@ export function ServicesMosaic({
     return (
       <div className="grid gap-6 md:grid-cols-12">
         <SurfaceCard className="md:col-span-7">
+          <ServiceImagePanel image={featured.image} aspect="aspect-[16/9]" />
           <ExampleIcon icon={featured.icon} className="mb-5 h-8 w-8 text-[var(--example-accent)]" />
           <h3 className="text-3xl [font-family:var(--example-font-display)] font-semibold text-[var(--example-text)]">
             {featured.title}
@@ -193,6 +218,7 @@ export function ServicesMosaic({
         <div className="grid gap-6 md:col-span-5">
           {rest.map((item, index) => (
             <SurfaceCard key={item.title} emphasis={index === 0 ? "accent" : "strong"}>
+              <ServiceImagePanel image={item.image} />
               <ExampleIcon icon={item.icon} className="mb-4 h-7 w-7 text-[var(--example-primary)]" />
               <h3 className="text-2xl [font-family:var(--example-font-display)] font-semibold text-[var(--example-text)]">
                 {item.title}
@@ -218,6 +244,7 @@ export function ServicesMosaic({
                 : "border-transparent bg-[var(--example-surface-strong)]",
             )}
           >
+            <ServiceImagePanel image={item.image} />
             <ExampleIcon icon={item.icon} className="mb-4 h-7 w-7 text-[var(--example-accent)]" />
             <h3 className="text-2xl [font-family:var(--example-font-display)] font-semibold text-[var(--example-text)]">
               {item.title}
@@ -233,6 +260,7 @@ export function ServicesMosaic({
     <div className="grid gap-5 md:grid-cols-3">
       {items.map((item, index) => (
         <SurfaceCard key={item.title} emphasis={index === 1 ? "accent" : "default"} className="h-full">
+          <ServiceImagePanel image={item.image} />
           <ExampleIcon icon={item.icon} className="mb-5 h-8 w-8 text-[var(--example-accent)]" />
           <h3 className="text-2xl [font-family:var(--example-font-display)] font-semibold text-[var(--example-text)]">
             {item.title}
@@ -337,17 +365,41 @@ export function ReviewCards({
   );
 }
 
-export function AreaChips({ areas, className }: { areas: string[]; className?: string }) {
+export function AreaChips({
+  areas,
+  mapImage,
+  className,
+}: {
+  areas: string[];
+  mapImage?: ExampleServiceAreaSection["mapImage"];
+  className?: string;
+}) {
   return (
-    <div className={cn("flex flex-wrap gap-3", className)}>
-      {areas.map((area) => (
-        <span
-          key={area}
-          className="rounded-[var(--example-radius-pill)] border border-[var(--example-border)] bg-[var(--example-surface)] px-4 py-2 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--example-text)]"
-        >
-          {area}
-        </span>
-      ))}
+    <div
+      className={cn(
+        "grid gap-6",
+        mapImage && "lg:grid-cols-[minmax(0,1.1fr)_minmax(16rem,24rem)] lg:items-center",
+        className,
+      )}
+    >
+      <div className="flex flex-wrap gap-3">
+        {areas.map((area) => (
+          <span
+            key={area}
+            className="rounded-[var(--example-radius-pill)] border border-[var(--example-border)] bg-[var(--example-surface)] px-4 py-2 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--example-text)]"
+          >
+            {area}
+          </span>
+        ))}
+      </div>
+      {mapImage ? (
+        <PhotoPanel
+          image={mapImage}
+          aspect="aspect-[16/11]"
+          sizes="(max-width: 1024px) 100vw, 24rem"
+          className="border border-[var(--example-border)]"
+        />
+      ) : null}
     </div>
   );
 }
@@ -427,6 +479,8 @@ export function ContactBlock({
   buttonTone?: "primary" | "secondary" | "ghost" | "accent";
   tone?: "default" | "inverse";
 }) {
+  const primaryAction = resolveContactAction(section, buttonTone);
+
   return (
     <div className="grid gap-10 md:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)]">
       <div>
@@ -492,16 +546,41 @@ export function ContactBlock({
       >
         <ExampleFormFields fields={section.fields} mode={formMode} />
         <TemplateButton
-          action={{
-            label: section.primaryCta?.label ?? "Send Request",
-            href: section.primaryCta?.href ?? "#contact",
-            tone: buttonTone,
-          }}
+          action={primaryAction}
           className="mt-6 w-full justify-center"
         />
       </div>
     </div>
   );
+}
+
+function resolveContactAction(
+  section: ExampleContactSection,
+  buttonTone: NonNullable<ExampleAction["tone"]>,
+): ExampleAction {
+  const href = section.primaryCta?.href;
+
+  if (href && href !== "#contact") {
+    return {
+      label: section.primaryCta?.label ?? "Send Request",
+      href,
+      tone: buttonTone,
+    };
+  }
+
+  if (section.email) {
+    return {
+      label: section.primaryCta?.label ?? "Email Business",
+      href: `mailto:${section.email}`,
+      tone: buttonTone,
+    };
+  }
+
+  return {
+    label: section.primaryCta?.label ?? "Call Business",
+    href: `tel:${section.phone.replace(/[^\d+]/g, "")}`,
+    tone: buttonTone,
+  };
 }
 
 export function StatBadge({

@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 type FallbackImageProps = {
   src: string;
   alt: string;
+  sizes?: string;
   className?: string;
   imageClassName?: string;
   fallbackLabel?: string;
@@ -16,6 +17,7 @@ type FallbackImageProps = {
 export function FallbackImage({
   src,
   alt,
+  sizes,
   className,
   imageClassName,
   fallbackLabel,
@@ -47,7 +49,7 @@ export function FallbackImage({
         src={src}
         alt={alt}
         fill
-        sizes="100vw"
+        sizes={sizes}
         className={cn("object-cover", imageClassName)}
         onError={() => setFailed(true)}
       />

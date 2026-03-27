@@ -17,7 +17,12 @@ export function ExampleGalleryCard({ page }: { page: ExampleLandingPage }) {
       >
         <div className="relative aspect-[4/3] overflow-hidden bg-[var(--example-surface)]">
           {page.hero.image ? (
-            <ExampleImage src={page.hero.image.src} alt={page.hero.image.alt} className="scale-[1.01]" />
+            <ExampleImage
+              src={page.hero.image.src}
+              alt={page.hero.image.alt}
+              sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 560px"
+              className="scale-[1.01]"
+            />
           ) : null}
           <div
             className="absolute inset-0"

@@ -203,11 +203,13 @@ export function SurfaceCard({
 export function ExampleImage({
   src,
   alt,
+  sizes,
   className,
   imageClassName,
 }: {
   src: string;
   alt: string;
+  sizes?: string;
   className?: string;
   imageClassName?: string;
 }) {
@@ -215,6 +217,7 @@ export function ExampleImage({
     <FallbackImage
       src={src}
       alt={alt}
+      sizes={sizes}
       className={className}
       imageClassName={imageClassName}
     />

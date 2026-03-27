@@ -334,7 +334,7 @@ function RestaurantExamplePage({ page }: ExamplePageProps) {
         description={page.serviceArea.description}
         className="bg-[var(--example-surface)]"
       >
-        <AreaChips areas={page.serviceArea.areas} />
+        <AreaChips areas={page.serviceArea.areas} mapImage={page.serviceArea.mapImage} />
       </ExampleSection>
 
       <ClosingBand page={page} tone="soft" />
@@ -425,7 +425,7 @@ function SalonExamplePage({ page }: ExamplePageProps) {
       <ProcessSection process={page.process?.steps} title={page.process?.title} eyebrow={page.process?.eyebrow} description={page.process?.description} tone="soft" />
 
       <ExampleSection id="service-area" eyebrow={page.serviceArea.eyebrow} title={page.serviceArea.title} description={page.serviceArea.description}>
-        <AreaChips areas={page.serviceArea.areas} />
+        <AreaChips areas={page.serviceArea.areas} mapImage={page.serviceArea.mapImage} />
       </ExampleSection>
 
       <ClosingBand page={page} tone="soft" />
@@ -495,7 +495,7 @@ function RealEstateExamplePage({ page }: ExamplePageProps) {
       <ProcessSection process={page.process?.steps} title={page.process?.title} eyebrow={page.process?.eyebrow} description={page.process?.description} />
 
       <ExampleSection id="service-area" eyebrow={page.serviceArea.eyebrow} title={page.serviceArea.title} description={page.serviceArea.description} className="bg-[var(--example-surface)]">
-        <AreaChips areas={page.serviceArea.areas} />
+        <AreaChips areas={page.serviceArea.areas} mapImage={page.serviceArea.mapImage} />
       </ExampleSection>
 
       <ClosingBand page={page} tone="minimal" />
@@ -595,7 +595,7 @@ function PlumberExamplePage({ page }: ExamplePageProps) {
       <ProcessSection process={page.process?.steps} title={page.process?.title} eyebrow={page.process?.eyebrow} description={page.process?.description} tone="accent" />
 
       <ExampleSection id="service-area" eyebrow={page.serviceArea.eyebrow} title={page.serviceArea.title} description={page.serviceArea.description}>
-        <AreaChips areas={page.serviceArea.areas} />
+        <AreaChips areas={page.serviceArea.areas} mapImage={page.serviceArea.mapImage} />
       </ExampleSection>
 
       <ClosingBand page={page} tone="accent" />
@@ -668,7 +668,7 @@ function ContractorExamplePage({ page }: ExamplePageProps) {
       <ProcessSection process={page.process?.steps} title={page.process?.title} eyebrow={page.process?.eyebrow} description={page.process?.description} tone="dark" />
 
       <ExampleSection id="service-area" eyebrow={page.serviceArea.eyebrow} title={page.serviceArea.title} description={page.serviceArea.description}>
-        <AreaChips areas={page.serviceArea.areas} />
+        <AreaChips areas={page.serviceArea.areas} mapImage={page.serviceArea.mapImage} />
       </ExampleSection>
 
       <ClosingBand page={page} tone="accent" />
@@ -727,7 +727,7 @@ function AutoRepairExamplePage({ page }: ExamplePageProps) {
       <ProcessSection process={page.process?.steps} title={page.process?.title} eyebrow={page.process?.eyebrow} description={page.process?.description} tone="accent" />
 
       <ExampleSection id="service-area" eyebrow={page.serviceArea.eyebrow} title={page.serviceArea.title} description={page.serviceArea.description}>
-        <AreaChips areas={page.serviceArea.areas} />
+        <AreaChips areas={page.serviceArea.areas} mapImage={page.serviceArea.mapImage} />
       </ExampleSection>
 
       <ClosingBand page={page} tone="accent" />
@@ -784,7 +784,7 @@ function AccountantExamplePage({ page }: ExamplePageProps) {
       <ProcessSection process={page.process?.steps} title={page.process?.title} eyebrow={page.process?.eyebrow} description={page.process?.description} />
 
       <ExampleSection id="service-area" eyebrow={page.serviceArea.eyebrow} title={page.serviceArea.title} description={page.serviceArea.description} className="bg-[var(--example-surface)]">
-        <AreaChips areas={page.serviceArea.areas} />
+        <AreaChips areas={page.serviceArea.areas} mapImage={page.serviceArea.mapImage} />
       </ExampleSection>
 
       <ClosingBand page={page} tone="accent" />
@@ -851,7 +851,7 @@ function LawFirmExamplePage({ page }: ExamplePageProps) {
       <ProcessSection process={page.process?.steps} title={page.process?.title} eyebrow={page.process?.eyebrow} description={page.process?.description} />
 
       <ExampleSection id="service-area" eyebrow={page.serviceArea.eyebrow} title={page.serviceArea.title} description={page.serviceArea.description} className="bg-[var(--example-surface)]">
-        <AreaChips areas={page.serviceArea.areas} />
+        <AreaChips areas={page.serviceArea.areas} mapImage={page.serviceArea.mapImage} />
       </ExampleSection>
 
       <ClosingBand page={page} tone="minimal" />
@@ -909,7 +909,7 @@ function DentistExamplePage({ page }: ExamplePageProps) {
       <ProcessSection process={page.process?.steps} title={page.process?.title} eyebrow={page.process?.eyebrow} description={page.process?.description} />
 
       <ExampleSection id="service-area" eyebrow={page.serviceArea.eyebrow} title={page.serviceArea.title} description={page.serviceArea.description}>
-        <AreaChips areas={page.serviceArea.areas} />
+        <AreaChips areas={page.serviceArea.areas} mapImage={page.serviceArea.mapImage} />
       </ExampleSection>
 
       <ClosingBand page={page} tone="minimal" />
@@ -978,7 +978,7 @@ function GymExamplePage({ page }: ExamplePageProps) {
       <ProcessSection process={page.process?.steps} title={page.process?.title} eyebrow={page.process?.eyebrow} description={page.process?.description} tone="dark" />
 
       <ExampleSection id="service-area" eyebrow={page.serviceArea.eyebrow} title={page.serviceArea.title} description={page.serviceArea.description}>
-        <AreaChips areas={page.serviceArea.areas} />
+        <AreaChips areas={page.serviceArea.areas} mapImage={page.serviceArea.mapImage} />
       </ExampleSection>
 
       <ClosingBand page={page} tone="dark" />
@@ -1050,7 +1050,7 @@ function LandscapingExamplePage({ page }: ExamplePageProps) {
       <ProcessSection process={page.process?.steps} title={page.process?.title} eyebrow={page.process?.eyebrow} description={page.process?.description} tone="dark" />
 
       <ExampleSection id="service-area" eyebrow={page.serviceArea.eyebrow} title={page.serviceArea.title} description={page.serviceArea.description}>
-        <AreaChips areas={page.serviceArea.areas} />
+        <AreaChips areas={page.serviceArea.areas} mapImage={page.serviceArea.mapImage} />
       </ExampleSection>
 
       <ClosingBand page={page} tone="dark" />
@@ -1091,7 +1091,7 @@ function GenericExamplePage({ page }: ExamplePageProps) {
       </ExampleSection>
       <ProcessSection process={page.process?.steps} title={page.process?.title} eyebrow={page.process?.eyebrow} description={page.process?.description} />
       <ExampleSection id="service-area" eyebrow={page.serviceArea.eyebrow} title={page.serviceArea.title} description={page.serviceArea.description}>
-        <AreaChips areas={page.serviceArea.areas} />
+        <AreaChips areas={page.serviceArea.areas} mapImage={page.serviceArea.mapImage} />
       </ExampleSection>
       <ClosingBand page={page} />
       <ExampleSection id="contact">
