@@ -503,7 +503,7 @@ function PlumberExamplePage({ page }: ExamplePageProps) {
 
   return (
     <>
-      <section className="relative overflow-hidden bg-[var(--example-primary)] px-5 py-14 text-[var(--example-primary-contrast)] md:px-8 md:py-22">
+      <section className="relative overflow-hidden bg-[var(--example-primary)] px-5 py-10 text-[var(--example-primary-contrast)] md:px-8 md:py-16 lg:py-14">
         <div className="absolute inset-0 opacity-24">
           {page.hero.image ? <ExampleImage src={page.hero.image.src} alt={page.hero.image.alt} /> : null}
         </div>
@@ -813,8 +813,14 @@ function LawFirmExamplePage({ page }: ExamplePageProps) {
       </ExampleSection>
 
       <ExampleSection id="reviews" eyebrow={page.testimonials.eyebrow} title={page.testimonials.title} description={page.testimonials.description}>
-        <HighlightQuote item={featuredReview} />
-        {otherReviews.length ? <div className="mt-6 max-w-xl"><ReviewCards items={otherReviews} /></div> : null}
+        <div className="md:flex md:justify-end">
+          <HighlightQuote item={featuredReview} className="md:max-w-[58rem]" />
+        </div>
+        {otherReviews.length ? (
+          <div className="mt-6 md:flex md:justify-start">
+            <ReviewCards items={otherReviews} className="max-w-3xl" />
+          </div>
+        ) : null}
       </ExampleSection>
 
       <ProcessSection process={page.process?.steps} title={page.process?.title} eyebrow={page.process?.eyebrow} description={page.process?.description} />
@@ -902,14 +908,14 @@ function GymExamplePage({ page }: ExamplePageProps) {
           <span className="inline-flex bg-[var(--example-accent)] px-4 py-2 text-[11px] font-black uppercase tracking-[0.24em] text-[var(--example-accent-contrast)]">
             {page.hero.eyebrow}
           </span>
-          <h1 className="mt-6 max-w-4xl text-5xl leading-[0.9] [font-family:var(--example-font-display)] font-black uppercase tracking-tight md:text-7xl lg:text-8xl">
+          <h1 className="mt-4 max-w-[68rem] text-5xl leading-[0.9] [font-family:var(--example-font-display)] font-black uppercase tracking-tight md:text-[4.65rem] lg:text-[5.35rem]">
             {page.hero.title}
             {page.hero.highlight ? <span className="text-[var(--example-accent-soft)]"> {page.hero.highlight}</span> : null}
           </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-white/74">{page.hero.description}</p>
-          <ExampleHeroActions hero={page.hero} className="mt-8" tone="inverse" />
+          <p className="mt-4 max-w-xl text-base leading-7 text-white/74 md:text-[1.02rem] md:leading-7">{page.hero.description}</p>
+          <ExampleHeroActions hero={page.hero} className="mt-5 md:mt-6" tone="inverse" />
           {page.hero.badges?.length ? (
-            <div className="mt-8 flex flex-wrap gap-2">
+            <div className="mt-5 flex flex-wrap gap-2">
               {page.hero.badges.map((badge) => (
                 <span
                   key={badge}
@@ -970,23 +976,23 @@ function GymExamplePage({ page }: ExamplePageProps) {
 function LandscapingExamplePage({ page }: ExamplePageProps) {
   return (
     <>
-      <section className="px-5 pt-8 pb-12 md:px-8 md:pt-10 md:pb-18">
+      <section className="px-5 pt-7 pb-10 md:px-8 md:pt-8 md:pb-14 lg:pt-7 lg:pb-12">
         <div className="mx-auto grid max-w-6xl gap-5 md:grid-cols-[minmax(0,1fr)_minmax(0,0.9fr)] lg:items-stretch">
-          <PhotoPanel image={page.hero.image} aspect="aspect-[16/11] md:aspect-auto md:h-full lg:min-h-[34rem]" />
-          <div className="rounded-[var(--example-radius-panel)] bg-[var(--example-primary)] p-8 text-[var(--example-primary-contrast)] md:p-8 lg:flex lg:min-h-[34rem] lg:flex-col lg:justify-between lg:p-9">
+          <PhotoPanel image={page.hero.image} aspect="aspect-[16/11] md:aspect-auto md:h-full lg:min-h-[31.5rem]" />
+          <div className="rounded-[var(--example-radius-panel)] bg-[var(--example-primary)] p-8 text-[var(--example-primary-contrast)] md:p-8 lg:flex lg:min-h-[31.5rem] lg:flex-col lg:justify-between lg:p-8">
             <SectionEyebrow className="text-white/64">{page.hero.eyebrow}</SectionEyebrow>
-            <h1 className="mt-3 text-5xl leading-[0.92] [font-family:var(--example-font-display)] font-black uppercase md:text-[3.7rem] lg:text-[4.15rem]">
+            <h1 className="mt-3 text-5xl leading-[0.92] [font-family:var(--example-font-display)] font-black uppercase md:text-[3.35rem] lg:text-[3.75rem]">
               {page.hero.title}
               {page.hero.highlight ? (
-                <span className="mt-3 block text-[2.55rem] leading-[0.94] text-[var(--example-accent-soft)] md:text-[2.85rem] lg:text-[3.15rem]">
+                <span className="mt-2 block text-[2.25rem] leading-[0.94] text-[var(--example-accent-soft)] md:text-[2.5rem] lg:text-[2.75rem]">
                   {page.hero.highlight}
                 </span>
               ) : null}
             </h1>
-            <p className="mt-5 max-w-lg text-base leading-7 text-white/74 md:text-[1.02rem]">{page.hero.description}</p>
-            <ExampleHeroActions hero={page.hero} className="mt-7" tone="inverse" />
+            <p className="mt-4 max-w-lg text-base leading-7 text-white/74 md:text-[0.98rem]">{page.hero.description}</p>
+            <ExampleHeroActions hero={page.hero} className="mt-6" tone="inverse" />
             {page.hero.badges?.length ? (
-              <div className="mt-6 flex flex-wrap gap-2">
+              <div className="mt-5 flex flex-wrap gap-2">
                 {page.hero.badges.map((badge) => (
                   <span
                     key={badge}

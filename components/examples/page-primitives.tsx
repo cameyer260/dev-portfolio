@@ -290,9 +290,11 @@ export function TrustPoints({
 export function ReviewCards({
   items,
   tone = "light",
+  className,
 }: {
   items: ExampleTestimonial[];
   tone?: "light" | "dark";
+  className?: string;
 }) {
   return (
     <div
@@ -303,6 +305,7 @@ export function ReviewCards({
           : items.length === 2
             ? "md:grid-cols-2"
             : "md:grid-cols-3",
+        className,
       )}
     >
       {items.map((item, index) => (
