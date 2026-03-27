@@ -978,13 +978,13 @@ function LandscapingExamplePage({ page }: ExamplePageProps) {
     <>
       <section className="px-5 pt-7 pb-10 md:px-8 md:pt-8 md:pb-14 lg:pt-7 lg:pb-12">
         <div className="mx-auto grid max-w-6xl gap-5 md:grid-cols-[minmax(0,1fr)_minmax(0,0.9fr)] lg:items-stretch">
-          <PhotoPanel image={page.hero.image} aspect="aspect-[16/11] md:aspect-auto md:h-full lg:min-h-[31.5rem]" />
-          <div className="rounded-[var(--example-radius-panel)] bg-[var(--example-primary)] p-8 text-[var(--example-primary-contrast)] md:p-8 lg:flex lg:min-h-[31.5rem] lg:flex-col lg:justify-between lg:p-8">
+          <PhotoPanel image={page.hero.image} aspect="aspect-[16/11] md:aspect-auto md:h-full lg:min-h-[31.5rem]" className="min-w-0" />
+          <div className="min-w-0 overflow-hidden rounded-[var(--example-radius-panel)] bg-[var(--example-primary)] p-6 text-[var(--example-primary-contrast)] sm:p-8 md:p-8 lg:flex lg:min-h-[31.5rem] lg:flex-col lg:justify-between lg:p-8">
             <SectionEyebrow className="text-white/64">{page.hero.eyebrow}</SectionEyebrow>
-            <h1 className="mt-3 text-5xl leading-[0.92] [font-family:var(--example-font-display)] font-black uppercase md:text-[3.35rem] lg:text-[3.75rem]">
+            <h1 className="mt-3 max-w-full text-4xl leading-[0.92] [font-family:var(--example-font-display)] font-black uppercase sm:text-5xl md:text-[3.35rem] lg:text-[3.75rem]">
               {page.hero.title}
               {page.hero.highlight ? (
-                <span className="mt-2 block text-[2.25rem] leading-[0.94] text-[var(--example-accent-soft)] md:text-[2.5rem] lg:text-[2.75rem]">
+                <span className="mt-2 block text-[1.9rem] leading-[0.94] text-[var(--example-accent-soft)] sm:text-[2.25rem] md:text-[2.5rem] lg:text-[2.75rem]">
                   {page.hero.highlight}
                 </span>
               ) : null}
