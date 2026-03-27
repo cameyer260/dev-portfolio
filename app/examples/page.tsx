@@ -30,7 +30,7 @@ export default function ExamplesIndexPage() {
             Back to portfolio
           </Link>
 
-          <div className="mt-8 grid gap-10 md:grid-cols-[minmax(0,1fr)_320px] md:items-end">
+          <div className="mt-8 grid gap-10 md:grid-cols-[minmax(0,1fr)_320px] md:items-center">
             <div>
               <p className="text-xs font-bold uppercase tracking-[0.28em] text-[#6b6259]">
                 Example local-business landing pages
@@ -51,8 +51,8 @@ export default function ExamplesIndexPage() {
               </p>
               <div className="mt-4 space-y-4 text-sm leading-7 text-[#3e3a35]">
                 <p>Clear calls to action that make it easy for customers to call, book, or request a quote.</p>
-                <p>Clean, modern layouts that build trust quickly on both desktop and mobile.</p>
-                <p>Local-business messaging built to feel relevant for Edwardsville, Glen Carbon, and the broader St. Louis area.</p>
+                <p>Clean, modern layouts that feel polished and easy to use on both desktop and mobile.</p>
+                <p>These are starting points, not locked templates. The businesses are fictional, and your site can borrow from any of these directions or go in a completely different one.</p>
               </div>
             </div>
           </div>
