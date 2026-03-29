@@ -983,7 +983,7 @@ function GymExamplePage({ page }: ExamplePageProps) {
 
       <ClosingBand page={page} tone="dark" />
 
-      <section id="contact" className="bg-[var(--example-accent)] px-5 py-18 text-[var(--example-accent-contrast)] md:px-8 md:py-24">
+      <section id="contact" className="scroll-mt-28 bg-[var(--example-accent)] px-5 py-18 text-[var(--example-accent-contrast)] md:scroll-mt-32 md:px-8 md:py-24">
         <div className="mx-auto max-w-6xl">
           <ContactBlock
             section={page.contact}
@@ -1055,7 +1055,7 @@ function LandscapingExamplePage({ page }: ExamplePageProps) {
 
       <ClosingBand page={page} tone="dark" />
 
-      <section id="contact" className="bg-[var(--example-surface)] px-5 py-18 md:px-8 md:py-24">
+      <section id="contact" className="scroll-mt-28 bg-[var(--example-surface)] px-5 py-18 md:scroll-mt-32 md:px-8 md:py-24">
         <div className="mx-auto max-w-6xl">
           <ContactBlock section={page.contact} />
         </div>

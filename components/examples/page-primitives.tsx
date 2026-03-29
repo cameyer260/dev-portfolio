@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { ContactDemoForm } from "@/components/examples/ContactDemoForm";
 import {
   ExampleIcon,
   ExampleImage,
@@ -39,7 +40,7 @@ export function ExampleSection({
   tone?: "default" | "inverse";
 }) {
   return (
-    <section id={id} className={cn("px-5 py-18 md:px-8 md:py-24", className)}>
+    <section id={id} className={cn("scroll-mt-28 px-5 py-18 md:scroll-mt-32 md:px-8 md:py-24", className)}>
       <div className="mx-auto max-w-6xl">
         {title ? (
           <div
@@ -431,18 +432,20 @@ export function ExampleFormFields({
           </span>
           {field.type === "textarea" ? (
             <textarea
+              name={field.name}
               rows={4}
               placeholder={field.placeholder}
               className={inputClasses(mode)}
             />
           ) : field.type === "select" ? (
-            <select className={inputClasses(mode)}>
+            <select name={field.name} className={inputClasses(mode)} defaultValue={field.options?.[0]}>
               {field.options?.map((option) => (
                 <option key={option}>{option}</option>
               ))}
             </select>
           ) : (
             <input
+              name={field.name}
               type={field.type ?? "text"}
               placeholder={field.placeholder}
               className={inputClasses(mode)}
@@ -479,8 +482,6 @@ export function ContactBlock({
   buttonTone?: "primary" | "secondary" | "ghost" | "accent";
   tone?: "default" | "inverse";
 }) {
-  const primaryAction = resolveContactAction(section, buttonTone);
-
   return (
     <div className="grid gap-10 md:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)]">
       <div>
@@ -544,43 +545,15 @@ export function ContactBlock({
               : "border border-[var(--example-border)] bg-[var(--example-surface)]"),
         )}
       >
-        <ExampleFormFields fields={section.fields} mode={formMode} />
-        <TemplateButton
-          action={primaryAction}
-          className="mt-6 w-full justify-center"
+        <ContactDemoForm
+          section={section}
+          formMode={formMode}
+          buttonTone={buttonTone}
+          tone={tone}
         />
       </div>
     </div>
   );
-}
-
-function resolveContactAction(
-  section: ExampleContactSection,
-  buttonTone: NonNullable<ExampleAction["tone"]>,
-): ExampleAction {
-  const href = section.primaryCta?.href;
-
-  if (href && href !== "#contact") {
-    return {
-      label: section.primaryCta?.label ?? "Send Request",
-      href,
-      tone: buttonTone,
-    };
-  }
-
-  if (section.email) {
-    return {
-      label: section.primaryCta?.label ?? "Email Business",
-      href: `mailto:${section.email}`,
-      tone: buttonTone,
-    };
-  }
-
-  return {
-    label: section.primaryCta?.label ?? "Call Business",
-    href: `tel:${section.phone.replace(/[^\d+]/g, "")}`,
-    tone: buttonTone,
-  };
 }
 
 export function StatBadge({
