@@ -2,6 +2,7 @@ import type { ReactElement } from "react";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { MobileCallBar } from "@/components/templates/MobileCallBar";
+import { ExampleDemoForm } from "@/components/examples/ExampleDemoForm";
 import {
   ExampleImage,
   SectionEyebrow,
@@ -15,7 +16,6 @@ import { cn } from "@/lib/utils";
 import {
   AreaChips,
   ContactBlock,
-  ExampleFormFields,
   ExampleHeroActions,
   ExampleSection,
   ExampleStats,
@@ -558,11 +558,22 @@ function PlumberExamplePage({ page }: ExamplePageProps) {
             <p className="mt-3 text-sm leading-7 text-[var(--example-muted)]">
               Keep the request short, route the call fast, and make the next step feel immediate.
             </p>
-            {page.hero.formFields ? <div className="mt-5"><ExampleFormFields fields={page.hero.formFields} /></div> : null}
-            <TemplateButton
-              action={{ ...page.hero.primaryCta, tone: "accent" }}
-              className="mt-6 w-full justify-center font-black uppercase"
-            />
+            {page.hero.formFields ? (
+              <div className="mt-5">
+                <ExampleDemoForm
+                  fields={page.hero.formFields}
+                  actionLabel={page.hero.primaryCta.label}
+                  buttonTone="accent"
+                  successDetail="This demo previews the dispatch flow only. No request was actually sent."
+                  buttonClassName="font-black uppercase"
+                />
+              </div>
+            ) : (
+              <TemplateButton
+                action={{ ...page.hero.primaryCta, tone: "accent" }}
+                className="mt-6 w-full justify-center font-black uppercase"
+              />
+            )}
             <div className="mt-5 space-y-2 border-t border-[var(--example-border)] pt-4 text-[11px] font-bold uppercase tracking-[0.18em] text-[var(--example-muted)]">
               <p>Emergency repairs, drain cleaning, and water heaters</p>
               <p>Edwardsville, Glen Carbon, Maryville, and nearby towns</p>
