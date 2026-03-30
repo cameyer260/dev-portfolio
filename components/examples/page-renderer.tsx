@@ -710,7 +710,7 @@ function AutoRepairExamplePage({ page }: ExamplePageProps) {
             <span className="inline-flex rounded-[var(--example-radius-pill)] bg-[var(--example-accent)] px-4 py-2 text-[11px] font-black uppercase tracking-[0.22em] text-[var(--example-accent-contrast)]">
               {page.hero.eyebrow}
             </span>
-            <h1 className="mt-6 text-5xl leading-[0.92] [font-family:var(--example-font-display)] font-black uppercase md:text-6xl lg:text-7xl">
+            <h1 className="mt-6 max-w-full text-[2.5rem] leading-[0.92] [font-family:var(--example-font-display)] font-black uppercase sm:text-5xl md:text-6xl lg:text-7xl">
               {page.hero.title}
               {page.hero.highlight ? <span className="block text-[var(--example-accent-soft)]">{page.hero.highlight}</span> : null}
             </h1>
