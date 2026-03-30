@@ -249,16 +249,16 @@ function createExampleImage(
 
 function createExampleAssetPath(slug: string, slot: ImageSlot, index = 0): string {
   if (slot === "hero") {
-    return `/examples/${slug}/hero.jpg`;
+    return `/examples/${slug}/hero.webp`;
   }
 
   if (slot === "proof") {
-    return `/examples/${slug}/proof.jpg`;
+    return `/examples/${slug}/proof.webp`;
   }
 
   if (slot === "service-area") {
     return "/examples/shared/service-area.png";
   }
 
-  return `/examples/${slug}/service-${index + 1}.jpg`;
+  return `/examples/${slug}/service-${index + 1}.webp`;
 }
