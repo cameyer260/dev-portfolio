@@ -25,11 +25,68 @@ import {
 } from "lucide-react";
 import { SpotlightCard } from "@/components/ui/spotlight-card";
 
+const pricingTiers = [
+  {
+    title: "Starter Website",
+    price: "Starting at $999",
+    description:
+      "A simple, professional website that helps customers find your business and get in touch.",
+    includes: [
+      "3–5 page website",
+      "Mobile-friendly design",
+      "Contact form for calls and emails",
+      "Google Maps and business information",
+      "Clean, modern layout",
+      "Built for a smooth user experience",
+    ],
+    cta: "Get a Quote",
+  },
+  {
+    title: "Growth Website",
+    price: "Starting at $2,000",
+    badge: "Most Popular",
+    description:
+      "A custom website designed to help your business stand out and turn more visitors into customers.",
+    includes: [
+      "Everything in Starter",
+      "Fully custom design",
+      "Conversion-focused layout",
+      "Basic SEO setup",
+      "Testimonials or reviews section",
+      "Clear call-to-action sections throughout the site",
+    ],
+    cta: "Get a Quote",
+  },
+  {
+    title: "Premium Digital Presence",
+    price: "Starting at $5,000",
+    description:
+      "A more complete digital presence built to support long-term growth and help your business generate more leads online.",
+    includes: [
+      "Everything in Growth",
+      "Advanced SEO strategy",
+      "Content and copy guidance",
+      "Performance tracking setup",
+      "Integrations such as booking, forms, or other tools",
+      "Ongoing improvement plan",
+    ],
+    cta: "Get a Quote",
+  },
+] as const;
+
+const advancedProjects = [
+  "Booking systems",
+  "Dashboards",
+  "Internal tools",
+  "API integrations",
+] as const;
+
 // --- Navigation Dock ---
 const Dock = () => {
   const links = [
     { name: "Home", href: "#home" },
     { name: "Work", href: "#work" },
+    { name: "Services & Pricing", href: "#services-pricing" },
     { name: "Resume", href: "#resume" },
     { name: "Contact", href: "#contact" },
   ];
@@ -285,6 +342,105 @@ export default function PortfolioPage() {
               </div>
             </SpotlightCard>
           </div>
+        </section>
+
+        {/* SERVICES & PRICING */}
+        <section id="services-pricing" className="space-y-8">
+          <div className="max-w-3xl">
+            <h2 className="text-3xl font-medium text-white">Services & Pricing</h2>
+            <p className="mt-4 text-lg text-zinc-400 leading-relaxed">
+              Every project is customized. These are starting points.
+            </p>
+          </div>
+
+          <div className="grid gap-4 xl:grid-cols-3">
+            {pricingTiers.map((tier) => (
+              <SpotlightCard
+                key={tier.title}
+                className={[
+                  "h-full p-8",
+                  tier.badge ? "border-emerald-500/20 bg-emerald-500/[0.06]" : "",
+                ].join(" ")}
+              >
+                <div className="relative flex h-full flex-col">
+                  {tier.badge ? (
+                    <span className="absolute right-0 top-0 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-3 py-1 text-xs font-medium text-emerald-100">
+                      {tier.badge}
+                    </span>
+                  ) : null}
+
+                  <div className={tier.badge ? "pr-28 xl:min-h-[5rem]" : "xl:min-h-[5rem]"}>
+                    <h3 className="max-w-[12rem] text-2xl font-medium text-white">{tier.title}</h3>
+                  </div>
+
+                  <div className="mt-3 xl:min-h-[3.5rem]">
+                    <p className="text-xl font-medium text-emerald-200">{tier.price}</p>
+                  </div>
+
+                  <p className="mt-5 text-sm leading-relaxed text-zinc-400 xl:min-h-[7.5rem] md:text-base">
+                    {tier.description}
+                  </p>
+
+                  <div className="mt-8 xl:min-h-[2rem]">
+                    <p className="text-sm font-medium text-white">Includes:</p>
+                  </div>
+
+                  <div>
+                    <ul className="mt-4 space-y-3 text-sm text-zinc-300">
+                      {tier.includes.map((item) => (
+                        <li key={item} className="flex gap-3">
+                          <span className="mt-0.5 text-emerald-300">•</span>
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="mt-auto pt-8">
+                    <a
+                      href="#contact"
+                      className="inline-flex w-fit items-center gap-2 rounded-full border border-white/10 bg-white px-5 py-3 text-sm font-medium text-black transition-colors hover:bg-zinc-200"
+                    >
+                      {tier.cta} <ArrowRight className="h-4 w-4" />
+                    </a>
+                  </div>
+                </div>
+              </SpotlightCard>
+            ))}
+          </div>
+
+          <SpotlightCard className="p-8 border-sky-500/20 bg-sky-500/[0.04]">
+            <div className="space-y-6">
+              <div className="max-w-3xl">
+                <h3 className="text-2xl font-medium text-white">Custom Software & Advanced Projects</h3>
+                <p className="mt-4 text-lg text-zinc-300">Need more than a standard business website?</p>
+                <p className="mt-4 text-zinc-400">I also take on custom projects such as:</p>
+              </div>
+
+              <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+                {advancedProjects.map((item) => (
+                  <div
+                    key={item}
+                    className="rounded-2xl border border-white/10 bg-white/[0.03] px-5 py-4 text-sm text-zinc-200"
+                  >
+                    {item}
+                  </div>
+                ))}
+              </div>
+
+              <div>
+                <p className="text-zinc-400">
+                  Every advanced project is scoped based on your specific needs.
+                </p>
+                <a
+                  href="#contact"
+                  className="mt-6 inline-flex items-center gap-2 rounded-full border border-sky-500/20 bg-sky-500/10 px-5 py-3 text-sm font-medium text-sky-100 transition-colors hover:bg-sky-500/15"
+                >
+                  Contact Me for a Custom Quote <ArrowRight className="h-4 w-4" />
+                </a>
+              </div>
+            </div>
+          </SpotlightCard>
         </section>
 
         {/* INTERACTIVE RESUME */}
