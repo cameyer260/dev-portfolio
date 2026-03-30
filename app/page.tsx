@@ -93,23 +93,28 @@ const advancedProjects = [
 // --- Navigation Dock ---
 const Dock = () => {
   const links = [
-    { name: "Home", href: "#home" },
-    { name: "Work", href: "#work" },
-    { name: "Services & Pricing", href: "#services-pricing" },
-    { name: "Resume", href: "#resume" },
-    { name: "Contact", href: "#contact" },
+    { name: "Home", mobileName: "Home", href: "#home" },
+    { name: "Work", mobileName: "Work", href: "#work" },
+    {
+      name: "Services & Pricing",
+      mobileName: "Pricing",
+      href: "#services-pricing",
+    },
+    { name: "Resume", mobileName: "Resume", href: "#resume" },
+    { name: "Contact", mobileName: "Contact", href: "#contact" },
   ];
 
   return (
     <div className="fixed bottom-4 left-1/2 z-50 w-max max-w-[calc(100vw-1.5rem)] -translate-x-1/2 md:bottom-6">
-      <div className="flex items-center gap-1 overflow-x-auto rounded-full border border-white/10 bg-white/5 p-1.5 shadow-2xl backdrop-blur-xl md:gap-2 md:p-2">
+      <div className="flex items-center gap-0.5 rounded-full border border-white/10 bg-white/5 p-1 shadow-2xl backdrop-blur-xl sm:gap-1 sm:p-1.5 md:gap-2 md:p-2">
         {links.map((link) => (
           <a
             key={link.name}
             href={link.href}
-            className="shrink-0 rounded-full px-3 py-2 text-xs text-zinc-400 transition-colors hover:bg-white/10 hover:text-white md:px-4 md:text-sm"
+            className="shrink-0 rounded-full px-2 py-2 text-[11px] text-zinc-400 transition-colors hover:bg-white/10 hover:text-white sm:px-3 sm:text-xs md:px-4 md:text-sm"
           >
-            {link.name}
+            <span className="sm:hidden">{link.mobileName}</span>
+            <span className="hidden sm:inline">{link.name}</span>
           </a>
         ))}
       </div>
