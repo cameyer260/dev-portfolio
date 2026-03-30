@@ -25,7 +25,16 @@ import {
 } from "lucide-react";
 import { SpotlightCard } from "@/components/ui/spotlight-card";
 
-const pricingTiers = [
+type PricingTier = {
+  title: string;
+  price: string;
+  badge?: string;
+  description: string;
+  includes: readonly string[];
+  cta: string;
+};
+
+const pricingTiers: readonly PricingTier[] = [
   {
     title: "Starter Website",
     price: "Starting at $999",
