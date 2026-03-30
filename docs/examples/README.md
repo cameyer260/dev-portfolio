@@ -23,4 +23,5 @@
 Store example assets under `public/examples/{slug}/`.
 
 - Required baseline images: `hero.jpg`, `proof.jpg`
-- Optional supporting images: `service-area.jpg`, `service-{n}.jpg`
+- Shared service-area image: `public/examples/shared/service-area.png`
+- Optional per-page supporting images: `service-{n}.jpg`

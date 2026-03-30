@@ -257,7 +257,7 @@ function createExampleAssetPath(slug: string, slot: ImageSlot, index = 0): strin
   }
 
   if (slot === "service-area") {
-    return `/examples/${slug}/service-area.jpg`;
+    return "/examples/shared/service-area.png";
   }
 
   return `/examples/${slug}/service-${index + 1}.jpg`;
