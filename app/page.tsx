@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { 
@@ -88,7 +89,7 @@ export default function PortfolioPage() {
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 to-cyan-300">local businesses in Edwardsville and St. Louis.</span>
               </h1>
               <p className="text-lg md:text-xl text-zinc-400 leading-relaxed">
-                I build fast, modern websites for local businesses, improve mobile experience, and help companies rank better on Google. I&apos;m also a Computer Science student building production software and open to Summer 2027 software engineering internships.
+                I build fast, modern websites for local businesses, and I&apos;ve put together industry-specific example sites so prospects can browse a restaurant, contractor, dentist, law firm, salon, or other local-business direction before we talk. I&apos;m also a Computer Science student building production software and open to Summer 2027 software engineering internships.
               </p>
               <div className="mt-8 grid gap-3 sm:grid-cols-3">
                 {[
@@ -111,12 +112,12 @@ export default function PortfolioPage() {
                 >
                   Start a Project <ArrowRight className="h-4 w-4" />
                 </a>
-                <a
-                  href="#work"
+                <Link
+                  href="/examples"
                   className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-white/[0.08]"
                 >
-                  View Technical Work
-                </a>
+                  Browse Industry Website Examples <ArrowRight className="h-4 w-4" />
+                </Link>
                 <a
                   href="#resume"
                   className="inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-5 py-3 text-sm font-medium text-emerald-100 transition-colors hover:bg-emerald-500/15"
@@ -265,8 +266,14 @@ export default function PortfolioPage() {
                   </div>
                   <h3 className="text-2xl font-medium text-white mb-3">Custom Business Solutions</h3>
                   <p className="text-zinc-400 text-sm md:text-base leading-relaxed max-w-md">
-                    Growing a freelance development business building bespoke dashboards, marketing sites, and workflow automation for local businesses. Owning the stack end-to-end.
+                    Freelance websites and software for local businesses, with industry-specific example sites prospects can browse before we talk through design direction, lead generation goals, and the right build for their business.
                   </p>
+                  <Link
+                    href="/examples"
+                    className="mt-6 inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-4 py-2 text-sm font-medium text-emerald-100 transition-colors hover:bg-emerald-500/15"
+                  >
+                    See Local Business Website Examples <ArrowRight className="h-4 w-4" />
+                  </Link>
                 </div>
                 <div className="mt-8 flex flex-wrap gap-2">
                   {['Next.js', 'Tailwind CSS', 'PostgreSQL', 'Vercel'].map(tech => (
@@ -542,8 +549,14 @@ export default function PortfolioPage() {
           <div className="max-w-2xl">
             <h2 className="text-3xl font-medium text-white mb-4">Let&apos;s build something useful.</h2>
             <p className="text-zinc-400 text-lg">
-              If you need a website for your business, want to improve your current site, or you&apos;re reaching out about an internship, feel free to email or text me directly. I respond quickly.
+              If you need a website for your business, want to improve your current site, or you&apos;re reaching out about an internship, feel free to email or text me directly. If you&apos;re here for freelance work, browse the industry-specific example sites first and then reach out when you find the closest fit.
             </p>
+            <Link
+              href="/examples"
+              className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-emerald-200 transition-colors hover:text-emerald-100"
+            >
+              View Industry-Specific Example Sites <ArrowRight className="h-4 w-4" />
+            </Link>
           </div>
 
           <div className="grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">

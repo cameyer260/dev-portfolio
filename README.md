@@ -1,88 +1,73 @@
-🌐 Dev Portfolio
+# Christopher Meyer Portfolio
 
-A modern developer portfolio built with Next.js and Tailwind CSS.
-Showcases my projects, skills, and experience with a responsive, dark-mode–friendly design.
+Personal portfolio site built with Next.js and Tailwind CSS. It serves two related but separate purposes:
 
-✨ Features
+- the main portfolio homepage at `/`, which introduces Christopher Meyer, featured software work, resume details, and contact options
+- the `/examples` showcase system, which presents fictional local-business website demos for freelance sales conversations
 
-🌓 Dark Mode Toggle — respects system preference and allows manual switching.
+The `/examples` pages are portfolio assets, not real client websites. The detail pages stay publicly accessible for sharing, but they are intentionally marked as fictional and excluded from search indexing.
 
-📂 Projects Section — highlights full-stack apps with links to live demos and repos.
+## Stack
 
-💼 Experience Timeline — work and freelance history with concise bullet points.
+- Next.js App Router
+- TypeScript
+- Tailwind CSS
+- Lucide React
+- Vercel Analytics
 
-🛠 Skills Grid — quick overview of technologies I use.
+## Routes
 
-📬 Contact Form — easy way to reach me.
+- `/`: main portfolio homepage
+- `/examples`: index of industry-specific local-business website examples
+- `/examples/[industry]`: individual fictional example site for a single industry slug
+- `/robots.txt`: robots policy
+- `/sitemap.xml`: sitemap for indexable routes
 
-🚀 Tech Stack
+## `/examples` Architecture
 
-Framework: Next.js
+The examples system uses shared infrastructure without forcing every industry through one finished page template.
 
-Styling: Tailwind CSS
+- Route files live in `app/examples/page.tsx` and `app/examples/[industry]/page.tsx`
+- Example content lives in `lib/examples/content/*.ts`
+- Shared example types live in `lib/examples/types.ts`
+- Example collection helpers live in `lib/examples/content/index.ts` and `lib/examples/index.ts`
+- Metadata helpers live in `lib/examples/metadata.ts`
+- The active page renderer map lives in `components/examples/page-renderer.tsx`
+- Shared example UI primitives live in `components/examples/page-primitives.tsx`
+- Shared example support components still used by the renderer system live in `components/templates/ExampleGalleryCard.tsx`, `components/templates/MobileCallBar.tsx`, and `components/templates/template-shared.tsx`
 
-Icons: Lucide React
+For a focused architecture note, see `docs/examples/README.md`.
 
-Deployment: Vercel
+## Image Assets
 
-📂 Projects
+Example imagery is file-path driven and stored under `public/examples/{slug}/`.
 
-DocuQuery
-AI-powered document Q&A app where users upload files and instantly query their contents using vector search.
-Tech: Next.js, OpenAI, Pinecone, Upstash Redis
+- Core images: `hero.jpg` and `proof.jpg`
+- Optional supporting images when referenced by content or renderer logic: `service-area.jpg` and `service-{n}.jpg`
+- If an asset is missing, the UI falls back to a visible placeholder instead of inventing imagery
 
-SkillSphere
-Real-time multiplayer gaming platform where users compete across multiple games. Built with WebSockets, Supabase, and deployed on a DigitalOcean VPS.
-Tech: Next.js, Supabase, WebSockets, Vercel, DigitalOcean VPS
+## Search And Indexing
 
-Social Media Mock
-Lightweight Twitter-style social media app with authentication, user avatars, and S3 image storage.
-Tech: Next.js, MongoDB, Tailwind, S3, bcrypt Auth
+- `/` remains indexable
+- `/examples` remains indexable as the portfolio examples hub
+- `/examples/[industry]` detail pages are marked `noindex` and removed from the sitemap because the businesses are fictional
 
-🛠 Skills
+## Development
 
-TypeScript • Python • React/Next.js • Tailwind CSS
-
-Node.js • PostgreSQL • Supabase • WebSockets
-
-Docker • AWS S3
-
-💼 Experience
-
-Freelance Web Developer (2025 – Present)
-
-Design and ship marketing sites, dashboards, and MVPs for clients.
-
-Own the stack end-to-end: Next.js, Tailwind, Supabase, Vercel.
-
-Server at Dewey's Pizza, Edwardsville, IL (Jun 2024 – Present)
-
-Deliver excellent customer service in a fast-paced restaurant environment.
-
-Collaborate with team members to maintain efficient operations during peak hours.
-
-📦 Setup
-
-Clone the repo:
-
-git clone https://github.com/cameyer260/dev-portfolio.git
-cd dev-portfolio
-
-
-Install dependencies:
-
+```bash
 npm install
-
-
-Run the dev server:
-
 npm run dev
+```
 
+Open `http://localhost:3000`.
 
-Open http://localhost:3000.
+Useful checks:
 
-📜 License
+```bash
+npm run lint
+npm run build
+```
 
-MIT License © 2025 Christopher Meyer
+## License
 
-👉 Live Site: https://www.christophermeyer.dev
+MIT License Copyright (c) 2026 Christopher Meyer
