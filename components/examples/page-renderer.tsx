@@ -532,7 +532,7 @@ function PlumberExamplePage({ page }: ExamplePageProps) {
         <div className="absolute inset-0 opacity-24">
           {page.hero.image ? <ExampleImage src={page.hero.image.src} alt={page.hero.image.alt} /> : null}
         </div>
-        <div className="absolute inset-0 bg-[linear-gradient(135deg,var(--example-hero-overlay-from),var(--example-hero-overlay-to))]" />
+        <div className="absolute inset-0 bg-[linear-gradient(135deg,var(--example-hero-overlay-from),var(--example-hero-overlay-to))] opacity-48" />
         <div className="relative mx-auto grid max-w-6xl gap-8 md:grid-cols-[minmax(0,1.05fr)_24rem] md:items-start">
           <div>
             <span className="inline-flex rounded-[var(--example-radius-pill)] bg-[var(--example-accent)] px-4 py-2 text-[11px] font-black uppercase tracking-[0.22em] text-[var(--example-accent-contrast)]">
@@ -704,7 +704,7 @@ function AutoRepairExamplePage({ page }: ExamplePageProps) {
             />
           ) : null}
         </div>
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,var(--example-hero-overlay-from),var(--example-hero-overlay-to))] opacity-64" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,var(--example-hero-overlay-from),var(--example-hero-overlay-to))] opacity-48" />
         <div className="relative mx-auto max-w-6xl">
           <div className="max-w-3xl">
             <span className="inline-flex rounded-[var(--example-radius-pill)] bg-[var(--example-accent)] px-4 py-2 text-[11px] font-black uppercase tracking-[0.22em] text-[var(--example-accent-contrast)]">
