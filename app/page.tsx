@@ -52,6 +52,7 @@ const pricingTiers: readonly PricingTier[] = [
       "Clean, modern layout built for easy browsing",
     ],
     cta: "Get a Quote",
+    useLightCta: false,
   },
   {
     title: "Growth Website",
@@ -74,7 +75,7 @@ const pricingTiers: readonly PricingTier[] = [
     title: "Custom Software / Advanced Website",
     price: "Custom quote",
     description:
-      "For businesses that need more than a standard website, with scope built around more advanced features or a more involved build.",
+      "For businesses that need more than a standard website, with a more advanced or involved build.",
     includes: [
       "Advanced websites with custom scope",
       "Booking systems, forms, and connected tools",
@@ -89,25 +90,26 @@ const pricingTiers: readonly PricingTier[] = [
       "border-sky-500/20 bg-sky-500/10 text-sky-100 hover:bg-sky-500/15",
     useLightCta: false,
   },
-  {
-    title: "Maintenance & Hosting",
-    price: "Starting at $99/month",
-    description:
-      "Ongoing hosting, updates, and support to keep your website running smoothly after launch.",
-    includes: [
-      "Hosting and routine website upkeep",
-      "Software and security updates",
-      "Text, photo, and small content edits",
-      "Form checks and help when something needs attention",
-    ],
-    cta: "Ask About Maintenance",
-    cardClassName: "border-amber-500/20 bg-amber-500/[0.04]",
-    priceClassName: "text-amber-200",
-    ctaClassName:
-      "border-amber-500/20 bg-amber-500/10 text-amber-100 hover:bg-amber-500/15",
-    useLightCta: false,
-  },
 ] as const;
+
+const maintenanceTier = {
+  title: "Maintenance & Hosting",
+  price: "Starting at $99/month",
+  description:
+    "Ongoing hosting, updates, and support to keep your website running smoothly after launch.",
+  includes: [
+    "Hosting and routine website upkeep",
+    "Software and security updates",
+    "Text, photo, and small content edits",
+    "Form checks and help when something needs attention",
+  ] as const,
+  cta: "Ask About Maintenance",
+  cardClassName: "border-amber-500/20 bg-amber-500/[0.04]",
+  priceClassName: "text-amber-200",
+  ctaClassName:
+    "border-amber-500/20 bg-amber-500/10 text-amber-100 hover:bg-amber-500/15",
+  useLightCta: false,
+} as const;
 
 // --- Navigation Dock ---
 const Dock = () => {
@@ -386,7 +388,7 @@ export default function PortfolioPage() {
             </p>
           </div>
 
-          <div className="grid gap-4 lg:grid-cols-2">
+          <div className="grid gap-4 xl:grid-cols-3">
             {pricingTiers.map((tier) => (
               <SpotlightCard
                 key={tier.title}
@@ -399,21 +401,23 @@ export default function PortfolioPage() {
                     </span>
                   ) : null}
 
-                  <div className={tier.badge ? "pr-28" : ""}>
-                    <h3 className="text-2xl font-medium text-white">{tier.title}</h3>
+                  <div className={["h-[4.5rem]", tier.badge ? "pr-28" : ""].join(" ")}>
+                    <h3 className="max-w-[14rem] text-2xl font-medium text-white">{tier.title}</h3>
                   </div>
 
-                  <div className="mt-3">
+                  <div className="mt-3 h-[2rem]">
                     <p className={["text-xl font-medium text-emerald-200", tier.priceClassName ?? ""].join(" ")}>
                       {tier.price}
                     </p>
                   </div>
 
-                  <p className="mt-5 text-sm leading-relaxed text-zinc-400 md:text-base">
-                    {tier.description}
-                  </p>
+                  <div className="mt-5 h-[6.75rem]">
+                    <p className="text-sm leading-relaxed text-zinc-400 md:text-base">
+                      {tier.description}
+                    </p>
+                  </div>
 
-                  <div className="mt-8">
+                  <div className="mt-8 h-[1.25rem]">
                     <p className="text-sm font-medium text-white">Includes:</p>
                   </div>
 
@@ -446,6 +450,47 @@ export default function PortfolioPage() {
               </SpotlightCard>
             ))}
           </div>
+
+          <SpotlightCard className={["p-8", maintenanceTier.cardClassName].join(" ")}>
+            <div className="grid gap-8 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.2fr)_auto] lg:items-stretch">
+              <div className="max-w-sm">
+                <h3 className="text-2xl font-medium text-white">{maintenanceTier.title}</h3>
+                <p className={["mt-3 text-xl font-medium text-emerald-200", maintenanceTier.priceClassName].join(" ")}>
+                  {maintenanceTier.price}
+                </p>
+                <p className="mt-5 text-sm leading-relaxed text-zinc-400 md:text-base">
+                  {maintenanceTier.description}
+                </p>
+              </div>
+
+              <div className="lg:max-w-xl">
+                <p className="text-sm font-medium text-white">Includes:</p>
+                <ul className="mt-4 space-y-3 text-sm text-zinc-300">
+                  {maintenanceTier.includes.map((item) => (
+                    <li key={item} className="flex gap-3">
+                      <span className="mt-0.5 text-amber-300">•</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="flex lg:self-stretch lg:items-end lg:justify-self-end">
+                <a
+                  href="#contact"
+                  className={[
+                    "inline-flex w-fit items-center gap-2 rounded-full px-5 py-3 text-sm font-medium transition-colors",
+                    maintenanceTier.useLightCta === false
+                      ? "border-white/10 bg-white/5 text-white hover:bg-white/10"
+                      : "border border-white/10 bg-white text-black hover:bg-zinc-200",
+                    maintenanceTier.ctaClassName ?? "",
+                  ].join(" ")}
+                >
+                  {maintenanceTier.cta} <ArrowRight className="h-4 w-4" />
+                </a>
+              </div>
+            </div>
+          </SpotlightCard>
         </section>
 
         {/* INTERACTIVE RESUME */}
