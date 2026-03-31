@@ -6,9 +6,15 @@ import { motion } from "framer-motion";
 interface SpotlightCardProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
   className?: string;
+  surfaceClassName?: string;
 }
 
-export function SpotlightCard({ children, className = "", ...props }: SpotlightCardProps) {
+export function SpotlightCard({
+  children,
+  className = "",
+  surfaceClassName = "bg-white/[0.02] border border-white/[0.08]",
+  ...props
+}: SpotlightCardProps) {
   const divRef = useRef<HTMLDivElement>(null);
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [opacity, setOpacity] = useState(0);
@@ -31,7 +37,7 @@ export function SpotlightCard({ children, className = "", ...props }: SpotlightC
       onMouseMove={handleMouseMove}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className={`relative overflow-hidden rounded-2xl bg-white/[0.02] border border-white/[0.08] ${className}`}
+      className={`relative overflow-hidden rounded-2xl ${surfaceClassName} ${className}`}
       {...props}
     >
       <div

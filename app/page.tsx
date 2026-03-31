@@ -32,8 +32,9 @@ type PricingTier = {
   description: string;
   includes: readonly string[];
   cta: string;
-  cardClassName?: string;
+  surfaceClassName?: string;
   priceClassName?: string;
+  bulletClassName?: string;
   ctaClassName?: string;
   useLightCta?: boolean;
 };
@@ -52,6 +53,10 @@ const pricingTiers: readonly PricingTier[] = [
       "Clean, modern layout built for easy browsing",
     ],
     cta: "Get a Quote",
+    priceClassName: "text-rose-200",
+    bulletClassName: "text-rose-200",
+    ctaClassName:
+      "border border-rose-500/30 bg-rose-500/12 text-rose-50 hover:bg-rose-500/18",
     useLightCta: false,
   },
   {
@@ -69,7 +74,8 @@ const pricingTiers: readonly PricingTier[] = [
       "Clear calls to action throughout the site",
     ],
     cta: "Get a Quote",
-    cardClassName: "border-emerald-500/20 bg-emerald-500/[0.06]",
+    priceClassName: "text-emerald-300",
+    bulletClassName: "text-emerald-300",
   },
   {
     title: "Custom Software / Advanced Website",
@@ -84,10 +90,10 @@ const pricingTiers: readonly PricingTier[] = [
       "Tracking or content guidance when the project calls for it",
     ],
     cta: "Request Custom Quote",
-    cardClassName: "border-sky-500/20 bg-sky-500/[0.04]",
     priceClassName: "text-sky-200",
+    bulletClassName: "text-sky-200",
     ctaClassName:
-      "border-sky-500/20 bg-sky-500/10 text-sky-100 hover:bg-sky-500/15",
+      "border border-sky-500/30 bg-sky-500/12 text-sky-50 hover:bg-sky-500/18",
     useLightCta: false,
   },
 ] as const;
@@ -104,10 +110,10 @@ const maintenanceTier = {
     "Form checks and help when something needs attention",
   ] as const,
   cta: "Ask About Maintenance",
-  cardClassName: "border-amber-500/20 bg-amber-500/[0.04]",
-  priceClassName: "text-amber-200",
+  priceClassName: "text-amber-100",
+  bulletClassName: "text-amber-100",
   ctaClassName:
-    "border-amber-500/20 bg-amber-500/10 text-amber-100 hover:bg-amber-500/15",
+    "border border-amber-500/30 bg-amber-500/12 text-amber-50 hover:bg-amber-500/18",
   useLightCta: false,
 } as const;
 
@@ -392,7 +398,7 @@ export default function PortfolioPage() {
             {pricingTiers.map((tier) => (
               <SpotlightCard
                 key={tier.title}
-                className={["h-full p-8", tier.cardClassName ?? ""].join(" ")}
+                className="h-full p-8"
               >
                 <div className="relative flex h-full flex-col">
                   {tier.badge ? (
@@ -406,7 +412,12 @@ export default function PortfolioPage() {
                   </div>
 
                   <div className="mt-3 xl:min-h-[2rem]">
-                    <p className={["text-xl font-medium text-emerald-200", tier.priceClassName ?? ""].join(" ")}>
+                    <p
+                      className={[
+                        "text-xl font-medium",
+                        tier.priceClassName ?? "text-emerald-200",
+                      ].join(" ")}
+                    >
                       {tier.price}
                     </p>
                   </div>
@@ -425,7 +436,9 @@ export default function PortfolioPage() {
                     <ul className="mt-4 space-y-3 text-sm text-zinc-300">
                       {tier.includes.map((item) => (
                         <li key={item} className="flex gap-3">
-                          <span className="mt-0.5 text-emerald-300">•</span>
+                          <span className={["mt-0.5 text-emerald-300", tier.bulletClassName ?? ""].join(" ")}>
+                            •
+                          </span>
                           <span>{item}</span>
                         </li>
                       ))}
@@ -438,9 +451,8 @@ export default function PortfolioPage() {
                       className={[
                         "inline-flex w-fit items-center gap-2 rounded-full px-5 py-3 text-sm font-medium transition-colors",
                         tier.useLightCta === false
-                          ? "border border-white/10 bg-white/5 text-white hover:bg-white/10"
+                          ? (tier.ctaClassName ?? "border border-white/10 bg-white/5 text-white hover:bg-white/10")
                           : "border border-white/10 bg-white text-black hover:bg-zinc-200",
-                        tier.ctaClassName ?? "",
                       ].join(" ")}
                     >
                       {tier.cta} <ArrowRight className="h-4 w-4" />
@@ -451,11 +463,18 @@ export default function PortfolioPage() {
             ))}
           </div>
 
-          <SpotlightCard className={["p-8", maintenanceTier.cardClassName].join(" ")}>
+          <SpotlightCard
+            className="p-8"
+          >
             <div className="grid gap-8 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.2fr)_auto] lg:items-stretch">
               <div className="max-w-sm">
                 <h3 className="text-2xl font-medium text-white">{maintenanceTier.title}</h3>
-                <p className={["mt-3 text-xl font-medium text-emerald-200", maintenanceTier.priceClassName].join(" ")}>
+                <p
+                  className={[
+                    "mt-3 text-xl font-medium",
+                    maintenanceTier.priceClassName,
+                  ].join(" ")}
+                >
                   {maintenanceTier.price}
                 </p>
                 <p className="mt-5 text-sm leading-relaxed text-zinc-400 md:text-base">
@@ -468,7 +487,9 @@ export default function PortfolioPage() {
                 <ul className="mt-4 space-y-3 text-sm text-zinc-300">
                   {maintenanceTier.includes.map((item) => (
                     <li key={item} className="flex gap-3">
-                      <span className="mt-0.5 text-amber-300">•</span>
+                      <span className={["mt-0.5 text-amber-300", maintenanceTier.bulletClassName ?? ""].join(" ")}>
+                        •
+                      </span>
                       <span>{item}</span>
                     </li>
                   ))}
@@ -481,9 +502,8 @@ export default function PortfolioPage() {
                   className={[
                     "inline-flex w-fit items-center gap-2 rounded-full px-5 py-3 text-sm font-medium transition-colors",
                     maintenanceTier.useLightCta === false
-                      ? "border border-white/10 bg-white/5 text-white hover:bg-white/10"
+                      ? (maintenanceTier.ctaClassName ?? "border border-white/10 bg-white/5 text-white hover:bg-white/10")
                       : "border border-white/10 bg-white text-black hover:bg-zinc-200",
-                    maintenanceTier.ctaClassName ?? "",
                   ].join(" ")}
                 >
                   {maintenanceTier.cta} <ArrowRight className="h-4 w-4" />
