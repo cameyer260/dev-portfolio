@@ -481,7 +481,7 @@ export default function PortfolioPage() {
                   className={[
                     "inline-flex w-fit items-center gap-2 rounded-full px-5 py-3 text-sm font-medium transition-colors",
                     maintenanceTier.useLightCta === false
-                      ? "border-white/10 bg-white/5 text-white hover:bg-white/10"
+                      ? "border border-white/10 bg-white/5 text-white hover:bg-white/10"
                       : "border border-white/10 bg-white text-black hover:bg-zinc-200",
                     maintenanceTier.ctaClassName ?? "",
                   ].join(" ")}
