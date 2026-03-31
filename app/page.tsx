@@ -32,62 +32,81 @@ type PricingTier = {
   description: string;
   includes: readonly string[];
   cta: string;
+  cardClassName?: string;
+  priceClassName?: string;
+  ctaClassName?: string;
+  useLightCta?: boolean;
 };
 
 const pricingTiers: readonly PricingTier[] = [
   {
-    title: "Starter Website",
-    price: "Starting at $999",
+    title: "Business Website",
+    price: "Starting at $750",
     description:
-      "A simple, professional website that helps customers find your business and get in touch.",
+      "For simple, professional small-business sites that make it easy for people to find you and get in touch.",
     includes: [
       "3–5 page website",
       "Mobile-friendly design",
       "Contact form for calls and emails",
       "Google Maps and business information",
-      "Clean, modern layout",
-      "Built for a smooth user experience",
+      "Clean, modern layout built for easy browsing",
     ],
     cta: "Get a Quote",
   },
   {
     title: "Growth Website",
-    price: "Starting at $2,000",
+    price: "Starting at $1,500",
     badge: "Most Popular",
     description:
-      "A custom website designed to help your business stand out and turn more visitors into customers.",
+      "For businesses that want a more custom design and stronger lead-generation structure.",
     includes: [
-      "Everything in Starter",
-      "Fully custom design",
+      "Everything in Business Website",
+      "Custom design tailored to your business",
       "Conversion-focused layout",
       "Basic SEO setup",
       "Testimonials or reviews section",
-      "Clear call-to-action sections throughout the site",
+      "Clear calls to action throughout the site",
     ],
     cta: "Get a Quote",
+    cardClassName: "border-emerald-500/20 bg-emerald-500/[0.06]",
   },
   {
-    title: "Premium Digital Presence",
-    price: "Starting at $5,000",
+    title: "Custom Software / Advanced Website",
+    price: "Custom quote",
     description:
-      "A more complete digital presence built to support long-term growth and help your business generate more leads online.",
+      "For businesses that need more than a standard website, with scope built around more advanced features or a more involved build.",
     includes: [
-      "Everything in Growth",
-      "Advanced SEO strategy",
-      "Content and copy guidance",
-      "Performance tracking setup",
-      "Integrations such as booking, forms, or other tools",
-      "Ongoing improvement plan",
+      "Advanced websites with custom scope",
+      "Booking systems, forms, and connected tools",
+      "Dashboards and internal tools",
+      "Integrations and custom workflows",
+      "Tracking or content guidance when the project calls for it",
     ],
-    cta: "Get a Quote",
+    cta: "Request Custom Quote",
+    cardClassName: "border-sky-500/20 bg-sky-500/[0.04]",
+    priceClassName: "text-sky-200",
+    ctaClassName:
+      "border-sky-500/20 bg-sky-500/10 text-sky-100 hover:bg-sky-500/15",
+    useLightCta: false,
   },
-] as const;
-
-const advancedProjects = [
-  "Booking systems",
-  "Dashboards",
-  "Internal tools",
-  "API integrations",
+  {
+    title: "Maintenance & Hosting",
+    price: "Starting at $99/month",
+    description:
+      "Ongoing hosting, updates, and support to keep your website running smoothly after launch.",
+    includes: [
+      "Hosting and routine website upkeep",
+      "Software and security updates",
+      "Text, photo, and small content edits",
+      "Form checks and help when something needs attention",
+    ],
+    cta: "Ask About Maintenance",
+    cardClassName: "border-amber-500/20 bg-amber-500/[0.04]",
+    priceClassName: "text-amber-200",
+    ctaClassName:
+      "border-amber-500/20 bg-amber-500/10 text-amber-100 hover:bg-amber-500/15",
+    useLightCta: false,
+  },
 ] as const;
 
 // --- Navigation Dock ---
@@ -363,18 +382,15 @@ export default function PortfolioPage() {
           <div className="max-w-3xl">
             <h2 className="text-3xl font-medium text-white">Services & Pricing</h2>
             <p className="mt-4 text-lg text-zinc-400 leading-relaxed">
-              Every project is customized. These are starting points.
+              Simple starting points for small-business websites, custom builds, and ongoing support.
             </p>
           </div>
 
-          <div className="grid gap-4 xl:grid-cols-3">
+          <div className="grid gap-4 lg:grid-cols-2">
             {pricingTiers.map((tier) => (
               <SpotlightCard
                 key={tier.title}
-                className={[
-                  "h-full p-8",
-                  tier.badge ? "border-emerald-500/20 bg-emerald-500/[0.06]" : "",
-                ].join(" ")}
+                className={["h-full p-8", tier.cardClassName ?? ""].join(" ")}
               >
                 <div className="relative flex h-full flex-col">
                   {tier.badge ? (
@@ -383,19 +399,21 @@ export default function PortfolioPage() {
                     </span>
                   ) : null}
 
-                  <div className={tier.badge ? "pr-28 xl:min-h-[5rem]" : "xl:min-h-[5rem]"}>
-                    <h3 className="max-w-[12rem] text-2xl font-medium text-white">{tier.title}</h3>
+                  <div className={tier.badge ? "pr-28" : ""}>
+                    <h3 className="text-2xl font-medium text-white">{tier.title}</h3>
                   </div>
 
-                  <div className="mt-3 xl:min-h-[3.5rem]">
-                    <p className="text-xl font-medium text-emerald-200">{tier.price}</p>
+                  <div className="mt-3">
+                    <p className={["text-xl font-medium text-emerald-200", tier.priceClassName ?? ""].join(" ")}>
+                      {tier.price}
+                    </p>
                   </div>
 
-                  <p className="mt-5 text-sm leading-relaxed text-zinc-400 xl:min-h-[7.5rem] md:text-base">
+                  <p className="mt-5 text-sm leading-relaxed text-zinc-400 md:text-base">
                     {tier.description}
                   </p>
 
-                  <div className="mt-8 xl:min-h-[2rem]">
+                  <div className="mt-8">
                     <p className="text-sm font-medium text-white">Includes:</p>
                   </div>
 
@@ -413,7 +431,13 @@ export default function PortfolioPage() {
                   <div className="mt-auto pt-8">
                     <a
                       href="#contact"
-                      className="inline-flex w-fit items-center gap-2 rounded-full border border-white/10 bg-white px-5 py-3 text-sm font-medium text-black transition-colors hover:bg-zinc-200"
+                      className={[
+                        "inline-flex w-fit items-center gap-2 rounded-full px-5 py-3 text-sm font-medium transition-colors",
+                        tier.useLightCta === false
+                          ? "border-white/10 bg-white/5 text-white hover:bg-white/10"
+                          : "border border-white/10 bg-white text-black hover:bg-zinc-200",
+                        tier.ctaClassName ?? "",
+                      ].join(" ")}
                     >
                       {tier.cta} <ArrowRight className="h-4 w-4" />
                     </a>
@@ -422,39 +446,6 @@ export default function PortfolioPage() {
               </SpotlightCard>
             ))}
           </div>
-
-          <SpotlightCard className="p-8 border-sky-500/20 bg-sky-500/[0.04]">
-            <div className="space-y-6">
-              <div className="max-w-3xl">
-                <h3 className="text-2xl font-medium text-white">Custom Software & Advanced Projects</h3>
-                <p className="mt-4 text-lg text-zinc-300">Need more than a standard business website?</p>
-                <p className="mt-4 text-zinc-400">I also take on custom projects such as:</p>
-              </div>
-
-              <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-                {advancedProjects.map((item) => (
-                  <div
-                    key={item}
-                    className="rounded-2xl border border-white/10 bg-white/[0.03] px-5 py-4 text-sm text-zinc-200"
-                  >
-                    {item}
-                  </div>
-                ))}
-              </div>
-
-              <div>
-                <p className="text-zinc-400">
-                  Every advanced project is scoped based on your specific needs.
-                </p>
-                <a
-                  href="#contact"
-                  className="mt-6 inline-flex items-center gap-2 rounded-full border border-sky-500/20 bg-sky-500/10 px-5 py-3 text-sm font-medium text-sky-100 transition-colors hover:bg-sky-500/15"
-                >
-                  Contact Me for a Custom Quote <ArrowRight className="h-4 w-4" />
-                </a>
-              </div>
-            </div>
-          </SpotlightCard>
         </section>
 
         {/* INTERACTIVE RESUME */}
