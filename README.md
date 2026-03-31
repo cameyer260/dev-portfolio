@@ -74,16 +74,22 @@ Internal guidance for the homepage pricing tiers. The public UI stays concise; t
 
 ### Pricing Model Notes
 
-- The `Business Website`, `Growth Website`, `Custom Software / Advanced Website`, and `Maintenance & Hosting` offers are starting points, not rigid one-size-fits-all packages.
+- The homepage pricing section is structured as three main comparison cards: `Business Website`, `Growth Website`, and `Custom Software / Advanced Website`.
+- `Maintenance & Hosting` is presented as a separate support offer below the main three cards, not as a fourth directly comparable build tier.
+- All offers are starting points, not rigid one-size-fits-all packages.
 - The pricing structure should stay simple enough for local small businesses to understand quickly.
 - `Growth Website` is the main website offer for businesses that want a more custom design and a stronger lead-generation structure.
 - `Custom Software / Advanced Website` is a separate custom-scoped lane for higher-complexity websites, integrations, or software-style work.
+- `Business Website` should feel like the approachable entry-level option for a local business that mainly needs a clean, credible web presence.
 - The main risk is scope creep, not technical feasibility. Proposal language should define deliverables clearly enough that a client cannot quietly turn one tier into a much larger engagement.
 - Promise deliverables and setup work, not rankings, lead volume, or other outcomes outside direct control.
 
 ### Business Website
 
 Starting point for a simple brochure-style business website.
+
+Homepage positioning:
+- For simple, professional small-business sites that make it easy for people to find the business and get in touch.
 
 `3–5 page website`
 - A standard small-business site such as `Home`, `About`, `Services`, `Contact`, plus one optional page like `FAQ`, `Gallery`, or `Service Area`.
@@ -110,6 +116,9 @@ Starting point for a simple brochure-style business website.
 ### Growth Website
 
 Starting point for a more tailored marketing website intended to convert more visitors into leads.
+
+Homepage positioning:
+- For businesses that want a more custom design and stronger lead-generation structure.
 
 `Everything in Business Website`
 - Includes all `Business Website` deliverables and baseline expectations.
@@ -139,6 +148,9 @@ Starting point for a more tailored marketing website intended to convert more vi
 
 Separate quote lane for work that goes beyond a standard small-business marketing site.
 
+Homepage positioning:
+- For businesses that need more than a standard website, with a more advanced or involved build.
+
 `Advanced websites with custom scope`
 - Use this when the build is still website-facing, but the page count, content structure, feature set, or planning needs go well beyond the standard website tiers.
 - This can include more complex content structure, custom user flows, or a more involved build than a normal brochure or lead-generation site.
@@ -151,7 +163,7 @@ Separate quote lane for work that goes beyond a standard small-business marketin
 - Internal-use interfaces, admin-style tools, reporting views, or business workflows that are not just public marketing pages.
 - If a project starts to behave like software, it should live in this lane.
 
-`API integrations and custom workflows`
+`Integrations and custom workflows`
 - Data connections between the website and other systems, or custom workflow logic that goes beyond a normal marketing-site scope.
 - Quote these based on integration complexity, testing needs, and edge cases.
 
@@ -162,6 +174,9 @@ Separate quote lane for work that goes beyond a standard small-business marketin
 ### Maintenance & Hosting
 
 Ongoing service for clients who want hosting, support, and straightforward updates after launch.
+
+Homepage positioning:
+- Ongoing hosting, updates, and support to keep the website running smoothly after launch.
 
 `Hosting and routine website upkeep`
 - Hosting should keep the site live, fast, and maintained without the client needing to manage technical details.
@@ -183,6 +198,7 @@ Guidance:
 - Keep `Custom Software / Advanced Website` custom-scoped.
 - Do not quietly absorb software-style builds into fixed website pricing.
 - Sell `Maintenance & Hosting` as a clean recurring service unless it is intentionally bundled for a limited period.
+- In the homepage layout, `Maintenance & Hosting` should read as a support add-on or ongoing service, not as a direct alternative to the three main build offers.
 
 ### Scope Boundaries To Keep In Proposals
 
