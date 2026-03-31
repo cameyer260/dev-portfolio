@@ -74,14 +74,22 @@ Internal guidance for the homepage pricing tiers. The public UI stays concise; t
 
 ### Pricing Model Notes
 
-- The `Starter Website`, `Growth Website`, and `Premium Digital Presence` tiers are starting points, not rigid one-size-fits-all packages.
-- The pricing ladder is meant to sell increasingly custom website work for local businesses without bundling custom software into fixed-price website scopes.
+- The homepage pricing section is structured as three main comparison cards: `Business Website`, `Growth Website`, and `Custom Software / Advanced Website`.
+- `Maintenance & Hosting` is presented as a separate support offer below the main three cards, not as a fourth directly comparable build tier.
+- All offers are starting points, not rigid one-size-fits-all packages.
+- The pricing structure should stay simple enough for local small businesses to understand quickly.
+- `Growth Website` is the main website offer for businesses that want a more custom design and a stronger lead-generation structure.
+- `Custom Software / Advanced Website` is a separate custom-scoped lane for higher-complexity websites, integrations, or software-style work.
+- `Business Website` should feel like the approachable entry-level option for a local business that mainly needs a clean, credible web presence.
 - The main risk is scope creep, not technical feasibility. Proposal language should define deliverables clearly enough that a client cannot quietly turn one tier into a much larger engagement.
 - Promise deliverables and setup work, not rankings, lead volume, or other outcomes outside direct control.
 
-### Starter Website
+### Business Website
 
 Starting point for a simple brochure-style business website.
+
+Homepage positioning:
+- For simple, professional small-business sites that make it easy for people to find the business and get in touch.
 
 `3–5 page website`
 - A standard small-business site such as `Home`, `About`, `Services`, `Contact`, plus one optional page like `FAQ`, `Gallery`, or `Service Area`.
@@ -100,24 +108,24 @@ Starting point for a simple brochure-style business website.
 - Map embed when the business has a public location.
 - Clear display of name, phone, address, service area, hours, and core contact details.
 
-`Clean, modern layout`
-- Professional visual presentation with good spacing, hierarchy, typography, and sensible brand styling.
-- Does not imply a fully custom brand identity process.
-
-`Built for a smooth user experience`
+`Clean, modern layout built for easy browsing`
 - Fast load, simple navigation, obvious next steps, readable structure, and basic accessibility-minded implementation.
-- This means strong practical UX, not formal UX research.
+- Professional visual presentation with good spacing, hierarchy, typography, and sensible brand styling.
+- Does not imply a fully custom brand identity process or a deeper marketing strategy engagement.
 
 ### Growth Website
 
 Starting point for a more tailored marketing website intended to convert more visitors into leads.
 
-`Everything in Starter`
-- Includes all `Starter Website` deliverables and baseline expectations.
+Homepage positioning:
+- For businesses that want a more custom design and stronger lead-generation structure.
 
-`Fully custom design`
+`Everything in Business Website`
+- Includes all `Business Website` deliverables and baseline expectations.
+
+`Custom design tailored to your business`
 - More tailored visual design and section structure than a simple brochure layout.
-- Meant to feel intentionally built for that business, not like a lightly modified starter template.
+- Meant to feel intentionally built for that business, not like a lightly modified entry-level site.
 
 `Conversion-focused layout`
 - Layout decisions are made to encourage calls, quote requests, bookings, or form submissions.
@@ -132,54 +140,65 @@ Starting point for a more tailored marketing website intended to convert more vi
 - A dedicated section for client-provided testimonials, reviews, or social proof.
 - Includes placement, formatting, and presentation, not review collection.
 
-`Clear call-to-action sections throughout the site`
+`Clear calls to action throughout the site`
 - More than a single hero button.
 - Calls to action should appear intentionally throughout the site so visitors always have a clear next step.
 
-### Premium Digital Presence
-
-Starting point for a more strategic website engagement with stronger marketing and measurement support.
-
-`Everything in Growth`
-- Includes all `Growth Website` deliverables and baseline expectations.
-
-`Advanced SEO strategy`
-- Stronger search-oriented planning such as service/location page planning, keyword-to-page mapping, internal linking recommendations, structured data improvements, and local SEO alignment.
-- Can include Search Console setup or review and recommendations for future content opportunities.
-- Does not mean indefinite SEO execution or guaranteed rankings.
-
-`Content and copy guidance`
-- Help deciding what each page needs to say and how sections should be structured.
-- Can include headline guidance, CTA guidance, page-by-page content prompts, and refinement of client-provided wording.
-- Does not automatically mean full done-for-you copywriting or deep brand messaging consulting unless separately scoped.
-
-`Performance tracking setup`
-- Setup for measurement tools such as GA4, Search Console, form-submit tracking, and click-to-call or click-to-email tracking where practical.
-- This is intended to give the business visibility into important website actions, not to provide full ongoing analytics consulting.
-
-`Integrations such as booking, forms, or other tools`
-- Connection of third-party tools such as booking systems, CRM forms, newsletter forms, chat widgets, payment links, or similar business tools.
-- Does not imply building custom software features under the website package price.
-
-`Ongoing improvement plan`
-- A documented roadmap for what to improve after launch.
-- Can include prioritized recommendations for SEO, content, conversion improvements, and optional next-step work.
-- This means a plan for future improvement, not unlimited ongoing support.
-
-### Custom Software And Advanced Projects
+### Custom Software / Advanced Website
 
 Separate quote lane for work that goes beyond a standard small-business marketing site.
 
-Typical examples:
-- Booking systems
-- Dashboards
-- Internal tools
-- API integrations
+Homepage positioning:
+- For businesses that need more than a standard website, with a more advanced or involved build.
+
+`Advanced websites with custom scope`
+- Use this when the build is still website-facing, but the page count, content structure, feature set, or planning needs go well beyond the standard website tiers.
+- This can include more complex content structure, custom user flows, or a more involved build than a normal brochure or lead-generation site.
+
+`Booking systems, forms, and connected tools`
+- Use when the website needs more involved third-party tool connections than a basic contact form setup.
+- Examples can include booking systems, advanced intake forms, CRM-connected forms, or other business tools that shape how the site works.
+
+`Dashboards and internal tools`
+- Internal-use interfaces, admin-style tools, reporting views, or business workflows that are not just public marketing pages.
+- If a project starts to behave like software, it should live in this lane.
+
+`Integrations and custom workflows`
+- Data connections between the website and other systems, or custom workflow logic that goes beyond a normal marketing-site scope.
+- Quote these based on integration complexity, testing needs, and edge cases.
+
+`Tracking or content guidance when the project calls for it`
+- More advanced tracking setup, content structure help, or page-planning guidance can be included here when it is part of a larger custom engagement.
+- Do not quietly roll broad strategy work into the fixed-price website tiers.
+
+### Maintenance & Hosting
+
+Ongoing service for clients who want hosting, support, and straightforward updates after launch.
+
+Homepage positioning:
+- Ongoing hosting, updates, and support to keep the website running smoothly after launch.
+
+`Hosting and routine website upkeep`
+- Hosting should keep the site live, fast, and maintained without the client needing to manage technical details.
+- This is an ongoing service, not a one-time launch task.
+
+`Software and security updates`
+- Keep framework, dependency, and platform-level updates on a reasonable maintenance cadence.
+- Focus on reliability and risk reduction, not promising zero issues forever.
+
+`Text, photo, and small content edits`
+- Straightforward updates such as swapping images, updating hours, editing copy, or making small page-level adjustments.
+- Larger redesigns, new pages, or major functionality changes should still be quoted separately.
+
+`Form checks and help when something needs attention`
+- Reasonable support for contact forms, submission issues, or routine website questions.
+- This should feel like practical small-business support, not enterprise retainers or unlimited consulting.
 
 Guidance:
-- Keep this category custom-scoped.
-- Do not quietly absorb these builds into website package pricing.
-- If a project starts to behave like software, not a marketing website, move it into this lane and quote it separately.
+- Keep `Custom Software / Advanced Website` custom-scoped.
+- Do not quietly absorb software-style builds into fixed website pricing.
+- Sell `Maintenance & Hosting` as a clean recurring service unless it is intentionally bundled for a limited period.
+- In the homepage layout, `Maintenance & Hosting` should read as a support add-on or ongoing service, not as a direct alternative to the three main build offers.
 
 ### Scope Boundaries To Keep In Proposals
 
@@ -188,14 +207,14 @@ Guidance:
 - Client-provided items such as logo, images, legal text, and core business information should be called out.
 - SEO setup should never be described as a ranking guarantee.
 - Delivery timeline should depend on the speed of client feedback and content delivery.
-- Maintenance should be sold separately unless an ongoing support arrangement is included.
+- Maintenance should be sold as a separate recurring service unless an ongoing support arrangement is intentionally included.
 - E-commerce, blogs, memberships, custom CMS work, and software features should be called out explicitly if included.
 - Accessibility-minded implementation is good practice, but that is not the same as selling a formal compliance audit unless specifically scoped.
 
 ### Positioning Notes
 
 - The pricing model is appropriate for selling local-business websites as a technically strong solo developer using Next.js and Vercel.
-- The packages should sell speed, clarity, design quality, reliability, and clean implementation.
+- The offers should sell speed, clarity, design quality, reliability, and clean implementation.
 - The safest sales posture is to be confident about build quality and process while staying precise about what is and is not included.
 
 ## License
