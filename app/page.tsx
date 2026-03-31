@@ -401,23 +401,23 @@ export default function PortfolioPage() {
                     </span>
                   ) : null}
 
-                  <div className={["h-[4.5rem]", tier.badge ? "pr-28" : ""].join(" ")}>
+                  <div className={["xl:min-h-[4.5rem]", tier.badge ? "pr-28" : ""].join(" ")}>
                     <h3 className="max-w-[14rem] text-2xl font-medium text-white">{tier.title}</h3>
                   </div>
 
-                  <div className="mt-3 h-[2rem]">
+                  <div className="mt-3 xl:min-h-[2rem]">
                     <p className={["text-xl font-medium text-emerald-200", tier.priceClassName ?? ""].join(" ")}>
                       {tier.price}
                     </p>
                   </div>
 
-                  <div className="mt-5 h-[6.75rem]">
+                  <div className="mt-5 xl:min-h-[5.5rem]">
                     <p className="text-sm leading-relaxed text-zinc-400 md:text-base">
                       {tier.description}
                     </p>
                   </div>
 
-                  <div className="mt-8 h-[1.25rem]">
+                  <div className="mt-8 xl:min-h-[1.25rem]">
                     <p className="text-sm font-medium text-white">Includes:</p>
                   </div>
 
@@ -438,7 +438,7 @@ export default function PortfolioPage() {
                       className={[
                         "inline-flex w-fit items-center gap-2 rounded-full px-5 py-3 text-sm font-medium transition-colors",
                         tier.useLightCta === false
-                          ? "border-white/10 bg-white/5 text-white hover:bg-white/10"
+                          ? "border border-white/10 bg-white/5 text-white hover:bg-white/10"
                           : "border border-white/10 bg-white text-black hover:bg-zinc-200",
                         tier.ctaClassName ?? "",
                       ].join(" ")}
