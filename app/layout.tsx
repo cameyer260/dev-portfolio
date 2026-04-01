@@ -76,7 +76,7 @@ const jsonLd = {
       url: "https://www.christophermeyer.dev",
       image: "https://www.christophermeyer.dev/christopher-meyer.webp",
       email: "cameyer06@gmail.com",
-      telephone: "+1-618-772-4471",
+      telephone: "+1-314-529-1949",
       jobTitle: "Freelance Software Developer",
       address: {
         "@type": "PostalAddress",
@@ -110,7 +110,7 @@ const jsonLd = {
       description:
         "Freelance software developer in Edwardsville, IL building fast, modern, SEO-focused websites for local businesses in the Edwardsville and St. Louis area.",
       email: "cameyer06@gmail.com",
-      telephone: "+1-618-772-4471",
+      telephone: "+1-314-529-1949",
       address: {
         "@type": "PostalAddress",
         addressLocality: "Edwardsville",

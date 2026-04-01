@@ -775,7 +775,7 @@ export default function PortfolioPage() {
           <div className="max-w-2xl">
             <h2 className="text-3xl font-medium text-white mb-4">Let&apos;s build something useful.</h2>
             <p className="text-zinc-400 text-lg">
-              If you need a website for your business, want to improve your current site, or you&apos;re reaching out about an internship, feel free to email or text me directly. If you&apos;re here for freelance work, browse the industry-specific example sites first and then reach out when you find the closest fit.
+              If you need a website, app, or other software for your business, or you&apos;re reaching out about an internship, email is the best way to reach me. Text or voicemail works too. If you&apos;re exploring freelance work, feel free to check out the industry-specific example sites for a few ideas, then reach out about whatever you&apos;re building.
             </p>
             <Link
               href="/examples"
@@ -812,13 +812,13 @@ export default function PortfolioPage() {
                   <div>
                     <p className="text-sm uppercase tracking-[0.2em] text-zinc-500">Phone</p>
                     <a
-                      href="tel:6187724471"
+                      href="tel:3145291949"
                       className="mt-2 block text-lg font-medium text-white hover:text-sky-200 transition-colors"
                     >
-                      618-772-4471
+                      (314) 529-1949
                     </a>
                     <p className="mt-2 text-sm text-zinc-400">
-                      Feel free to email or text me directly. I respond quickly.
+                      Email is best. Text or voicemail is fine too.
                     </p>
                   </div>
                 </div>
